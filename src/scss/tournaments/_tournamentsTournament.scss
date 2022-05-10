@@ -1,0 +1,497 @@
+.tournamentsTournament {
+    width: 100%;
+    padding-top: 40px;
+    @extend %reset;
+    @extend %col;
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        min-height: calc(100% - #{$heightTopBar});
+        background: linear-gradient(180deg, rgba(12, 12, 14, 0) 0%, #0C0C0E 1100px, #0C0C0E 100%);
+        content: "";
+    }
+    &__back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+        width: 100%;
+        height: 100%;
+        min-height: calc(100% - #{$heightTopBar});
+        object-fit: contain;
+        object-position: center top;
+        opacity: 0.3;
+        filter: blur(30px);
+        @extend %reset;
+    }
+    &__title {
+        position: relative;
+        max-width: 100%;
+        margin-bottom: 34px;
+        margin-bottom: 34px;
+        color: #f8f8f8;
+        font-size: 40px;
+        font-family: 'Regular';
+        @extend %reset;
+        &Icon {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            z-index: 2;
+            width: 24px;
+            height: 24px;
+            margin-left: 8px;
+            transform: translate(0, -50%);
+            @extend %reset;
+            @extend %click;
+            @include icon(#f8f8f8);
+        }
+    }
+    &__items {
+        justify-content: space-between;
+        width: 100%;
+        @extend %reset;
+        @extend %row;
+    }
+    &__item {
+        @extend %reset;
+        @extend %col;
+        &._content {
+            width: calc(100% - 306px);
+            padding-right: 32px;
+        }
+        &._nav {
+            width: 306px;
+        }
+    }
+    &__preview {
+        position: relative;
+        width: 100%;
+        height: 348px;
+        margin-bottom: 36px;
+        @extend %reset;
+        &Image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @extend %reset;
+        }
+        &Status {
+            position: absolute;
+            top: 26px;
+            left: 30px;
+            z-index: 2;
+            padding: 12px 18px;
+            color: #f8f8f8;
+            font-size: 16px;
+            font-family: 'Regular';
+            background: rgba(#f8f8f8, .1);
+            border-radius: 4px;
+            @extend %reset;
+            @include blur(40px);
+        }
+    }
+    &__info {
+        align-items: center;
+        width: 100%;
+        margin-bottom: 32px;
+        @extend %reset;
+        @extend %row;
+        @include media(0, 1500px) {
+            flex-wrap: wrap;
+        }
+        &Item {
+            align-items: center;
+            justify-content: center;
+            width: 236px;
+            height: 68px;
+            margin-right: 16px;
+            margin-bottom: 16px;
+            padding: 12px 24px;
+            background: rgba(#c4c4c4, .1);
+            border-radius: 360px;
+            @extend %reset;
+            @extend %row;
+            &Icon {
+                width: 32px;
+                height: 32px;
+                @extend %reset;
+            }
+            &Content {
+                max-width: calc(100% - 32px);
+                padding-left: 12px;
+                @extend %reset;
+            }
+            &Value {
+                max-width: 100%;
+                margin-bottom: 6px;
+                color: #f8f8f8;
+                font-size: 18px;
+                font-family: 'Regular';
+                @extend %reset;
+            }
+            &Description {
+                max-width: 100%;
+                color: #f8f8f8;
+                font-size: 14px;
+                font-family: 'Regular';
+                @extend %reset;
+            }
+        }
+    }
+    &__about {
+        width: 100%;
+        @extend %reset;
+        &Block {
+            width: 100%;
+            @extend %reset;
+            @extend %col;
+            &+& {
+                margin-top: 28px;
+            }
+        }
+        &Title {
+            max-width: 100%;
+            margin-bottom: 8px;
+            color: #f8f8f8;
+            font-size: 18px;
+            font-family: 'Regular';
+            @extend %reset;
+        }
+        &Description {
+            max-width: 100%;
+            color: #bfbfbf;
+            font-size: 17px;
+            font-family: 'Light';
+            line-height: 1.3;
+            @extend %reset;
+        }
+    }
+    &__nav {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        padding: 28px;
+        background: #181a21;
+        @extend %reset;
+        &Block {
+            width: 100%;
+            @extend %reset;
+            @extend %col;
+            &+& {
+                margin-top: 24px;
+            }
+        }
+        &Support {
+            max-width: 100%;
+            margin-bottom: 10px;
+            color: #606060;
+            font-size: 18px;
+            font-family: 'Regular';
+            @extend %reset;
+        }
+        &Content {
+            max-width: 100%;
+            color: #f8f8f8;
+            font-size: 18px;
+            font-family: 'Regular';
+            @extend %reset;
+        }
+        &Teams {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            margin-bottom: 12px;
+            @extend %reset;
+            &::before {
+                position: absolute;
+                bottom: -2px;
+                left: -2px;
+                z-index: 1;
+                width: calc(100% + 4px);
+                height: 50%;
+                background: linear-gradient(180deg, rgba(24, 28, 35, 0) 0%, #181a21 70%, #181a21 100%);
+                content: "";
+            }
+            &Box {
+                width: 100%;
+                height: 280px;
+                overflow: hidden;
+                @extend %reset;
+            }
+            &Show {
+                position: absolute;
+                bottom: 12px;
+                left: 50%;
+                z-index: 2;
+                color: $colorMain;
+                font-size: 16px;
+                font-family: 'Regular';
+                white-space: nowrap;
+                transform: translate(-50%, 0);
+                @extend %reset;
+                @extend %click;
+            }
+        }
+        &Team {
+            align-items: center;
+            width: 100%;
+            @extend %reset;
+            @extend %row;
+            &+& {
+                margin-top: 6px;
+            }
+            &Avatar {
+                width: 42px;
+                height: 42px;
+                margin-right: 16px;
+                @extend %reset;
+                &Image {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    @extend %reset;
+                }
+            }
+            &Name {
+                color: #f8f8f8;
+                font-size: 18px;
+                font-family: 'Regular';
+                @extend %reset;
+            }
+            &Counter {
+                margin-left: auto;
+                color: #f8f8f8;
+                font-size: 16px;
+                font-family: 'Regular';
+                @extend %reset;
+            }
+        }
+        &Button {
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 48px;
+            font-size: 20px;
+            font-family: 'Medium';
+            border-radius: 4px;
+            @extend %reset;
+            @extend %row;
+            @extend %click;
+            &._grey {
+                color: #1b1b1b;
+                background: #7c7c7c;
+            }
+        }
+        &List {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            display: none;
+            width: calc(100% + 40px);
+            padding: 14px 20px 20px 20px;
+            background: #1c1d20;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            transform: translate(-50%, 0);
+            @extend %reset;
+            &Name {
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 46px;
+                margin-bottom: 20px;
+                color: #f8f8f8;
+                font-size: 16px;
+                font-family: 'Regular';
+                background: rgba(#bfbfbf, .1);
+                border-radius: 4px;
+                @extend %reset;
+                @extend %row;
+                &Icon {
+                    width: 24px;
+                    height: 24px;
+                    margin-right: 8px;
+                    @include icon(#f8f8f8);
+                }
+            }
+            &Teams {
+                width: 100%;
+                @extend %reset;
+            }
+            &Team {
+                align-items: center;
+                width: 100%;
+                @extend %reset;
+                @extend %row;
+                &+& {
+                    margin-top: 30px;
+                }
+                &Avatar {
+                    width: 46px;
+                    height: 46px;
+                    overflow: hidden;
+                    border-radius: 4px;
+                    @extend %reset;
+                    &Image {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        @extend %reset;
+                    }
+                }
+                &Content {
+                    width: calc(100% - 46px);
+                    padding-left: 12px;
+                    @extend %reset;
+                    @extend %col;
+                }
+                &Name {
+                    max-width: 100%;
+                    margin-bottom: 6px;
+                    color: #f8f8f8;
+                    font-size: 18px;
+                    font-family: 'Regular';
+                    @extend %reset;
+                }
+                &Description {
+                    max-width: 100%;
+                    color: #bfbfbf;
+                    font-size: 15px;
+                    font-family: 'Regular';
+                    @extend %reset;
+                }
+            }
+        }
+    }
+    &__games {
+        width: 100%;
+        margin: 84px 0 48px 0;
+        @extend %reset;
+        @extend %col;
+        &Support {
+            max-width: 100%;
+            margin-bottom: 22px;
+            color: #f8f8f8;
+            font-size: 18px;
+            font-family: 'Regular';
+            @extend %reset;
+        }
+        &Items {
+            flex-wrap: wrap;
+            width: calc(100% + 20px);
+            margin-left: -10px;
+            @extend %reset;
+            @extend %row;
+        }
+        &Item {
+            width: calc(100% / 3);
+            margin-bottom: 20px;
+            padding: 0 10px;
+            @extend %reset;
+            @include media(0, 1400px) {
+                width: 50%;
+            }
+        }
+    }
+    &__content {
+        width: 100%;
+        @extend %reset;
+        &._grid &Inner {
+            overflow-y: auto;
+        }
+        &Inner {
+            width: 100%;
+            @extend %reset;
+            @extend %col;
+        }
+        &Box {
+            margin: 0 auto;
+            @extend %reset;
+        }
+    }
+    &__links {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        margin-bottom: 80px;
+        @extend %reset;
+        @extend %row;
+        &::before {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 4px;
+            background: #3F3F45;
+            border-radius: 360px;
+            content: "";
+            @extend %reset;
+        }
+    }
+    &__link {
+        width: calc(100% / 3);
+        @extend %reset;
+    }
+    &__table {
+        width: 100%;
+        @extend %reset;
+        &Block {
+            align-items: center;
+            width: 100%;
+            @extend %reset;
+            @extend %col;
+            &+& {
+                margin-top: 48px;
+            }
+        }
+        &Date {
+            max-width: 100%;
+            margin-bottom: 32px;
+            color: $colorMain;
+            font-size: 20px;
+            font-family: 'Medium';
+            text-align: center;
+            @extend %reset;
+        }
+        &Items {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 6px;
+            @extend %reset;
+        }
+        &Item {
+            width: 100%;
+            @extend %reset;
+            &:nth-child(2n) {
+                background: #17171B;
+            }
+            &:nth-child(2n + 1) {
+                background: #141417;
+            }
+        }
+    }
+    &__players {
+        flex-wrap: wrap;
+        width: calc(100% + 10px);
+        margin-left: -5px;
+        @extend %reset;
+        @extend %row;
+    }
+    &__player {
+        width: 20%;
+        margin-bottom: 10px;
+        padding: 0 5px;
+        @extend %reset;
+        @include media(0, 1350px) {
+            width: 25%;
+        }
+        @include media(0, 1050px) {
+            width: calc(100% / 3);
+        }
+    }
+}

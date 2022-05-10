@@ -1,0 +1,66 @@
+.mobileBar {
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 12px;
+    background: rgba(#0e0e0e, .8);
+    border-bottom: 1px solid rgba(#f8f8f8, .1);
+    @include blur(20px);
+    @extend %reset;
+    @extend %row;
+    &__icon {
+        position: relative;
+        width: 13px;
+        height: 2px;
+        background: #fff;
+        transition: $trans;
+        @extend %reset;
+        .body__mobileBar._show & {
+            background: none;
+        }
+        &::before,
+        &::after {
+            position: absolute;
+            left: 0;
+            width: 26px;
+            height: 2px;
+            background: #fff;
+            transition: $trans;
+            content: "";
+        }
+        &::before {
+            top: -7px;
+            transform-origin: 5px 5px;
+            .body__mobileBar._show & {
+                transform: rotate(45deg);
+            }
+        }
+        &::after {
+            bottom: -7px;
+            transform-origin: 5px -3px;
+            .body__mobileBar._show & {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+    &__button {
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        padding: 8px 12px;
+        color: #000;
+        font-size: 16px;
+        font-family: 'Regular';
+        background: $colorMain;
+        border-radius: 6px;
+        @extend %reset;
+        @extend %row;
+        &Icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            @include icon(#000);
+            @extend %reset;
+        }
+    }
+}

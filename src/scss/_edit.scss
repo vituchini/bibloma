@@ -1,0 +1,8 @@
+.edit {
+    width: 100%;
+    color: $colorMain;
+    font-size: 16px;
+    font-family: 'Regular';
+    @extend %reset;
+    @extend %click;
+}

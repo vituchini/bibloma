@@ -1,0 +1,302 @@
+.matchesSideBar {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+    @extend %reset;
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: rgba(248, 248, 248, 0.05);
+        content: "";
+        @include blur(20px);
+    }
+    &__inner {
+        width: 100%;
+        height: 100%;
+        @extend %reset;
+        @extend %col;
+    }
+    &__head {
+        width: 100%;
+        height: 72px;
+        @extend %reset;
+    }
+    &__content {
+        width: 100%;
+        height: calc(100% - 72px);
+        overflow-y: auto;
+        @extend %reset;
+        @extend %noscroll;
+    }
+    &._fullContent &__content {
+        height: 100%;
+    }
+    &__labels {
+        width: 100%;
+        margin-bottom: 34px;
+        padding: 0 22px;
+        @extend %reset;
+        &Inner {
+            position: relative;
+            z-index: 1;
+            @extend %reset;
+            @extend %row;
+            &::before {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+                width: 100%;
+                height: 4px;
+                background: #3F3F45;
+                border-radius: 360px;
+                content: "";
+                @extend %reset;
+            }
+        }
+    }
+    &__label {
+        width: 50%;
+        @extend %reset;
+    }
+    &__team {
+        width: 100%;
+        margin-bottom: 34px;
+        padding: 0 22px;
+        @extend %reset;
+        @extend %col;
+        &Support {
+            position: relative;
+            z-index: 1;
+            max-width: 100%;
+            margin-bottom: 10px;
+            color: #bfbfbf;
+            font-size: 18px;
+            font-family: 'Regular';
+            @extend %reset;
+            &Icon {
+                position: absolute;
+                top: 50%;
+                left: 100%;
+                width: 16px;
+                height: 16px;
+                margin-left: 6px;
+                transform: translate(0, -50%);
+                @extend %reset;
+                @extend %click;
+            }
+        }
+        &Users {
+            flex-wrap: wrap;
+            width: 100%;
+            @extend %reset;
+            @extend %row;
+        }
+        &User {
+            position: relative;
+            width: 48px;
+            height: 48px;
+            margin-right: 6px;
+            @extend %reset;
+            &Icon {
+                display: block;
+                width: 100%;
+                height: 100%;
+                @extend %click;
+            }
+            &._add {
+                // @extend %click;
+            }
+            &Drop {
+                position: absolute;
+                top: 0;
+                left: 100%;
+                z-index: 3;
+                width: 278px;
+                margin: 0 0 0 16px;
+                @extend %reset;
+            }
+        }
+    }
+    &__filter {
+        width: 100%;
+        @extend %reset;
+        @extend %col;
+        &Inner {
+            width: 100%;
+            @extend %reset;
+        }
+        &Support {
+            align-items: center;
+            max-width: 100%;
+            margin-bottom: 10px;
+            padding: 0 22px;
+            color: #f8f8f8;
+            font-size: 18px;
+            font-family: 'Regular';
+            @extend %reset;
+            @extend %row;
+            &Icon {
+                width: 20px;
+                height: 20px;
+                margin-right: 6px;
+                @extend %reset;
+            }
+        }
+        &Content {
+            width: 100%;
+            padding: 0 5px;
+            @extend %reset;
+        }
+    }
+    &__game {
+        width: 100%;
+        padding: 0 22px;
+        @extend %reset;
+        &Item {
+            width: 100%;
+            @extend %reset;
+            @extend %col;
+            &+& {
+                margin-top: 24px;
+            }
+        }
+        &Support {
+            max-width: 100%;
+            margin-bottom: 12px;
+            color: #bfbfbf;
+            font-size: 18px;
+            font-family: 'Regular';
+            @extend %reset;
+        }
+        &Content {
+            width: 100%;
+            @extend %reset;
+        }
+        &Labels {
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: -12px;
+            @extend %reset;
+            @extend %row;
+        }
+        &Label {
+            width: 48%;
+            height: 40px;
+            margin-bottom: 12px;
+            @extend %reset;
+            &._medium {
+                width: 31.5%;
+            }
+        }
+        &Field {
+            position: relative;
+            width: 100%;
+            height: 40px;
+            @extend %reset;
+            &._name {
+                margin-top: 28px;
+            }
+            &._price {
+                margin-bottom: 20px;
+            }
+            &Support {
+                position: absolute;
+                top: 50%;
+                right: 12px;
+                color: #bfbfbf;
+                font-size: 16px;
+                font-family: 'Regular';
+                transform: translate(0, -50%);
+                @extend %reset;
+                @include ofStrike() {
+                    background: #bfbfbf;
+                }
+            }
+        }
+        &Input {
+            width: 100%;
+            height: 100%;
+            padding: 5px 12px;
+            color: #f8f8f8;
+            font-size: 16px;
+            font-family: 'Regular';
+            background: rgba(#F8F8F8, .1);
+            border-radius: 4px;
+            @extend %reset;
+            &::-webkit-input-placeholder {
+                color: #bfbfbf;
+            }
+        }
+        &Field._price &Input {
+            background: rgba(#1A1A1C, .6);
+            border: 1px solid #606060;
+        }
+        &Checkbox {
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+            @extend %reset;
+            &Inner {
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                padding: 20px 0;
+                border-top: 1px solid #3F3D46;
+                border-bottom: 1px solid #3F3D46;
+                @extend %reset;
+                @extend %row;
+                @extend %click;
+            }
+            &Support {
+                max-width: 75%;
+                color: #bfbfbf;
+                font-size: 18px;
+                font-family: 'Regular';
+                @extend %reset;
+            }
+            &Content {
+                @extend %reset;
+            }
+        }
+        &Button {
+            width: 100%;
+            height: 38px;
+            margin-top: 10px;
+            @extend %reset;
+        }
+    }
+    &__button {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 6px 16px;
+        color: #101011;
+        font-size: 15px;
+        font-family: 'Medium';
+        background: $colorMain;
+        border-radius: 4px;
+        @extend %reset;
+        @extend %click;
+        @extend %row;
+        &Icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 7px;
+            @extend %reset;
+            @include icon(#000);
+        }
+        &_warn{
+            background: #c42712;
+            color: #f8f8f8;
+        }
+    }
+}

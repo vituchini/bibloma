@@ -1,0 +1,220 @@
+.gameCard {
+    width: 100%;
+    height: 100%;
+    @extend %reset;
+    @extend %click;
+    @include blur(20px);
+    &._list {
+        align-items: stretch;
+        @extend %row;
+    }
+    &__image {
+        position: relative;
+        width: 100%;
+        @extend %reset;
+        @include inParent('.gameCard._block') {
+            height: 234px;
+        }
+        @include inParent('.gameCard._list') {
+            width: 164px;
+            // height: 100%;
+        }
+        &Item {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @extend %reset;
+        }
+    }
+    &__user {
+        align-items: center;
+        width: 100%;
+        @extend %reset;
+        @extend %row;
+        @include inParent('.gameCard._block') {
+            margin-bottom: 4px;
+        }
+        @include inParent('.gameCard._list') {
+            width: 354px;
+            @include media(0, 1280px) {
+                width: 254px;
+            }
+        }
+        &Lang {
+            width: 24px;
+            height: 15px;
+            margin-right: 10px;
+            object-fit: contain;
+            @extend %reset;
+            @include inParent('.gameCard._list') {
+                width: 37px;
+                height: 24px;
+                margin-right: 24px;
+            }
+        }
+        &Name {
+            max-width: 70%;
+            margin-right: 4px;
+            color: #f8f8f8;
+            font-size: 18px;
+            font-family: 'Regular';
+            @extend %reset;
+        }
+        &Icon {
+            display: block;
+            width: 22px;
+            height: 22px;
+            @extend %reset;
+        }
+    }
+    &__map {
+        max-width: 100%;
+        color: #afafaf;
+        font-size: 17px;
+        font-family: 'Regular';
+        @extend %reset;
+    }
+    &__online {
+        position: absolute;
+        top: 5px;
+        right: 0;
+        z-index: 2;
+        padding: 4px 8px;
+        color: $colorError;
+        font-size: 16px;
+        font-family: 'Regular';
+        background: rgba($colorError, .1);
+        border-radius: 360px;
+        @extend %reset;
+    }
+    &__info {
+        width: 100%;
+        padding: 10px 15px;
+        background: rgba(248, 248, 248, 0.02);
+        @extend %reset;
+        @include inParent('.gameCard._list') {
+            align-items: center;
+            width: calc(100% - 164px);
+            padding-left: 26px;
+            @extend %row;
+        }
+        @include inParent('.gameCard._list._withoutImage') {
+            width: 100%;
+        }
+        &Head {
+            position: relative;
+            width: 100%;
+            padding-top: 5px;
+            @include inParent('.gameCard._block') {
+                margin-bottom: 4px;
+                padding-bottom: 8px;
+                border-bottom: 1px solid #3F3D46;
+            }
+            @include inParent('.gameCard._list') {
+                width: auto;
+            }
+        }
+        &Foot {
+            width: 100%;
+            padding: 4px 0;
+            @extend %reset;
+            @extend %row;
+            @include inParent('.gameCard._list') {
+                align-items: center;
+            }
+        }
+        &Items {
+            @extend %row;
+            @include media(0, 1280px) {
+                flex-wrap: wrap;
+                width: 300px;
+                margin-bottom: -16px;
+            }
+        }
+        &Item {
+            @extend %reset;
+            @extend %col;
+            @include inParent('.gameCard._list') {
+                width: 110px;
+                @include media(0, 1280px) {
+                    margin-bottom: 16px;
+                }
+            }
+            &+& {
+                margin-left: 30px;
+                @include inParent('.gameCard._list') {
+                    margin-left: 16px;
+                    @include media(0, 1280px) {
+                        margin-left: 0;
+                    }
+                }
+            }
+            &Support {
+                max-width: 100%;
+                margin-bottom: 3px;
+                color: #606060;
+                font-size: 15px;
+                font-family: 'Regular';
+                @extend %reset;
+                @include inParent('.gameCard._list') {
+                    margin-bottom: 5px;
+                    font-size: 16px;
+                }
+            }
+            &Value {
+                max-width: 100%;
+                color: #f8f8f8;
+                font-size: 17px;
+                font-family: 'Regular';
+                @extend %reset;
+            }
+        }
+        &Status {
+            align-items: flex-end;
+            color: $colorSuccess;
+            font-size: 16px;
+            font-family: 'Regular';
+            @extend %reset;
+            @extend %row;
+            @include inParent('.gameCard._block') {
+                margin: auto 0 0 auto;
+            }
+            @include inParent('.gameCard._list') {
+                margin: 0 0 0 auto;
+            }
+            &._error {
+                color: $colorError;
+            }
+            &._error &Icon {
+                @include icon($colorError);
+            }
+            &Icon {
+                width: 24px;
+                height: 24px;
+                margin-left: 2px;
+                @extend %reset;
+            }
+        }
+        &Views {
+            align-items: center;
+            color: #bfbfbf;
+            font-size: 16px;
+            font-family: 'Regular';
+            @extend %reset;
+            @extend %row;
+            @include inParent('.gameCard._block') {
+                margin: auto 0 0 auto;
+            }
+            @include inParent('.gameCard._list') {
+                margin: 0 0 0 auto;
+            }
+            &Icon {
+                width: 20px;
+                height: 20px;
+                margin-top: -1px;
+                margin-right: 6px;
+                @extend %reset;
+            }
+        }
+    }
+}

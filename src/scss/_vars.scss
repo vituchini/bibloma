@@ -1,0 +1,107 @@
+$colorMain:#FAC704;
+$colorDark:#1D1D21;
+$colorGreyText:#787878;
+$colorSuccess:#6FFF57;
+$colorError:#F13939;
+$widthInner:1200px;
+$widthInnerLand:1526px;
+$heightTopBar:78px;
+$heightMobileBar:54px;
+$widthSideBar:100px;
+$widthChatBar:88px;
+$heightCalibration:82px;
+$trans: .3s ease-in-out;
+$transLong: .5s ease-in-out;
+@mixin bg($url, $size, $pos, $repeat:false) {
+    background: url("../img/#{$url}")no-repeat;
+    background-position: $pos;
+    background-size: $size;
+    @if $repeat {
+        background-repeat: repeat;
+    }
+}
+
+@mixin mediaMin($w) {
+    @media screen and (min-width: $w) {
+        @content;
+    }
+}
+
+@mixin media($w1,
+$w2) {
+    @media screen and (min-width: $w1) and (max-width: $w2) {
+        @content;
+    }
+}
+
+@mixin icon($color) {
+    & .icon__path {
+        fill: $color;
+    }
+    & .icon__stroke {
+        stroke: $color;
+    }
+}
+
+._desktop {
+    @include media(0,
+    500px) {
+        display: none;
+    }
+}
+
+._mobile {
+    @include mediaMin(501px) {
+        display: none;
+    }
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+%click {
+    cursor: pointer;
+    user-select: none;
+    // @include media(0,
+    // 500px) {
+    //     cursor: default;
+    // }
+}
+
+@mixin blur($val) {
+    & {
+        -webkit-backdrop-filter: saturate(100%) blur($val);
+        backdrop-filter: saturate(100%) blur($val);
+        // will-change: transform;
+    }
+}
+
+%scroll {
+    &::-webkit-scrollbar {
+        width: 5px;
+        height: 4px;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: #606060;
+        border-radius: 360px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $colorMain;
+        border-radius: 360px;
+    }
+}
+
+%noscroll {
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+}

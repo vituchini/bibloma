@@ -1,0 +1,334 @@
+.matches {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    min-height: calc(100vh - #{$heightTopBar});
+    padding-bottom: 48px;
+    padding-bottom: 0;
+    background: #000;
+    @extend %reset;
+    @include media(0, 1600px) {
+        overflow: hidden;
+    }
+    &__back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+        width: 100%;
+        height: 100%;
+        min-height: calc(100vh - #{$heightTopBar});
+        object-fit: contain;
+        object-position: center top;
+        @extend %reset;
+    }
+    &._stream &__back {
+        display: none;
+    }
+    &._stream::after {
+        position: absolute;
+        top: -28px;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 200px;
+        content: "";
+        @include bg('cabinet-back-top.svg', contain, center top, true);
+    }
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        min-height: calc(100vh - #{$heightTopBar});
+        background: linear-gradient(180deg, rgba(#0F0E13, .6) 0%, #0F0E13 75%, #0F0E13 100%);
+        content: "";
+    }
+    &._stream::before {
+        z-index: -2;
+        background: linear-gradient(0deg, rgba(#191922, .4) 0%, rgba(#191922, .7) 30%, rgba(#191922, .8) 80%, rgba(#191922, .3) 100%);
+        // display: none;
+    }
+    &._fullPage &__items {
+        padding: 0 50px;
+    }
+    &._calibration &__items {
+        padding: 0 190px;
+        @include media(0, 1600px) {
+            padding: 0 32px;
+        }
+    }
+    &._stream &__items {
+        padding-right: 114px;
+        @include media(0, 1600px) {
+            padding-right: 50px;
+        }
+    }
+    &__items {
+        width: 100%;
+        @extend %reset;
+        @extend %row;
+    }
+    &._fullPage &__item._content {
+        padding: 18px 0;
+    }
+    &__item {
+        @extend %reset;
+        &._sideBar {
+            position: -webkit-sticky;
+            position: sticky;
+            top: $heightTopBar;
+            width: 311px;
+            height: calc(100vh - #{$heightTopBar});
+            @include namePage('_withCalibration') {
+                height: calc(100vh - #{$heightTopBar} - #{$heightCalibration});
+            }
+            @include media(0, 1600px) {
+                position: fixed;
+                left: $widthSideBar;
+                z-index: 9;
+                display: none;
+            }
+        }
+        &._content {
+            align-items: center;
+            width: calc(100% - 311px);
+            padding: 18px 38px;
+            @extend %col;
+            @include media(0, 1600px) {
+                width: 100%;
+            }
+        }
+    }
+    &._showBar &__item._sideBar {
+        @include media(0, 1600px) {
+            display: block;
+        }
+    }
+    &__btnBar {
+        position: fixed;
+        top: calc(#{$heightTopBar} + 16px);
+        left: $widthSideBar;
+        z-index: 9;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 100px;
+        background: rgba(248, 248, 248, 0.05);
+        border-radius: 0 12px 12px 0;
+        @extend %reset;
+        @extend %click;
+        @extend %col;
+        @include blur(20px);
+        @include media(0, 1600px) {
+            display: flex;
+        }
+        &Icon {
+            display: block;
+            width: 24px;
+            height: 24px;
+            margin-left: -1px;
+            object-fit: contain;
+            transform: rotate(180deg);
+            @extend %reset;
+        }
+    }
+    &._showBar &__btnBar {
+        @include media(0, 1600px) {
+            left: calc(#{$widthSideBar} + 311px);
+            &Icon {
+                transform: rotate(0deg);
+            }
+        }
+    }
+    &._fullPage &__item._content {
+        width: 100%;
+    }
+    &._showBar &__item._content {
+        @include media(0, 1600px) {
+            transform: translate(311px, 0);
+            filter: blur(10px);
+            pointer-events: none;
+        }
+    }
+    &__head {
+        align-items: center;
+        width: 100%;
+        max-width: 984px;
+        margin-bottom: 56px;
+        @extend %reset;
+        @extend %col;
+        &Items {
+            position: relative;
+            z-index: 1;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 68px;
+            @extend %reset;
+            @extend %row;
+            &::before {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+                width: 100%;
+                height: 4px;
+                background: #3F3F45;
+                border-radius: 360px;
+                content: "";
+                @extend %reset;
+            }
+        }
+        &Item {
+            width: 25%;
+            @extend %reset;
+        }
+    }
+    &__stat {
+        justify-content: space-between;
+        width: 100%;
+        @extend %reset;
+        @extend %row;
+        &Item {
+            align-items: center;
+            justify-content: center;
+            width: 250px;
+            height: 100px;
+            padding: 12px;
+            background: rgba(248, 248, 248, 0.1);
+            border-radius: 8px;
+            @extend %reset;
+            @include blur(10px);
+            @extend %col;
+            &Counter {
+                max-width: 100%;
+                margin-bottom: 6px;
+                color: #f8f8f8;
+                font-size: 46px;
+                font-family: 'Regular';
+                text-align: center;
+                @extend %reset;
+            }
+            &Description {
+                max-width: 100%;
+                color: rgba(#f8f8f8, .8);
+                font-size: 18px;
+                font-family: 'Regular';
+                text-align: center;
+                @extend %reset;
+            }
+        }
+    }
+    &__content {
+        width: 100%;
+        @extend %reset;
+    }
+    &__games {
+        width: 100%;
+        @extend %reset;
+        &Head {
+            align-items: center;
+            align-items: center;
+            width: 100%;
+            height: 32px;
+            margin-bottom: 20px;
+            @extend %reset;
+            @extend %row;
+            &Item {
+                @extend %reset;
+                @extend %row;
+                &._views {
+                    margin-left: auto;
+                }
+            }
+            &Name {
+                color: #f8f8f8;
+                font-size: 18px;
+                font-family: 'Regular';
+                @extend %reset;
+            }
+            &View {
+                align-items: center;
+                color: #f8f8f8;
+                font-size: 18px;
+                font-family: 'Regular';
+                @extend %reset;
+                @extend %row;
+            }
+            &Icon {
+                width: 30px;
+                height: 30px;
+                margin-left: 6px;
+                @extend %reset;
+                @extend %click;
+                @include icon(#6A6C7D);
+                &._current {
+                    @include icon($colorMain);
+                }
+                &+& {
+                    margin-left: 4px;
+                }
+            }
+        }
+        &Cards {
+            // margin-bottom: -50px;
+            @extend %reset;
+            @extend %row;
+            @include inParent('.matches__games._block') {
+                flex-wrap: wrap;
+                width: calc(100% + 50px);
+                margin: 0 -25px;
+            }
+            @include inParent('.matches__games._list') {
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+        &Card {
+            @extend %reset;
+            @include inParent('.matches__games._block') {
+                width: calc(100% / 3);
+                margin-bottom: 50px;
+                padding: 0 25px;
+                @include media(0, 1300px) {
+                    width: 50%;
+                }
+            }
+            @include inParent('.matches__games._list') {
+                width: 100%;
+                min-height: 80px;
+                margin-bottom: 20px;
+                padding: 0;
+            }
+        }
+    }
+    &__calibration {
+        align-items: center;
+        margin: 68px 0 32px 0;
+        padding: 14px 24px;
+        background: rgba(248, 248, 248, 0.1);
+        border-radius: 14px;
+        @extend %reset;
+        @include blur(40px);
+        @extend %col;
+        &Title {
+            max-width: 100%;
+            margin-bottom: 6px;
+            color: #f8f8f8;
+            font-size: 40px;
+            font-family: 'Medium';
+            text-align: center;
+            @extend %reset;
+        }
+        &Description {
+            max-width: 100%;
+            color: rgba(#f8f8f8, .6);
+            font-size: 18px;
+            font-family: 'Regular';
+            @extend %reset;
+        }
+    }
+}

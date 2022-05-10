@@ -1,0 +1,8 @@
+.info {
+    width: 100%;
+    @extend %reset;
+    &__content {
+        width: 100%;
+        @extend %reset;
+    }
+}

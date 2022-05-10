@@ -1,0 +1,38 @@
+.switcher {
+    display: block;
+    width: 100%;
+    height: 100%;
+    @extend %reset;
+    &__input {
+        display: none;
+    }
+    &__view {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: #606060;
+        border-radius: 360px;
+        transition: $trans;
+        @extend %reset;
+        @extend %click;
+        &Point {
+            position: absolute;
+            top: 50%;
+            left: 4px;
+            width: 12px;
+            height: 12px;
+            background: #1e1e25;
+            border-radius: 50%;
+            transform: translate(0, -50%);
+            transition: $trans;
+            @extend %reset;
+        }
+    }
+    &__input:checked~&__view {
+        background: $colorMain;
+    }
+    &__input:checked~&__view &__viewPoint {
+        left: calc(100% - 4px);
+        transform: translate(-100%, -50%);
+    }
+}

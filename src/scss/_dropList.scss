@@ -1,0 +1,241 @@
+.dropList {
+    width: 100%;
+    overflow: hidden;
+    background: rgba(#1A1A1C, .1);
+    border-radius: 6px;
+    box-shadow: 2px 4px 7px rgba(0, 0, 0, 0.25);
+    @extend %reset;
+    @include blur(120px);
+    &__head {
+        width: 100%;
+        margin-bottom: 20px;
+        @extend %reset;
+    }
+    &._actions {
+        padding: 6px 0;
+        background: rgba(#1e1f29, .2);
+    }
+    &._withSearch &__head {
+        padding-left: 18px;
+    }
+    &._withSearch {
+        padding: 12px 0;
+        padding-right: 12px;
+    }
+    &__search {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 34px;
+        padding: 6px 6px 6px 30px;
+        border-bottom: 1px solid #606060;
+        @extend %reset;
+        &Icon {
+            position: absolute;
+            top: 50%;
+            left: 2px;
+            z-index: 1;
+            width: 18px;
+            height: 18px;
+            transform: translate(0, -50%);
+            @extend %reset;
+            @include icon(#BFBFBF);
+        }
+        &Input {
+            width: 100%;
+            height: 100%;
+            color: #f8f8f8;
+            font-size: 16px;
+            font-family: 'Regular';
+            @extend %reset;
+            &::-webkit-input-placeholder {
+                color: #BFBFBF;
+            }
+        }
+    }
+    &__items {
+        width: 100%;
+        max-height: 270px;
+        overflow-y: auto;
+        @extend %scroll;
+    }
+    &._menu &__items {
+        max-height: none;
+    }
+    &._withSearch &__item::before {
+        display: none;
+    }
+    &__item {
+        position: relative;
+        z-index: 1;
+        align-items: center;
+        width: 100%;
+        padding: 18px 28px;
+        transition: $trans;
+        @extend %reset;
+        @extend %click;
+        @extend %row;
+        &+& {
+            &::after {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: calc(100% - 12px);
+                height: 1px;
+                background: rgba(#989898, .5);
+                transform: translate(-50%, 0);
+                content: "";
+            }
+        }
+        // &._current {
+        //     background: rgba($colorMain, .1);
+        // }
+        &:hover {
+            background: rgba($colorMain, .1);
+        }
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 4px;
+            height: 100%;
+            background: $colorMain;
+            opacity: 0;
+            transition: $trans;
+            content: "";
+        }
+        // &._current::before {
+        //     opacity: 1;
+        // }
+        &:hover::before {
+            opacity: 1;
+        }
+        &Image {
+            width: 46px;
+            height: 46px;
+            margin-right: 10px;
+            @extend %reset;
+            &Item {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                @extend %reset;
+            }
+        }
+        &Info {
+            width: calc(100% - 58px);
+            @extend %reset;
+            @extend %col;
+        }
+        &Name {
+            max-width: 100%;
+            color: #f8f8f8;
+            font-size: 18px;
+            font-family: 'Medium';
+            @extend %reset;
+        }
+        &Description {
+            max-width: 100%;
+            margin-top: 2px;
+            color: #BFBFBF;
+            font-size: 16px;
+            font-family: 'Light';
+            line-height: 1.2;
+            @extend %reset;
+            & a {
+                color: $colorMain;
+                @extend %reset;
+            }
+        }
+    }
+    &._actions &__item {
+        padding: 7px 16px;
+        &::after {
+            display: none;
+        }
+        &Image {
+            width: 24px;
+            height: 24px;
+            margin-right: 24px;
+        }
+        &Info {
+            width: calc(100% - 48px);
+        }
+        &Name {
+            font-size: 16px;
+        }
+    }
+    &._messages &__item,
+    &._notifications &__item {
+        align-items: flex-start;
+        padding: 14px 24px;
+        &Info {
+            width: calc(100% - 46px);
+        }
+        &Name {
+            font-size: 16px;
+        }
+        &Description {
+            font-size: 16px;
+        }
+    }
+    &._messages &__item {
+        &Image {
+            width: 32px;
+            height: 32px;
+            margin-right: 14px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+    }
+    &._notifications &__item {
+        &Image {
+            width: 24px;
+            height: 24px;
+            margin-right: 14px;
+        }
+    }
+    &._menu &__item {
+        padding: 10px 18px;
+        &Image {
+            width: 24px;
+            height: 24px;
+            margin-right: 20px;
+            @include icon(rgba(#F8F8F8, .6));
+        }
+        &Info {
+            width: calc(100% - 44px);
+        }
+        &Name {
+            color: rgba(#F8F8F8, .6);
+            font-size: 16px;
+            font-family: 'Regular';
+        }
+    }
+    &._users &__item {
+        padding: 6px 18px;
+        &::after {
+            display: none;
+        }
+        &Image {
+            width: 26px;
+            height: 26px;
+            margin-right: 20px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+        &Info {
+            width: calc(100% - 44px);
+        }
+        &Name {
+            color: #f8f8f8;
+            font-size: 16px;
+            font-family: 'Regular';
+        }
+    }
+    &._withSearch &__item {
+        padding-right: 0;
+        padding-left: 18px;
+    }
+}

@@ -1,0 +1,15 @@
+.land {
+    width: 100%;
+    background: #232328;
+    background: linear-gradient(180deg, #25252C 0%, #0C0C0E 100%);
+    @extend %reset;
+    &__section {
+        width: 100%;
+        opacity: 0;
+        transition: $trans;
+        @extend %reset;
+        &._anim {
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,225 @@
+.chatSupport {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @extend %reset;
+    &__btn {
+        align-items: center;
+        justify-content: center;
+        width: 58px;
+        height: 58px;
+        background: #3D56AF;
+        border-radius: 50%;
+        box-shadow: 0px 0px 24px 7px rgba(248, 248, 248, 0.3);
+        @extend %reset;
+        @extend %col;
+        @extend %click;
+        @include media(0, 800px) {
+            width: 50px;
+            height: 50px;
+            margin-left: -5vw;
+        }
+        &Icon {
+            width: 26px;
+            height: 26px;
+            margin-top: 2px;
+            @extend %reset;
+            @include media(0, 800px) {
+                width: 22px;
+                height: 22px;
+            }
+        }
+    }
+    &._show &__window {
+        width: 382px;
+        @include media(0, 800px) {
+            width: 95vw;
+        }
+    }
+    &._fullSize &__window {
+        position: relative;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0;
+    }
+    &__window {
+        position: absolute;
+        right: -24px;
+        bottom: 100%;
+        width: 178px;
+        margin-bottom: 34px;
+        @extend %reset;
+        @include media(0, 800px) {
+            right: 2.5vw;
+            width: 154px;
+            margin-bottom: 26px;
+        }
+        &Hide {
+            z-index: 2;
+            align-items: center;
+            width: 100%;
+            padding: 16px 20px;
+            color: #f8f8f8;
+            font-size: 20px;
+            font-family: 'Regular';
+            background: #2e292d;
+            border-radius: 6px;
+            // box-shadow: 0px 4px 5px rgba(39, 39, 40, 0.18);
+            @extend %reset;
+            @extend %row;
+            @extend %click;
+            @include media(0, 800px) {
+                position: relative;
+                display: none;
+                margin-left: -5vw;
+                font-size: 16px;
+            }
+            &::before {
+                position: absolute;
+                top: 100%;
+                right: 34px;
+                z-index: -1;
+                width: 38px;
+                height: 38px;
+                background: #2e292d;
+                transform: translate(0, -50%) rotateX(50deg) rotateZ(45deg);
+                content: "";
+                @include media(0, 800px) {
+                    right: 20px;
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+            &Icon {
+                width: 24px;
+                height: 24px;
+                margin-left: 4px;
+                transform: rotate(180deg);
+                @extend %reset;
+                @include icon(#f8f8f8);
+            }
+        }
+    }
+    &._fullSize &__chat {
+        height: 100%;
+        &Head {
+            border-radius: 0;
+        }
+        &Foot {
+            border-radius: 0;
+        }
+        &Content {
+            height: calc(100% - 88px);
+        }
+    }
+    &__chat {
+        width: 100%;
+        @extend %reset;
+        &Head {
+            align-items: center;
+            height: 44px;
+            padding: 10px 14px;
+            color: #f8f8f8;
+            font-size: 18px;
+            font-family: 'Regular';
+            background: #565256;
+            border-radius: 6px 6px 0 0;
+            @extend %reset;
+            @extend %row;
+            &Icons {
+                margin-left: auto;
+                @extend %reset;
+                @extend %row;
+            }
+            &Icon {
+                width: 24px;
+                height: 24px;
+                @extend %reset;
+                @extend %click;
+                &+& {
+                    margin-left: 8px;
+                }
+            }
+        }
+        &Content {
+            width: 100%;
+            height: 350px;
+            padding: 0 14px 0 14px;
+            overflow-y: auto;
+            background: rgba(#F8F8F8, .1);
+            @extend %reset;
+            @extend %scroll;
+            @include blur(20px);
+        }
+        &Messages {
+            width: 100%;
+            padding: 20px 0 20px 0;
+            @extend %reset;
+        }
+        &Message {
+            width: 100%;
+            @extend %reset;
+            &+& {
+                margin-top: 16px;
+            }
+        }
+        &Foot {
+            position: relative;
+            z-index: 1;
+            align-items: center;
+            width: 100%;
+            height: 44px;
+            padding: 10px 14px;
+            background: #565256;
+            border-radius: 0 0 6px 6px;
+            @extend %reset;
+            @extend %row;
+            &::before {
+                position: absolute;
+                top: 100%;
+                right: 34px;
+                z-index: -1;
+                width: 38px;
+                height: 38px;
+                background: #565256;
+                transform: translate(0, -50%) rotateX(50deg) rotateZ(45deg);
+                content: "";
+                @include media(0, 800px) {
+                    right: 32px;
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+            &Emodzi {
+                width: 24px;
+                height: 24px;
+                margin-right: 16px;
+                @extend %reset;
+                &Icon {
+                    width: 100%;
+                    height: 100%;
+                    @extend %reset;
+                    @extend %click;
+                }
+            }
+            &Input {
+                color: #f8f8f8;
+                font-size: 16px;
+                font-family: 'Regular';
+                @extend %reset;
+                &::-webkit-input-placeholder {
+                    color: #f8f8f8;
+                }
+            }
+            &Send {
+                width: 24px;
+                height: 24px;
+                margin-left: auto;
+                @extend %reset;
+                @extend %click;
+            }
+        }
+    }
+}

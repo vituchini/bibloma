@@ -1,0 +1,246 @@
+.friendsUser {
+    width: 100%;
+    padding: 32px 50px 32px 50px;
+    @extend %reset;
+    &__head {
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 40px;
+        padding-bottom: 26px;
+        border-bottom: 1px solid #3F3D46;
+        @extend %reset;
+        @extend %row;
+        &Item {
+            align-items: center;
+            @extend %reset;
+            @extend %row;
+        }
+    }
+    &__user {
+        align-items: center;
+        width: 640px;
+        @extend %reset;
+        @extend %row;
+        &Avatar {
+            width: 140px;
+            height: 140px;
+            overflow: hidden;
+            border-radius: 50%;
+            @extend %reset;
+            &Image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                @extend %reset;
+            }
+        }
+        &Info {
+            max-width: calc(100% - 140px);
+            padding-left: 30px;
+            @extend %reset;
+            @extend %col;
+        }
+        &Name {
+            position: relative;
+            max-width: 100%;
+            margin-bottom: 6px;
+            color: #f8f8f8;
+            font-size: 36px;
+            font-family: 'Regular';
+            @extend %reset;
+        }
+        &Status {
+            max-width: 100%;
+            margin-bottom: 10px;
+            color: #606060;
+            font-size: 15px;
+            font-family: 'Regular';
+            @extend %reset;
+        }
+        &Description {
+            max-width: 100%;
+            color: #bfbfbf;
+            font-size: 14px;
+            font-family: 'Regular';
+            line-height: 1.2;
+            @extend %reset;
+        }
+    }
+    &__actions {
+        align-items: center;
+        @extend %reset;
+        @extend %row;
+    }
+    &__action {
+        align-items: center;
+        justify-content: center;
+        min-width: 56px;
+        height: 42px;
+        padding: 9px;
+        color: #000;
+        font-size: 16px;
+        font-family: 'Medium';
+        background: #3F3D46;
+        border-radius: 4px;
+        @extend %reset;
+        @extend %row;
+        @extend %click;
+        @include icon(#bfbfbf);
+        &+& {
+            margin-left: 14px;
+        }
+        &._add-friend {
+            background: $colorMain;
+            @include icon(#000);
+        }
+        &Icon {
+            width: 24px;
+            height: 24px;
+            @extend %reset;
+        }
+        &._add-friend &Icon {
+            margin-right: 8px;
+        }
+    }
+    &__content {
+        align-items: stretch;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 32px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #3F3D46;
+        @extend %reset;
+        @extend %row;
+        &Item {
+            @extend %reset;
+            &._users {
+                width: 442px;
+                padding: 32px 16px 32px 32px;
+                background: rgba(#f8f8f8, .05);
+            }
+            &._info {
+                width: calc(100% - 442px);
+                padding-left: 32px;
+            }
+        }
+        &Users {
+            width: 100%;
+            height: 568px;
+            padding-right: 16px;
+            overflow-y: auto;
+            @extend %reset;
+            @extend %scroll;
+        }
+        &Block {
+            @extend %reset;
+            &+& {
+                margin-top: 42px;
+            }
+            &Head {
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                margin-bottom: 32px;
+                padding-right: 8px;
+                @extend %reset;
+                @extend %row;
+            }
+            &Name {
+                color: #c4c4c4;
+                font-size: 14px;
+                font-family: 'Medium';
+                @extend %reset;
+            }
+            &Line {
+                flex: 1 0 auto;
+                // width: 30px;
+                height: 1px;
+                margin: 0 20px;
+                background: #3F3D46;
+                @extend %reset;
+            }
+            &Counter {
+                color: #c4c4c4;
+                font-size: 14px;
+                font-family: 'Medium';
+                @extend %reset;
+            }
+            &Users {
+                width: 100%;
+                @extend %reset;
+            }
+            &User {
+                width: 100%;
+                @extend %reset;
+                &+& {
+                    margin-top: 26px;
+                }
+            }
+        }
+    }
+    &__teams {
+        align-items: center;
+        width: 100%;
+        @extend %reset;
+        @extend %col;
+        &Head {
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+            @extend %reset;
+            @extend %row;
+        }
+        &Name {
+            margin-right: 50px;
+            color: #f8f8f8;
+            font-size: 18px;
+            font-family: 'Regular';
+            @extend %reset;
+        }
+        &Search {
+            @extend %reset;
+            &Input {
+                color: #606060;
+                font-size: 18px;
+                font-family: 'Regular';
+                @extend %reset;
+                &::-webkit-input-placeholder {
+                    color: #606060;
+                }
+            }
+        }
+        &Items {
+            width: 100%;
+            margin-bottom: 40px;
+            @extend %reset;
+        }
+        &Item {
+            width: 100%;
+            @extend %reset;
+            &+& {
+                margin-top: 20px;
+            }
+        }
+        &Show {
+            align-items: center;
+            color: #f8f8f8;
+            font-size: 18px;
+            font-family: 'Regular';
+            @extend %reset;
+            @extend %click;
+            @extend %row;
+            &::after {
+                width: 10px;
+                height: 10px;
+                margin-top: -4px;
+                margin-left: 8px;
+                border: 2px solid transparent;
+                border-right-color: #fff;
+                border-bottom-color: #fff;
+                transform: rotate(45deg);
+                content: "";
+                @extend %reset;
+            }
+        }
+    }
+}

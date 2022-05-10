@@ -1,0 +1,396 @@
+.indexArticle {
+    position: relative;
+    z-index: 1;
+    align-items: center;
+    width: 100%;
+    padding: 64px 0;
+    @extend %reset;
+    @extend %col;
+    @include media(0, 800px) {
+        padding: 0 0 32px 0;
+    }
+    &::after {
+        position: absolute;
+        top: -28px;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 200px;
+        content: "";
+        @include bg('cabinet-back-top.svg', contain, center top, true);
+        @include media(0, 800px) {
+            top: calc(80vw - 28px);
+            background-size: cover;
+        }
+    }
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+        width: 100%;
+        height: 100%;
+        min-height: calc(100vh - #{$heightTopBar});
+        background: linear-gradient(180deg, rgba(78, 78, 116, 0) 0%, rgba(78, 78, 116, .2) 500px, rgba(78, 78, 116, .2) 100%);
+        content: "";
+    }
+    &__inner {
+        width: 1300px;
+        @extend %reset;
+        @extend %col;
+        @include media(0, 1500px) {
+            width: 100%;
+            padding: 0 30px;
+        }
+        @include media(0, 800px) {
+            padding: 0 16px;
+        }
+    }
+    &__image {
+        width: 100%;
+        margin-bottom: 22px;
+        @extend %reset;
+        @include media(0, 800px) {
+            width: 100vw;
+            height: 80vw;
+            margin-left: -16px;
+            object-fit: cover;
+        }
+    }
+    &__title {
+        max-width: 100%;
+        margin-bottom: 12px;
+        color: #f8f8f8;
+        font-size: 36px;
+        font-family: 'Regular';
+        line-height: 1.2;
+        @extend %reset;
+        @include media(0, 800px) {
+            margin-bottom: 16px;
+            font-size: 26px;
+            line-height: 1.3;
+            text-align: center;
+        }
+    }
+    &__head {
+        align-items: center;
+        width: 100%;
+        margin-bottom: 64px;
+        @extend %reset;
+        @extend %row;
+        @include media(0, 800px) {
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+        &User {
+            align-items: center;
+            margin-right: 28px;
+            padding: 10px 14px;
+            background: rgba(#f8f8f8, .1);
+            border-radius: 20px;
+            @extend %reset;
+            @extend %row;
+            @include media(0, 800px) {
+                margin: 0 0 12px 0;
+                padding: 8px 12px;
+                border-radius: 12px;
+            }
+            &Avatar {
+                width: 40px;
+                height: 40px;
+                margin-right: 10px;
+                overflow: hidden;
+                border-radius: 50%;
+                @extend %reset;
+                @include media(0, 800px) {
+                    width: 32px;
+                    height: 32px;
+                    margin-right: 8px;
+                }
+                &Image {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            &Name {
+                color: #f8f8f8;
+                font-size: 18px;
+                font-family: 'Regular';
+                @extend %reset;
+            }
+        }
+        &Info {
+            align-items: center;
+            @extend %row;
+        }
+        &Views {
+            align-items: center;
+            margin-right: 28px;
+            color: #f8f8f8;
+            font-size: 18px;
+            font-family: 'Regular';
+            @extend %reset;
+            @extend %row;
+            @include media(0, 800px) {
+                font-size: 16px;
+            }
+            &Icon {
+                width: 24px;
+                height: 24px;
+                margin-right: 7px;
+                @extend %reset;
+                @include icon(#f8f8f8);
+                @include media(0, 800px) {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+        &Date+&Views {
+            margin-right: 0;
+            margin-left: 28px;
+        }
+        &Date {
+            color: #f8f8f8;
+            font-size: 18px;
+            font-family: 'Regular';
+            @extend %reset;
+            @include media(0, 800px) {
+                font-size: 16px;
+            }
+        }
+        &Share {
+            align-items: center;
+            margin-left: auto;
+            @extend %reset;
+            @extend %row;
+            @include media(0, 800px) {
+                margin: 12px 0 0 0;
+            }
+            &Btn {
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 38px;
+                background: rgba(#f8f8f8, .1);
+                border-radius: 4px;
+                @extend %col;
+                @extend %reset;
+                @extend %click;
+                @include media(0, 800px) {
+                    width: 44px;
+                    height: 44px;
+                }
+                &+& {
+                    margin-left: 8px;
+                }
+                &Icon {
+                    width: 24px;
+                    height: 24px;
+                    @extend %reset;
+                    @include icon(#f8f8f8);
+                    @include media(0, 800px) {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+    }
+    &__tags {
+        align-items: center;
+        width: 100%;
+        @extend %reset;
+        @extend %row;
+        @include media(0, 800px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    &__tags+&__head {
+        margin-top: 32px;
+        margin-bottom: 0;
+    }
+    &__tag {
+        color: $colorMain;
+        font-size: 18px;
+        font-family: 'Regular';
+        @extend %reset;
+        @extend %click;
+        @include media(0, 800px) {
+            margin: 0 12px;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+        &+& {
+            margin-left: 24px;
+            @include media(0, 800px) {
+                margin-left: 0;
+            }
+        }
+    }
+    &__content {
+        width: 100%;
+        margin-bottom: 24px;
+        padding: 25px 0;
+        @extend %reset;
+        &>p {
+            color: #f8f8f8;
+            font-size: 18px;
+            font-family: 'Light';
+            line-height: 1.2;
+            @extend %reset;
+            @include media(0, 800px) {
+                font-size: 16px;
+                line-height: 1.3;
+            }
+        }
+        &>p+p {
+            margin-top: 18px;
+            @include media(0, 800px) {
+                margin-top: 16px;
+            }
+        }
+        &>h3 {
+            margin-bottom: 16px;
+            color: #f8f8f8;
+            font-size: 24px;
+            font-family: 'Medium';
+            line-height: 1.2;
+            @extend %reset;
+            @include media(0, 800px) {
+                font-size: 22px;
+            }
+        }
+        &>p+h3,
+        &>img+h3 {
+            margin-top: 70px;
+        }
+        &>img {
+            max-width: 100%;
+            max-height: 600px;
+            margin: 50px 0;
+            object-fit: contain;
+            object-position: left top;
+            @extend %reset;
+            @include media(0, 800px) {
+                width: 100vw;
+                max-width: none;
+                margin-left: -16px;
+                object-fit: cover;
+            }
+        }
+        &Game {
+            width: 100%;
+            margin: 76px 0;
+            // overflow-x: auto;
+            @extend %reset;
+        }
+    }
+    &__actions {
+        height: 86px;
+        margin: 60px auto 0 auto;
+        padding: 8px 0;
+        background: rgba(#f8f8f8, .1);
+        border-radius: 4px;
+        @extend %reset;
+        @extend %row;
+        @include media(0, 800px) {
+            width: 100%;
+            height: auto;
+            margin-top: 32px;
+        }
+    }
+    &__action {
+        align-items: center;
+        justify-content: center;
+        width: 138px;
+        height: 100%;
+        @extend %reset;
+        @extend %click;
+        @extend %col;
+        @include media(0, 800px) {
+            width: 50%;
+        }
+        &+& {
+            position: relative;
+            border-left: 1px solid #606060;
+        }
+        &Icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 2px;
+            @extend %reset;
+            @include media(0, 800px) {
+                width: 28px;
+                height: 28px;
+                margin-bottom: 6px;
+            }
+        }
+        &Content {
+            max-width: 100%;
+            font-size: 16px;
+            font-family: 'Regular';
+            line-height: 1.3;
+            text-align: center;
+            @extend %reset;
+        }
+        &._dislike &Content {
+            color: $colorError;
+        }
+        &._like &Content {
+            color: $colorSuccess;
+        }
+    }
+    &__articles {
+        // align-items: center;
+        width: 100%;
+        margin-top: 112px;
+        @extend %reset;
+        @extend %col;
+        &Title {
+            max-width: 100%;
+            margin: 0 auto 50px auto;
+            color: #f8f8f8;
+            font-size: 24px;
+            font-family: 'Regular';
+            text-align: center;
+            @extend %reset;
+        }
+        &Items {
+            flex-wrap: wrap;
+            width: calc(100% + 260px);
+            margin-left: -130px;
+            @extend %reset;
+            @extend %row;
+            @include media(0, 1700px) {
+                width: calc(100% + 30px);
+                margin-left: -15px;
+            }
+            @include media(0, 800px) {
+                flex-direction: column;
+                flex-wrap: nowrap;
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+        &Item {
+            width: calc(100% / 3);
+            margin-bottom: 36px;
+            padding: 0 15px;
+            @extend %reset;
+            @include media(0, 1400px) {
+                width: 50%;
+            }
+            @include media(0, 800px) {
+                width: 100%;
+                margin-bottom: 0;
+                padding: 0;
+                &+& {
+                    margin-top: 16px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,189 @@
+.cabinetStat {
+    width: 100%;
+    @extend %reset;
+    &__head {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        margin-bottom: 28px;
+        @extend %reset;
+        @extend %row;
+        &::before {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 4px;
+            background: rgba(#C4C4C4, .1);
+            border-radius: 360px;
+            content: "";
+        }
+        &Item {
+            width: 50%;
+            @extend %reset;
+        }
+    }
+    &__content {
+        width: 100%;
+        @extend %reset;
+    }
+    &__block {
+        width: 100%;
+        padding: 28px 51px 28px 64px;
+        background: rgba(#F8F8F8, .05);
+        @include blur(120px);
+        @extend %reset;
+        @extend %row;
+        @include media(0, 1450px) {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 28px 40px;
+        }
+        &+& {
+            margin-top: 30px;
+        }
+        &Item {
+            @extend %reset;
+            @extend %col;
+            &._support {
+                width: 180px;
+            }
+            &._content {
+                align-items: center;
+                width: calc(100% - 180px);
+                padding-left: 64px;
+                @include media(0, 1450px) {
+                    width: 100%;
+                    margin-top: 32px;
+                    padding-left: 0;
+                }
+            }
+        }
+        &Rang {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 65px;
+            height: 30px;
+            margin-top: 9px;
+            margin-left: 12px;
+            object-fit: contain;
+            object-position: left center;
+            transform: translate(0, -50%);
+            @extend %reset;
+        }
+    }
+    &__title {
+        position: relative;
+        max-width: 100%;
+        padding-top: 19px;
+        color: #fff;
+        font-size: 24px;
+        font-family: 'Regular';
+        @extend %reset;
+        @include media(0, 1450px) {
+            padding-top: 0;
+        }
+    }
+    &__cards {
+        align-items: center;
+        margin-left: auto;
+        @extend %reset;
+        @extend %row;
+        @include media(0, 1450px) {
+            width: 100%;
+            margin-left: 0;
+        }
+        // @include media(0, 1450px) {
+        //     flex-direction: column;
+        //     align-items: flex-end;
+        // }
+    }
+    &__card {
+        align-items: center;
+        padding: 13px 29px;
+        background: rgba(248, 248, 248, 0.1);
+        border-radius: 4px;
+        @extend %reset;
+        @extend %row;
+        @include blur(10px);
+        @include media(0, 1450px) {
+            // justify-content: center;
+            // width: 192px;
+        }
+        &+& {
+            margin-left: 20px;
+            // @include media(0, 1450px) {
+            //     margin-top: 24px;
+            //     margin-left: 0;
+            // }
+        }
+        &Icon {
+            width: 26px;
+            height: 26px;
+            margin-right: 8px;
+            @extend %reset;
+        }
+        &Info {
+            @extend %reset;
+            @extend %col;
+        }
+        &Value {
+            max-width: 100%;
+            margin-bottom: 4px;
+            color: #fff;
+            font-size: 18px;
+            font-family: 'Regular';
+            @extend %reset;
+        }
+        &Description {
+            max-width: 100%;
+            color: #fff;
+            font-size: 14px;
+            font-family: 'Light';
+            @extend %reset;
+        }
+    }
+    &__infos {
+        width: 100%;
+        margin-top: 22px;
+        @extend %reset;
+    }
+    &__info {
+        width: 100%;
+        @extend %reset;
+        &+& {
+            margin-top: 46px;
+        }
+        &Items {
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            @extend %reset;
+            @extend %row;
+            &+& {
+                margin-top: 10px;
+            }
+        }
+        &Item {
+            font-size: 16px;
+            font-family: 'Regular';
+            @extend %reset;
+            &._support {
+                color: #BFBFBF;
+            }
+            &._value {
+                color: $colorMain;
+            }
+        }
+    }
+    &__diagram {
+        width: 77%;
+        @extend %reset;
+        &._full {
+            width: 100%;
+            margin-top: 32px;
+        }
+    }
+}

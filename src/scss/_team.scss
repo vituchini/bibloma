@@ -1,0 +1,305 @@
+.team {
+    align-items: center;
+    width: 100%;
+    padding-top: 24px;
+    @extend %col;
+    @extend %reset;
+    &__preview {
+        position: relative;
+        z-index: 1;
+        width: 510px;
+        height: 322px;
+        margin-bottom: 20px;
+        @extend %reset;
+        &Image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            @extend %reset;
+            &._back {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                z-index: -1;
+                width: 250%;
+                height: 250%;
+                transform: translate(-50%, -50%);
+                filter: blur(120px);
+                pointer-events: none;
+            }
+        }
+        &:hover &Change {
+            visibility: visible;
+            opacity: 1;
+        }
+        &Change {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            align-items: center;
+            padding: 12px 16px;
+            color: #f8f8f8;
+            font-size: 16px;
+            font-family: 'Regular';
+            background: rgba(#F8F8F8, .2);
+            border-radius: 4px;
+            transform: translate(-50%, -50%);
+            visibility: hidden;
+            opacity: 0;
+            transition: $trans;
+            @include blur(30px);
+            @extend %reset;
+            @extend %click;
+            @extend %row;
+            &Icon {
+                width: 24px;
+                height: 24px;
+                margin-right: 10px;
+                @extend %reset;
+            }
+        }
+    }
+    &__content {
+        position: relative;
+        z-index: 2;
+        align-items: center;
+        width: 100%;
+        @extend %reset;
+        @extend %col;
+    }
+    &__name {
+        position: relative;
+        align-items: center;
+        max-width: 100%;
+        margin-bottom: 20px;
+        @extend %reset;
+        @extend %row;
+        &Item {
+            color: #f8f8f8;
+            font-size: 36px;
+            font-family: 'Regular';
+            @extend %reset;
+        }
+        &Icon {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 18px;
+            height: 18px;
+            margin-left: 18px;
+            transform: translate(0, -50%);
+            @extend %reset;
+            @extend %click;
+        }
+    }
+    &__awards {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 20px;
+        @extend %reset;
+        @extend %row;
+        &Item {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            @extend %reset;
+            &+& {
+                margin-left: 14px;
+            }
+        }
+    }
+    &__description {
+        max-width: 90%;
+        margin-bottom: 20px;
+        color: #bfbfbf;
+        font-size: 14px;
+        font-family: 'Regular';
+        line-height: 1.3;
+        text-align: center;
+        @extend %reset;
+    }
+    &__info {
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 0 32px;
+        @extend %reset;
+        @extend %row;
+        &Item {
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            // width: 176px;
+            padding: 6px 26px;
+            background: rgba(#C4C4C4, .1);
+            border-radius: 360px;
+            @extend %reset;
+            @extend %row;
+            &Icon {
+                width: 26px;
+                height: 26px;
+                margin-right: 12px;
+                object-fit: contain;
+                @extend %reset;
+            }
+            &Content {
+                @extend %reset;
+                @extend %col;
+            }
+            &Title {
+                max-width: 100%;
+                margin-bottom: 4px;
+                color: #f8f8f8;
+                font-size: 18px;
+                font-family: 'Regular';
+                @extend %reset;
+                @include ofStrike() {
+                    width: calc(100% + 2px);
+                    height: 1px;
+                    margin-top: 1px;
+                    background: #fff;
+                }
+            }
+            &Description {
+                max-width: 100%;
+                color: #f8f8f8;
+                font-size: 14px;
+                font-family: 'Light';
+                @extend %reset;
+            }
+        }
+    }
+    &__users {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 36px;
+        @extend %reset;
+        @extend %row;
+        &Info {
+            position: relative;
+            align-items: center;
+            margin-left: 8px;
+            padding-left: 40px;
+            color: #bfbfbf;
+            font-size: 15px;
+            font-family: 'Regular';
+            @extend %reset;
+            @extend %row;
+            &::before {
+                position: absolute;
+                top: 50%;
+                left: 24px;
+                width: 6px;
+                height: 44px;
+                border: 1px solid #3F3D46;
+                border-left: 0;
+                transform: translate(0, -50%);
+                content: "";
+                @extend %reset;
+            }
+            &::after {
+                position: absolute;
+                top: 50%;
+                left: 6px;
+                width: 5px;
+                height: 5px;
+                border: 2px solid transparent;
+                border-bottom-color: #BFBFBF;
+                border-left-color: #BFBFBF;
+                transform: translate(0, -50%) rotate(45deg);
+                content: "";
+            }
+        }
+    }
+    &__user {
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        width: 46px;
+        height: 46px;
+        overflow: hidden;
+        color: #f8f8f8;
+        font-size: 16px;
+        border-radius: 50%;
+        @extend %reset;
+        @extend %col;
+        &._counter {
+            background: #3F3D46;
+        }
+        &._add {
+            color: #f8f8f8;
+            font-size: 18px;
+        }
+        &+& {
+            margin-left: 6px;
+        }
+        &Image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @extend %reset;
+        }
+    }
+    &__actions {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 530px;
+        @extend %reset;
+        @extend %row;
+    }
+    &__action {
+        align-items: center;
+        justify-content: center;
+        width: 49%;
+        height: 46px;
+        color: #f8f8f8;
+        font-size: 16px;
+        font-family: 'Regular';
+        background: rgba(#bfbfbf, .1);
+        border-radius: 4px;
+        @extend %reset;
+        @extend %row;
+        @extend %click;
+        &._disable {
+            color: #606060;
+            @include icon(#606060);
+        }
+        &._vote {
+            margin-top: 12px;
+            background: rgba(#bfbfbf, .2);
+            border-radius: 4px 4px 0 0;
+        }
+        &._full {
+            width: 100%;
+        }
+        &._fullMed {
+            width: 50%;
+        }
+        &._capitan {
+            border-radius: 0 0 0 4px;
+        }
+        &._capitan &Icon {
+            @include icon(#FAC704);
+        }
+        &._delete {
+            border-radius: 0 0 4px 0;
+        }
+        &._delete &Icon {
+            @include icon(#F13939);
+        }
+        &._leave {
+            margin: 50px auto 0 auto;
+            @include icon(#F13939);
+        }
+        &Icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            @extend %reset;
+            @include icon(#f8f8f8);
+        }
+    }
+}

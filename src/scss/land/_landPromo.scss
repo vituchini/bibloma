@@ -1,0 +1,28 @@
+.landPromo {
+    width: 100%;
+    padding: 70px 0 100px 0;
+    @extend %reset;
+    @extend %section;
+    @include media(0, 1050px) {
+        padding: 32px 0;
+    }
+    &__inner {
+        align-items: center;
+        @extend %reset;
+        @extend %innerLand;
+    }
+    &__title {
+        max-width: 100%;
+        margin-bottom: 82px;
+        text-align: center;
+        @extend %reset;
+        @include media(0, 1050px) {
+            max-width: 80%;
+            margin-bottom: 48px;
+        }
+    }
+    &__content {
+        width: 100%;
+        @extend %reset;
+    }
+}

@@ -1,0 +1,123 @@
+.promo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 68px 122px 128px 122px;
+    border-radius: 25px;
+    @extend %reset;
+    @extend %row;
+    @include media(0, 1280px) {
+        padding: 68px 64px 128px 64px;
+    }
+    @include media(0, 1050px) {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    &._sale {
+        justify-content: flex-end;
+        background: linear-gradient(262.36deg, #FAC704 0%, #4B1613 100%);
+        @include media(0, 800px) {
+            flex-direction: column-reverse;
+            padding-bottom: 0;
+        }
+    }
+    &._sale2 {
+        background: linear-gradient(262.36deg, #7D70D1 0%, #134B48 100%);
+    }
+    &__image {
+        position: absolute;
+        @extend %reset;
+        @include media(0, 1050px) {
+            position: relative;
+        }
+    }
+    &._sale &__image {
+        bottom: 0;
+        left: 54px;
+        width: 600px;
+        object-fit: contain;
+        object-position: left bottom;
+        @include media(0, 1050px) {
+            left: 0;
+            width: 100%;
+        }
+        @include media(0, 800px) {
+            margin-top: 16px;
+        }
+    }
+    &._sale2 &__image {
+        right: 0px;
+        bottom: -150px;
+        width: 880px;
+        object-fit: contain;
+        object-position: right bottom;
+        @include media(0, 1280px) {
+            bottom: -40px;
+            width: 600px;
+        }
+        @include media(0, 1050px) {
+            bottom: 0;
+            width: 100%;
+        }
+    }
+    &__content {
+        width: 50%;
+        max-width: 612px;
+        @extend %reset;
+        @extend %col;
+        @include media(0, 1050px) {
+            width: 100%;
+        }
+    }
+    &._sale &__content {
+        align-items: flex-end;
+        text-align: right;
+    }
+    &__support {
+        max-width: 100%;
+        margin-bottom: 26px;
+        color: #f8f8f8;
+        font-size: 28px;
+        font-family: 'Regular';
+        line-height: 1.3;
+        @extend %reset;
+        @include media(0, 1050px) {
+            font-size: 18px;
+        }
+    }
+    &__title {
+        max-width: 100%;
+        margin-bottom: 40px;
+        color: #f8f8f8;
+        font-size: 36px;
+        font-family: 'Medium';
+        line-height: 1.3;
+        @extend %reset;
+        @include media(0, 1050px) {
+            font-size: 26px;
+        }
+    }
+    &__button {
+        align-items: center;
+        justify-content: center;
+        padding: 18px 38px;
+        color: #f8f8f8;
+        font-size: 22px;
+        font-family: 'Regular';
+        background: rgba(#f8f8f8, .1);
+        border: 1px solid #f8f8f8;
+        transition: $trans;
+        @extend %reset;
+        @extend %row;
+        @extend %click;
+        @include media(0, 1050px) {
+            width: 100%;
+            padding: 16px;
+            font-size: 18px;
+        }
+        &:hover {
+            background: rgba(#f8f8f8, .2);
+        }
+    }
+}

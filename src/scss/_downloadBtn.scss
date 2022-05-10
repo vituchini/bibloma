@@ -1,0 +1,44 @@
+.downloadBtn {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 12px 24px;
+    color: $colorMain;
+    font-size: 16px;
+    font-family: 'Medium';
+    background: rgba($colorMain, .05);
+    border: 2px solid $colorMain;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: $trans;
+    @extend %reset;
+    @extend %row;
+    @extend %click;
+    @include media(0, 1050px) {
+        font-size: 15px;
+        border-width: 1px;
+    }
+    &:hover {
+        background: rgba($colorMain, .2);
+        box-shadow: 0 0 20px 5px rgba($colorMain, 0.2);
+    }
+    &._white {
+        color: #f8f8f8;
+        background: rgba(#f8f8f8, .05);
+        border-color: #f8f8f8;
+        &:hover {
+            background: rgba(#f8f8f8, .2);
+            box-shadow: 0 0 20px 5px rgba(#f8f8f8, 0.2);
+        }
+    }
+    &__icon {
+        width: 24px;
+        height: 24px;
+        margin-left: 16px;
+        object-fit: contain;
+        @extend %reset;
+    }
+    &._white &__icon {
+        @include icon(#f8f8f8);
+    }
+}

@@ -1,0 +1,183 @@
+.teams {
+    position: relative;
+    z-index: 1;
+    align-items: center;
+    width: 100%;
+    min-height: calc(100vh - #{$heightTopBar});
+    padding: 16px 0 64px 0;
+    @extend %reset;
+    @extend %col;
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: calc(100vh - #{$heightTopBar});
+        content: "";
+        @include bg('teams-back.png', cover, center -74px);
+    }
+    &._team::before {
+        display: none;
+    }
+    &__inner {
+        align-items: center;
+        width: 100%;
+        max-width: 1494px;
+        padding: 0 30px;
+        @extend %reset;
+        @extend %col;
+    }
+    &__links {
+        position: relative;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 984px;
+        margin-bottom: 46px;
+        @extend %reset;
+        @extend %row;
+        &::before {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 4px;
+            background: #3F3F45;
+            border-radius: 360px;
+            content: "";
+            @extend %reset;
+        }
+    }
+    &__link {
+        width: 25%;
+        @extend %reset;
+    }
+    &__content {
+        width: 100%;
+        @extend %reset;
+        @extend %col;
+    }
+    &__block {
+        align-items: center;
+        width: 100%;
+        @extend %reset;
+        @extend %col;
+        &+& {
+            margin-top: 80px;
+        }
+        &Head {
+            align-items: center;
+            width: 100%;
+            margin-bottom: 22px;
+            @extend %reset;
+            @extend %row;
+        }
+        &Support {
+            color: #f8f8f8;
+            font-size: 18px;
+            font-family: 'Regular';
+            @extend %reset;
+        }
+        &Sort {
+            margin-left: auto;
+            @extend %reset;
+            &View {
+                align-items: center;
+                @extend %reset;
+                @extend %row;
+            }
+            &Support {
+                margin-right: 10px;
+                color: #606060;
+                font-size: 18px;
+                font-family: 'Regular';
+                @extend %reset;
+            }
+            &Select {
+                align-items: center;
+                color: #f8f8f8;
+                font-size: 18px;
+                font-family: 'Regular';
+                @extend %reset;
+                @extend %click;
+                @extend %row;
+                &::after {
+                    width: 10px;
+                    height: 10px;
+                    margin-top: -4px;
+                    margin-left: 8px;
+                    border: 2px solid transparent;
+                    border-right-color: #fff;
+                    border-bottom-color: #fff;
+                    transform: rotate(45deg);
+                    content: "";
+                    @extend %reset;
+                }
+            }
+        }
+        &Search {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 20px;
+            background: rgba(#f8f8f8, .1);
+            border-radius: 4px;
+            @extend %reset;
+            &Input {
+                width: 100%;
+                height: 100%;
+                color: #787878;
+                font-size: 18px;
+                font-family: 'Regular';
+                text-align: center;
+                @extend %reset;
+                &::-webkit-input-placeholder {
+                    color: #787878;
+                }
+            }
+        }
+        &Content {
+            width: 100%;
+            @extend %reset;
+        }
+        &Show {
+            align-items: center;
+            margin-top: 28px;
+            color: #f8f8f8;
+            font-size: 18px;
+            font-family: 'Regular';
+            @extend %reset;
+            @extend %click;
+            @extend %row;
+            &::after {
+                width: 10px;
+                height: 10px;
+                margin-top: -4px;
+                margin-left: 8px;
+                border: 2px solid transparent;
+                border-right-color: #fff;
+                border-bottom-color: #fff;
+                transform: rotate(45deg);
+                content: "";
+                @extend %reset;
+            }
+        }
+    }
+    &__card {
+        width: 100%;
+        @extend %reset;
+        &+& {
+            margin-top: 20px;
+        }
+    }
+    &__pagenation {
+        margin: 64px auto 0 auto;
+        @extend %reset;
+    }
+    &__team {
+        width: 800px;
+        margin: 0 auto;
+        transform: translate(-54px, 0);
+        @extend %reset;
+    }
+}

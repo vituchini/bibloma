@@ -1,0 +1,124 @@
+.cabinetPersonal {
+    width: 100%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    @extend %cabinetPage;
+    @extend %reset;
+    &__block {
+        width: 100%;
+        padding: 28px 0;
+        @extend %reset;
+        &+& {
+            border-top: 1px solid #3F3D46;
+        }
+        &Head {
+            align-items: center;
+            width: 100%;
+            margin-bottom: 46px;
+            @extend %reset;
+            @extend %row;
+        }
+        &Title {
+            margin-right: 20px;
+            @extend %reset;
+        }
+        &Edit {
+            @extend %reset;
+        }
+        &Content {
+            justify-content: space-between;
+            width: 100%;
+            @extend %reset;
+            @extend %row;
+        }
+        &Item {
+            @extend %reset;
+            &._info {
+                width: 648px;
+            }
+            &._more {
+                width: 140px;
+            }
+        }
+        &Row {
+            width: 100%;
+            @extend %reset;
+            @extend %row;
+            &+& {
+                margin-top: 26px;
+            }
+        }
+        &Col {
+            @extend %reset;
+            @extend %col;
+            &._support {
+                width: 150px;
+                color: #989898;
+                font-size: 16px;
+                font-family: 'Regular';
+                line-height: 1.2;
+            }
+            &._content {
+                width: calc(100% - 150px);
+                padding-left: 30px;
+                color: #f8f8f8;
+                font-size: 18px;
+                font-family: 'Regular';
+                line-height: 1.2;
+            }
+            &Content {
+                position: relative;
+                position: relative;
+                color: #f8f8f8;
+                font-size: 18px;
+                @extend %reset;
+            }
+        }
+        &Row._bio &Col._support {
+            // padding-top: 0;
+        }
+        &Row._name &Col._content {
+            font-size: 24px;
+        }
+        &Row._bio &Col._content {
+            font-size: 14px;
+        }
+        &Icon {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 18px;
+            height: 18px;
+            margin-left: 8px;
+            transform: translate(0, -50%);
+            @extend %reset;
+            @extend %click;
+            &._done {
+                width: 24px;
+                height: 24px;
+            }
+        }
+        &Avatar {
+            align-items: center;
+            width: 140px;
+            @extend %reset;
+            @extend %col;
+            &Preview {
+                position: relative;
+                z-index: 1;
+                width: 100%;
+                height: 140px;
+                margin-bottom: 8px;
+                overflow: hidden;
+                border-radius: 50%;
+                @extend %reset;
+            }
+            &Image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                @extend %reset;
+            }
+        }
+    }
+}

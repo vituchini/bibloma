@@ -1,0 +1,308 @@
+.infoSupport {
+    position: relative;
+    z-index: 1;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: calc(100vh - #{$heightTopBar});
+    padding: 164px 0 164px 0;
+    @extend %reset;
+    @extend %col;
+    @include bg('support-back.png', 1900px, center top, true);
+    @include media(0, 800px) {
+        padding: 48px 0;
+    }
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+        width: 100%;
+        height: 100%;
+        min-height: calc(100vh - #{$heightTopBar});
+        background: linear-gradient(270deg, rgba(#0c0c15, .2) 0%, rgba(#0c0c15, .7) 100%);
+        content: "";
+    }
+    &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        min-height: calc(100vh - #{$heightTopBar});
+        content: "";
+        @include bg('flash.png', cover, center top);
+    }
+    &__inner {
+        align-items: center;
+        width: 100%;
+        max-width: 1210px;
+        padding: 0 30px;
+        @extend %reset;
+        @extend %col;
+        @include media(0, 800px) {
+            width: 100%;
+            max-width: none;
+            padding: 0 12px;
+        }
+    }
+    &__head {
+        align-items: center;
+        width: 544px;
+        margin-bottom: 162px;
+        @extend %reset;
+        @extend %col;
+        @include media(0, 800px) {
+            width: 100%;
+            margin-bottom: 48px;
+        }
+        &Search {
+            position: relative;
+            width: 100%;
+            height: 63px;
+            margin-top: 30px;
+            background: rgba(#f8f8f8, .1);
+            border-radius: 25px;
+            @extend %reset;
+            @include blur(20px);
+            @include media(0, 800px) {
+                height: 60px;
+                border-radius: 12px;
+            }
+            &Icon {
+                position: absolute;
+                top: 50%;
+                left: 26px;
+                z-index: 2;
+                width: 24px;
+                height: 24px;
+                transform: translate(0, -50%);
+                @extend %reset;
+                @include media(0, 800px) {
+                    left: 22px;
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            &Input {
+                width: 100%;
+                height: 100%;
+                padding: 12px 12px 12px 64px;
+                color: #f8f8f8;
+                font-size: 18px;
+                font-family: 'Regular';
+                @extend %reset;
+                &::-webkit-input-placeholder {
+                    color: #f8f8f8;
+                }
+            }
+        }
+    }
+    &__title {
+        max-width: 100%;
+        color: #f8f8f8;
+        font-size: 36px;
+        font-family: 'Medium';
+        text-align: center;
+        @extend %reset;
+        @include media(0, 800px) {
+            font-size: 24px;
+        }
+    }
+    &__content {
+        align-items: center;
+        width: 100%;
+        @extend %reset;
+        @extend %col;
+    }
+    &__tabs {
+        position: relative;
+        width: 100%;
+        max-width: 672px;
+        margin: 45px 0 50px 0;
+        @extend %reset;
+        @extend %row;
+        @include media(0, 800px) {
+            margin-top: 16px;
+        }
+        &::before {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 4px;
+            background: rgba(#3F3F45, .3);
+            border-radius: 360px;
+            content: "";
+            @extend %reset;
+        }
+    }
+    &__tab {
+        width: 25%;
+        @extend %reset;
+    }
+    &__questions {
+        align-items: center;
+        width: 100%;
+        margin-bottom: 120px;
+        @extend %reset;
+        @extend %col;
+        &Box {
+            width: 100%;
+            @extend %reset;
+        }
+    }
+    &__question {
+        width: 100%;
+        border-top: 1px solid rgba(#f8f8f8, .1);
+        @extend %reset;
+        &Head {
+            position: relative;
+            width: 100%;
+            width: 100%;
+            padding: 23px 0;
+            @extend %reset;
+            @extend %click;
+        }
+        &._show &Icon {
+            transform: translate(0, -50%) rotate(0deg);
+            @include media(0, 800px) {
+                transform: translate(0, 0) rotate(0deg);
+            }
+        }
+        &Icon {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            z-index: 2;
+            width: 30px;
+            height: 30px;
+            transform: translate(0, -50%) rotate(45deg);
+            @extend %reset;
+            @include media(0, 800px) {
+                top: 24px;
+                transform: translate(0, 0) rotate(45deg);
+            }
+        }
+        &Title {
+            max-width: 100%;
+            color: #f8f8f8;
+            font-size: 20px;
+            font-family: 'Regular';
+            line-height: 1.2;
+            @extend %reset;
+            @include media(0, 800px) {
+                padding-right: 32px;
+                font-size: 20px;
+                line-height: 1.4;
+            }
+        }
+        &Content {
+            display: none;
+            max-width: 80%;
+            padding: 6px 0 46px 0;
+            color: #f8f8f8;
+            font-size: 16px;
+            font-family: 'Light';
+            line-height: 1.3;
+            @extend %reset;
+            @include media(0, 800px) {
+                max-width: 100%;
+                padding-bottom: 24px;
+            }
+        }
+        &._show &Content {
+            display: block;
+        }
+    }
+    &__form {
+        align-items: center;
+        width: 100%;
+        max-width: 908px;
+        @extend %reset;
+        @extend %col;
+        &Description {
+            max-width: 100%;
+            margin: 26px 0 35px 0;
+            color: #f8f8f8;
+            font-size: 16px;
+            font-family: 'Regular';
+            line-height: 1.3;
+            text-align: center;
+            @extend %reset;
+        }
+        &Fields {
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 770px;
+            margin-bottom: 24px;
+            @extend %reset;
+            @extend %row;
+            @include media(0, 800px) {
+                max-width: none;
+            }
+        }
+        &Field {
+            width: 49%;
+            height: 50px;
+            margin-bottom: 20px;
+            @extend %reset;
+            @include media(0, 800px) {
+                width: 100%;
+                height: 60px;
+            }
+            &._full {
+                width: 100%;
+            }
+            &._area {
+                height: 180px;
+                @include media(0, 800px) {
+                    height: 200px;
+                }
+            }
+        }
+        &Input {
+            width: 100%;
+            height: 100%;
+            padding: 16px;
+            color: #f8f8f8;
+            font-size: 16px;
+            font-family: 'Regular';
+            background: rgba(248, 248, 248, 0.2);
+            border: 1px solid #f8f8f8;
+            resize: none;
+            @extend %reset;
+            @include blur(80px);
+            @include media(0, 800px) {
+                border-color: rgba(#f8f8f8, .5);
+            }
+            &::-webkit-input-placeholder {
+                color: #f8f8f8;
+            }
+        }
+        &Button {
+            align-items: center;
+            justify-content: center;
+            width: 358px;
+            height: 46px;
+            color: #f8f8f8;
+            font-size: 15px;
+            font-family: 'Regular';
+            background: rgba(248, 248, 248, 0.2);
+            border: 1px solid #f8f8f8;
+            @extend %reset;
+            @extend %click;
+            @extend %row;
+            @include blur(80px);
+            @include media(0, 800px) {
+                width: 100%;
+                height: 60px;
+                font-size: 18px;
+                border-color: rgba(#f8f8f8, .5);
+            }
+        }
+    }
+}

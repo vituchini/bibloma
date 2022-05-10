@@ -1,0 +1,83 @@
+.calendar {
+    width: 100%;
+    height: 100%;
+    padding: 24px 32px;
+    background: rgba(#f8f8f8, .1);
+    border-radius: 4px;
+    @extend %reset;
+    &__head {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 20px;
+        @extend %reset;
+        @extend %row;
+        &Btn {
+            width: 28px;
+            height: 28px;
+            @extend %reset;
+            @extend %click;
+        }
+        &Current {
+            margin: 0 34px;
+            color: #fff;
+            font-size: 20px;
+            font-family: 'Regular';
+            text-align: center;
+            @extend %reset;
+        }
+    }
+    &__content {
+        width: 100%;
+        @extend %reset;
+    }
+    &__days {
+        flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: -10px;
+        @extend %reset;
+        @extend %row;
+    }
+    &__day {
+        display: block;
+        width: calc(100% / 7);
+        height: 34px;
+        margin-bottom: 10px;
+        @extend %reset;
+        &Input {
+            display: none;
+        }
+        &Input:checked~&View &Inner {
+            color: #fff;
+            background: rgba($colorMain, .5);
+            border-color: $colorMain;
+        }
+        &View {
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            transition: $trans;
+            @extend %reset;
+            @extend %col;
+        }
+        &._cur &View {
+            background: rgba($colorMain, .5);
+        }
+        &._cur &Inner {
+            color: #fff;
+        }
+        &Inner {
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 100%;
+            color: #606060;
+            font-size: 18px;
+            font-family: 'Regular';
+            border: 2px solid transparent;
+            transition: $trans;
+            @extend %col;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+.alertMobile {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: calc(100vh - #{$heightMobileBar});
+    padding: 32px 12px;
+    @extend %reset;
+    @extend %col;
+    &__logo {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 24px;
+        object-fit: contain;
+        @extend %reset;
+    }
+    &__description {
+        max-width: 80%;
+        margin-bottom: 24px;
+        color: #f8f8f8;
+        font-size: 18px;
+        font-family: 'Light';
+        line-height: 1.5;
+        text-align: center;
+        @extend %reset;
+    }
+    &__button {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 320px;
+        height: 42px;
+        padding: 8px 12px;
+        color: #000;
+        font-size: 16px;
+        font-family: 'Regular';
+        background: $colorMain;
+        border-radius: 6px;
+        @extend %reset;
+        @extend %row;
+        &Icon {
+            width: 22px;
+            height: 22px;
+            margin-right: 8px;
+            @include icon(#000);
+            @extend %reset;
+        }
+    }
+}

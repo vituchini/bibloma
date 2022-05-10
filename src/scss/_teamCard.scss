@@ -1,0 +1,168 @@
+.teamCard {
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-right: 24px;
+    background: rgba(#18181B, .9);
+    @include blur(40px);
+    @extend %click;
+    @extend %reset;
+    @extend %row;
+    @include media(0, 1050px) {
+        flex-direction: column;
+        align-items: center;
+        padding: 12px;
+    }
+    &._light {
+        background: rgba(#f8f8f8, .05);
+    }
+    &._isInvite {
+        background: rgba(#6FFF57, .1);
+    }
+    &__preview {
+        width: 108px;
+        height: 100%;
+        min-height: 80px;
+        margin-right: 46px;
+        @extend %reset;
+        @include media(0, 1140px) {
+            margin-right: 16px;
+        }
+        @include media(0, 1050px) {
+            width: 100px;
+            height: 100px;
+            margin-right: 0;
+            margin-bottom: 24px;
+        }
+        &Image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @extend %reset;
+        }
+    }
+    &__name {
+        width: 234px;
+        margin-right: 54px;
+        overflow: hidden;
+        color: #f8f8f8;
+        font-size: 22px;
+        font-family: 'Regular';
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        @extend %reset;
+        @include media(0, 1140px) {
+            margin-right: 16px;
+        }
+        @include media(0, 1050px) {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+    &__info {
+        flex-wrap: wrap;
+        width: calc(100% - 154px - 288px - 208px);
+        margin-bottom: -14px;
+        padding: 16px 0;
+        @extend %reset;
+        @extend %row;
+        @include media(0, 1140px) {
+            width: calc(100% - 124px - 250px - 208px);
+        }
+        @include media(0, 1050px) {
+            width: 100%;
+            margin-bottom: 0;
+        }
+        &Item {
+            width: 25%;
+            min-width: 120px;
+            margin-bottom: 14px;
+            padding: 0 12px;
+            @extend %reset;
+            @extend %col;
+            @include media(0, 1050px) {
+                width: 50%;
+                padding: 0;
+            }
+            // &+& {
+            //     margin-left: 64px;
+            // }
+            &Support {
+                max-width: 100%;
+                margin-bottom: 4px;
+                color: #606060;
+                font-size: 16px;
+                font-family: 'Regular';
+                @extend %reset;
+            }
+            &Value {
+                max-width: 100%;
+                color: #f8f8f8;
+                font-size: 18px;
+                font-family: 'Regular';
+                @extend %reset;
+                @include ofStrike() {
+                    width: calc(100% + 2px);
+                    height: 1px;
+                    margin-top: 1px;
+                    background: #f8f8f8;
+                }
+            }
+        }
+    }
+    &__actions {
+        align-items: center;
+        margin-left: auto;
+        @extend %reset;
+        @extend %row;
+    }
+    &__action {
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        @extend %reset;
+        @extend %col;
+        @extend %click;
+        &._delete {
+            background: rgba($colorError, .2);
+            border-color: $colorError;
+            @include icon($colorError);
+        }
+        &._done {
+            background: rgba($colorSuccess, .2);
+            border-color: $colorSuccess;
+            @include icon($colorSuccess);
+        }
+        &+& {
+            margin-left: 18px;
+        }
+        &Icon {
+            width: 24px;
+            height: 24px;
+            @extend %reset;
+        }
+    }
+    &__awards {
+        align-items: center;
+        width: 208px;
+        margin-left: auto;
+        @extend %reset;
+        @extend %row;
+        @include media(0, 1050px) {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+    &__award {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        @extend %reset;
+        &+& {
+            margin-left: 16px;
+        }
+    }
+}

@@ -1,0 +1,272 @@
+$heightChatBarHead:110px;
+$heightChatBarFoot:52px;
+.chatBar {
+    position: relative;
+    z-index: 1;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    @extend %reset;
+    @extend %col;
+    &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: rgba(67, 67, 67, 0.2);
+        content: "";
+        @include blur(40px);
+    }
+    &._show::before {
+        width: 448px;
+    }
+    &._stream::before {
+        width: 100%;
+        background: rgba(248, 248, 248, 0.1);
+    }
+    &__show {
+        position: absolute;
+        top: 78px;
+        right: 100%;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 134px;
+        background: rgba(67, 67, 67, 0.2);
+        border-radius: 10px 0 0 10px;
+        @extend %reset;
+        @extend %col;
+        @extend %click;
+        @include blur(40px);
+        &Icon {
+            width: 24px;
+            height: 24px;
+            @extend %reset;
+        }
+    }
+    &__preview {
+        width: 100%;
+        height: 100%;
+        padding: 0 14px;
+        @extend %reset;
+        &Head {
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 78px;
+            border-bottom: 1px solid rgba(#fff, .3);
+            @extend %reset;
+            @extend %col;
+        }
+        &Name {
+            align-items: center;
+            max-width: 100%;
+            color: #f8f8f8;
+            font-size: 18px;
+            font-family: 'Regular';
+            @extend %reset;
+            @extend %row;
+            &Icon {
+                width: 20px;
+                height: 20px;
+                margin-right: 6px;
+            }
+        }
+        &Users {
+            align-items: center;
+            width: 100%;
+            padding-top: 34px;
+            @extend %reset;
+            @extend %col;
+        }
+        &User {
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            border-radius: 50%;
+            @extend %reset;
+            &+& {
+                margin-top: 32px;
+            }
+            &Image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                @extend %reset;
+            }
+        }
+    }
+    &._stream &__inner {
+        width: 100%;
+    }
+    &._stream &__inner {
+        &Head {
+            position: relative;
+            height: 64px;
+            padding-top: 20px;
+            &::before {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: calc(100% - 48px);
+                height: 1px;
+                background: $colorMain;
+                transform: translate(-50%, 0);
+                content: "";
+            }
+            &Name {
+                color: $colorMain;
+                &Icon {
+                    @include icon($colorMain);
+                }
+            }
+        }
+        &Content {
+            height: calc(100% - 64px - #{$heightChatBarFoot});
+        }
+    }
+    &__inner {
+        width: 448px;
+        height: 100%;
+        @extend %reset;
+        @extend %col;
+        &Head {
+            width: 100%;
+            height: $heightChatBarHead;
+            padding: 30px 24px 0 24px;
+            @extend %reset;
+            &Top {
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                margin-bottom: 18px;
+                @extend %reset;
+                @extend %row;
+            }
+            &Name {
+                align-items: center;
+                color: #f8f8f8;
+                font-size: 18px;
+                font-family: 'Regular';
+                @extend %reset;
+                @extend %row;
+                &Icon {
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 6px;
+                    @extend %reset;
+                }
+            }
+            &Pin {
+                width: 24px;
+                height: 24px;
+                @extend %reset;
+                @extend %click;
+            }
+            &Description {
+                color: #f8f8f8;
+                font-size: 18px;
+                font-family: 'Regular';
+                @extend %reset;
+            }
+            &Links {
+                position: relative;
+                width: 100%;
+                margin-bottom: 32px;
+                @extend %reset;
+                @extend %row;
+                &::before {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    z-index: -1;
+                    width: 100%;
+                    height: 4px;
+                    background: #3F3F45;
+                    border-radius: 360px;
+                    content: "";
+                    @extend %reset;
+                }
+            }
+            &Link {
+                width: 50%;
+                @extend %reset;
+            }
+        }
+        &Content {
+            width: 100%;
+            height: calc(100% - #{$heightChatBarHead} - #{$heightChatBarFoot});
+            padding: 0 12px 0 24px;
+            @extend %reset;
+        }
+        &Messages {
+            width: 100%;
+            height: 100%;
+            padding: 42px 0;
+            padding-right: 12px;
+            overflow-y: auto;
+            @extend %reset;
+            @extend %scroll;
+        }
+        &Message {
+            width: 100%;
+            @extend %reset;
+            &+& {
+                margin-top: 28px;
+            }
+        }
+        &Foot {
+            align-items: center;
+            width: 100%;
+            height: $heightChatBarFoot;
+            margin-top: auto;
+            padding: 10px 24px;
+            background: #3F3D46;
+            @extend %reset;
+            @extend %row;
+            &Avatar {
+                width: 30px;
+                height: 30px;
+                margin-right: 16px;
+                overflow: hidden;
+                border-radius: 50%;
+                @extend %reset;
+                &Image {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    @extend %reset;
+                }
+            }
+            &Input {
+                width: 60%;
+                color: #f8f8f8;
+                font-size: 16px;
+                font-family: 'Regular';
+                @extend %reset;
+                &::-webkit-input-placeholder {
+                    color: #BFBFBF;
+                }
+            }
+            &Send {
+                align-items: center;
+                justify-content: center;
+                width: 28px;
+                height: 28px;
+                margin-left: auto;
+                background: $colorMain;
+                border-radius: 50%;
+                @extend %reset;
+                @extend %col;
+                @extend %click;
+                &Icon {
+                    width: 12px;
+                    height: 12px;
+                    @extend %reset;
+                }
+            }
+        }
+    }
+}

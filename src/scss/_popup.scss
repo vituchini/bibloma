@@ -1,0 +1,258 @@
+.popup {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    @extend %reset;
+    @extend %col;
+    &__inner {
+        position: relative;
+        z-index: 1;
+        align-items: center;
+        width: 824px;
+        padding: 60px 100px 60px 100px;
+        @extend %reset;
+        @extend %col;
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            background: rgba(248, 248, 248, 0.1);
+            content: "";
+            @include blur(40px);
+        }
+    }
+    &__close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        z-index: 2;
+        display: block;
+        width: 20px;
+        height: 20px;
+        @extend %reset;
+        @extend %click;
+    }
+    &__icon {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 28px;
+        object-fit: contain;
+        @extend %reset;
+    }
+    &__title {
+        max-width: 100%;
+        margin-bottom: 7px;
+        color: #f8f8f8;
+        font-size: 28px;
+        font-family: 'Medium';
+        text-align: center;
+        @extend %reset;
+        @include ofStrike() {
+            width: calc(100% + 4px);
+            height: 2px;
+            margin-top: 4px;
+            background: #f8f8f8;
+        }
+        &._large {
+            margin-bottom: 24px;
+            font-size: 36px;
+        }
+    }
+    &__description {
+        max-width: 80%;
+        margin-bottom: 22px;
+        color: #bfbfbf;
+        font-size: 16px;
+        font-family: 'Regular';
+        line-height: 1.5;
+        text-align: center;
+        @extend %reset;
+        &._wide {
+            max-width: 100%;
+        }
+    }
+    &._calibration &__description {
+        margin-bottom: 120px;
+    }
+    &__user {
+        margin-bottom: 32px;
+        padding: 9px 40px 9px 12px;
+        background: rgba(#000, .25);
+        border-radius: 12px;
+        @extend %reset;
+    }
+    &__checkboxes {
+        width: 380px;
+        margin-bottom: 56px;
+        @extend %reset;
+        @extend %col;
+    }
+    &__checkbox {
+        width: 100%;
+        @extend %reset;
+        &+& {
+            margin-top: 16px;
+        }
+    }
+    &__referal {
+        position: relative;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 20px 28px;
+        color: #fff;
+        font-size: 16px;
+        font-family: 'Regular';
+        background: #606060;
+        border-radius: 16px;
+        @extend %reset;
+        @extend %row;
+        &Icon {
+            position: absolute;
+            top: 50%;
+            right: 32px;
+            z-index: 2;
+            width: 22px;
+            height: 22px;
+            transform: translate(0, -50%);
+            @extend %reset;
+            @extend %click;
+            @include icon(#f8f8f8);
+        }
+    }
+    &__socials {
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        margin-bottom: 16px;
+        @extend %reset;
+        @extend %row;
+    }
+    &__social {
+        width: 30px;
+        height: 30px;
+        @extend %reset;
+        @extend %click;
+        &Icon {
+            display: block;
+            width: 100%;
+            height: 100%;
+            @extend %reset;
+        }
+        &+& {
+            margin-left: 28px;
+        }
+    }
+    &__text {
+        max-width: 100%;
+        margin-bottom: 68px;
+        color: #f8f8f8;
+        font-size: 16px;
+        font-family: 'Regular';
+        text-align: center;
+        @extend %reset;
+    }
+    &__transfer {
+        align-items: center;
+        margin: 20px 0 54px 0;
+        @extend %reset;
+        @extend %row;
+        &Info {
+            align-items: center;
+            color: #f8f8f8;
+            font-size: 28px;
+            font-family: 'Regular';
+            @extend %reset;
+            @extend %row;
+        }
+        &Icon {
+            width: 34px;
+            height: 34px;
+            @extend %reset;
+            @include icon(#f8f8f8);
+            &+& {
+                margin-left: 4px;
+            }
+        }
+        &User {
+            margin-left: 24px;
+            padding: 9px 41px 9px 11px;
+            background: rgba(#000, .25);
+            border-radius: 12px;
+            @extend %reset;
+            @extend %reset;
+        }
+    }
+    &__buttons {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        @extend %reset;
+        @extend %row;
+    }
+    &__button {
+        align-items: center;
+        justify-content: center;
+        width: 152px;
+        padding: 14px 16px;
+        color: #f8f8f8;
+        font-size: 16px;
+        font-family: 'Regular';
+        background: rgba(#fff, .1);
+        border: 1px solid #f8f8f8;
+        @include blur(80px);
+        @extend %reset;
+        @extend %row;
+        @extend %click;
+        &._wide {
+            width: 220px;
+        }
+        &._main {
+            color: $colorMain;
+            background: rgba($colorMain, .1);
+            border-color: $colorMain;
+        }
+        &._mainFull {
+            color: #000;
+            background: $colorMain;
+            border-color: $colorMain;
+            border-radius: 4px;
+        }
+        &+& {
+            margin-left: 16px;
+        }
+    }
+    &__game {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 12px 0 96px 0;
+        @extend %reset;
+        @extend %row;
+        &Map {
+            width: 164px;
+            height: 80px;
+            margin-right: 28px;
+            object-fit: cover;
+            @extend %reset;
+        }
+        &Lang {
+            width: 37px;
+            height: 24px;
+            margin-right: 24px;
+            object-fit: contain;
+            @extend %reset;
+        }
+        &Name {
+            color: #f8f8f8;
+            font-size: 18px;
+            font-family: 'Regular';
+            text-transform: uppercase;
+            @extend %reset;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true
+    },
+    "extends": [
+        "airbnb-base",
+        "airbnb/hooks",
+        "plugin:react/recommended",
+        "prettier"
+    ],
+    "rules": {
+        "import/no-cycle": [
+            2,
+            {
+                "maxDepth": 1
+            }
+        ],
+        "no-underscore-dangle": "off",
+        "no-restricted-syntax": [
+            "off"
+        ],
+        "class-methods-use-this": "off",
+        "prefer-promise-reject-errors": "off",
+        "global-require": "off",
+        "import/no-dynamic-require": "off",
+        "no-param-reassign": "off",
+        "no-new": "off",
+        "camelcase": "off",
+        "prefer-destructuring": "off",
+        "import/extensions": "off",
+        "arrow-body-style": "off",
+        "no-unneeded-ternary": "off",
+        "no-alert": "off"
+    }
+}

@@ -1,0 +1,228 @@
+.infoPartnersOffer {
+    align-items: center;
+    width: 100%;
+    @extend %reset;
+    @extend %col;
+    &__inner {
+        align-items: center;
+        width: 100%;
+        max-width: 1046px;
+        padding: 42px;
+        background: rgba(248, 248, 248, 0.1);
+        border-radius: 18px;
+        @include blur(220px);
+        @extend %reset;
+        @extend %col;
+    }
+    &__content {
+        align-items: center;
+        max-width: 784px;
+        @extend %reset;
+        @extend %col;
+    }
+    &__head {
+        align-items: center;
+        margin-bottom: 70px;
+        @extend %reset;
+        @extend %col;
+    }
+    &__title {
+        max-width: 100%;
+        margin-bottom: 8px;
+        color: #fff;
+        font-size: 36px;
+        font-family: 'Bold';
+        text-align: center;
+        @extend %reset;
+    }
+    &__subTitle {
+        max-width: 100%;
+        color: #fff;
+        font-size: 18px;
+        font-family: 'Light';
+        line-height: 1.3;
+        text-align: center;
+        @extend %reset;
+    }
+    &__list {
+        width: 100%;
+        margin-bottom: 64px;
+        @extend %reset;
+        &Item {
+            position: relative;
+            max-width: 100%;
+            color: #fff;
+            font-size: 24px;
+            font-family: 'Regular';
+            line-height: 1.4;
+            @extend %reset;
+            &::before {
+                position: absolute;
+                top: 0;
+                left: -24px;
+                font-size: 24px;
+                font-family: 'Regular';
+                // content: "•";
+            }
+        }
+    }
+    &__actions {
+        width: 100%;
+        @extend %reset;
+        &Block {
+            align-items: center;
+            @extend %reset;
+            @extend %col;
+            &+& {
+                margin-top: 32px;
+            }
+        }
+        &Description {
+            max-width: 76%;
+            margin-bottom: 24px;
+            color: #fff;
+            font-size: 16px;
+            font-family: 'Light';
+            line-height: 1.3;
+            text-align: center;
+            @extend %reset;
+        }
+        &Button {
+            width: 192px;
+            height: 46px;
+            @extend %reset;
+        }
+    }
+    &__button {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 12px;
+        color: #fff;
+        font-size: 15px;
+        font-family: 'Regular';
+        background: rgba(#fff, .1);
+        border: 1px solid #fff;
+        transition: $trans;
+        @extend %reset;
+        @extend %click;
+        @extend %row;
+        &:hover {
+            background: rgba(#fff, .2);
+            box-shadow: 0 0 20px 5px rgba(#fff, 0.2);
+        }
+    }
+    &__logo {
+        width: 110px;
+        height: 118px;
+        margin-bottom: 24px;
+        object-fit: contain;
+        @extend %reset;
+    }
+    &__form {
+        align-items: center;
+        width: 100%;
+        max-width: 474px;
+        margin-top: 40px;
+        @extend %reset;
+        @extend %col;
+        &Link {
+            align-items: center;
+            width: 100%;
+            margin-bottom: 64px;
+            @extend %reset;
+            @extend %col;
+            &Support {
+                width: 120%;
+                margin-bottom: 16px;
+                color: #fff;
+                font-size: 16px;
+                font-family: 'Light';
+                line-height: 1.3;
+                text-align: center;
+                @extend %reset;
+            }
+            &Field {
+                width: 100%;
+                @extend %reset;
+            }
+        }
+        &Button {
+            width: 192px;
+            height: 46px;
+            margin-bottom: 48px;
+            @extend %reset;
+        }
+    }
+    &__fields {
+        width: 100%;
+        margin-bottom: 48px;
+        @extend %reset;
+    }
+    &__field {
+        width: 100%;
+        @extend %reset;
+        &+& {
+            margin-top: 16px;
+        }
+    }
+    &__socials {
+        align-items: center;
+        width: 100%;
+        @extend %reset;
+        @extend %col;
+        &Title {
+            position: relative;
+            max-width: 100%;
+            margin-bottom: 25px;
+            color: #bfbfbf;
+            font-size: 14px;
+            font-family: 'Medium';
+            text-align: center;
+            @extend %reset;
+            &::before,
+            &::after {
+                position: absolute;
+                top: 50%;
+                width: 200px;
+                height: 1px;
+                background: rgba(#BFBFBF, .5);
+                transform: translate(0, -50%);
+                content: "";
+            }
+            &::before {
+                right: 100%;
+                margin-right: 28px;
+            }
+            &::after {
+                left: 100%;
+                margin-left: 28px;
+            }
+        }
+        &Items {
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            @extend %reset;
+            @extend %row;
+        }
+        &Item {
+            width: 44px;
+            height: 44px;
+            @extend %click;
+            @extend %reset;
+            &._google {
+                width: 42px;
+                height: 42px;
+            }
+            &._fb {
+                width: 40px;
+                height: 40px;
+            }
+            &+& {
+                margin-left: 60px;
+            }
+        }
+    }
+}

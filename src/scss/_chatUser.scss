@@ -1,0 +1,126 @@
+.chatUser {
+    position: relative;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 12px 16px;
+    transition: $trans;
+    user-select: none;
+    @extend %reset;
+    @extend %row;
+    &._medium {
+        padding: 0;
+    }
+    &:not(._medium):hover {
+        background: rgba(#f8f8f8, .1);
+    }
+    &._online &__avatar {
+        &::before {
+            position: absolute;
+            top: 0;
+            right: -2px;
+            z-index: 2;
+            width: 14px;
+            height: 14px;
+            background: $colorSuccess;
+            border-radius: 50%;
+            content: "";
+        }
+    }
+    &__avatar {
+        position: relative;
+        width: 46px;
+        height: 46px;
+        margin-right: 12px;
+        @extend %reset;
+        &Inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+        &Image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__info {
+        margin-right: 50px;
+        @extend %reset;
+        @extend %col;
+    }
+    &__name {
+        max-width: 100%;
+        margin-bottom: 4px;
+        color: #bfbfbf;
+        font-size: 18px;
+        font-family: 'Regular';
+        @extend %reset;
+    }
+    &__status {
+        max-width: 100%;
+        color: #606060;
+        font-size: 15px;
+        font-family: 'Regular';
+        @extend %reset;
+    }
+    &__award {
+        width: 66px;
+        height: 30px;
+        object-fit: contain;
+        @extend %reset;
+    }
+    &__actions {
+        align-items: center;
+        margin-left: auto;
+        @extend %reset;
+        @extend %row;
+    }
+    &__btn {
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        @extend %reset;
+        @extend %click;
+        @extend %col;
+        &._accept {
+            background: rgba($colorSuccess, .1);
+            border-color: $colorSuccess;
+        }
+        &._add-friend &Icon {
+            width: 100%;
+            height: 100%;
+        }
+        &Icon {
+            width: 14px;
+            height: 14px;
+            @extend %reset;
+        }
+    }
+    &__more {
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        margin-left: 16px;
+        border-radius: 50%;
+        transition: $trans;
+        @extend %reset;
+        @extend %click;
+        @extend %col;
+        &:hover {
+            background: rgba(#BFBFBF, .2);
+        }
+        &Icon {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            @extend %reset;
+        }
+    }
+}

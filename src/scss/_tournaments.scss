@@ -1,0 +1,31 @@
+.tournaments {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    min-height: calc(100vh - #{$heightTopBar});
+    padding: 90px 158px;
+    background: #0C0C0E;
+    @extend %reset;
+    @include media(0, 1800px) {
+        padding: 32px;
+    }
+    &._create {
+        background: linear-gradient(180deg, rgba(78, 78, 116, 0) 0%, #1d1d28 40%, #1d1d28 100%);
+    }
+    &._index::before {
+        position: absolute;
+        top: -28px;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 200px;
+        content: "";
+        @include bg('cabinet-back-top.svg', contain, center top, true);
+    }
+    &__content {
+        width: 100%;
+        max-width: 1500px;
+        margin: 0 auto;
+        @extend %reset;
+    }
+}

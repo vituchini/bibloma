@@ -1,0 +1,45 @@
+.auth {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    min-height: calc(100vh - #{$heightTopBar});
+    padding: 64px 0 64px 231px;
+    @extend %reset;
+    @extend %col;
+    @include media(0, 800px) {
+        align-items: center;
+        padding: 16px 0;
+    }
+    &__back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        // opacity: 0.5;
+        @extend %reset;
+    }
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: rgba(#0C0C0E, .7);
+        content: "";
+        @extend %reset;
+    }
+    &__form {
+        position: relative;
+        z-index: 2;
+        width: 677px;
+        height: 781px;
+        @extend %reset;
+        @include media(0, 800px) {
+            width: 94%;
+        }
+    }
+}

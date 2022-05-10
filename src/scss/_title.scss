@@ -1,0 +1,10 @@
+.title {
+    width: 100%;
+    color: #F8F8F8;
+    font-size: 24px;
+    font-family: 'Regular';
+    @extend %reset;
+    &._medium {
+        font-size: 20px;
+    }
+}

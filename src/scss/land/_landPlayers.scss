@@ -1,0 +1,271 @@
+.landPlayers {
+    position: relative;
+    width: 100%;
+    padding: 70px 0 100px 0;
+    overflow: hidden;
+    @extend %reset;
+    @extend %section;
+    @include media(0, 1050px) {
+        padding: 32px 0;
+    }
+    &__inner {
+        align-items: center;
+        @extend %reset;
+        @extend %innerLand;
+    }
+    &__head {
+        align-items: center;
+        width: 634px;
+        margin-bottom: 230px;
+        @extend %reset;
+        @extend %col;
+        @include media(0, 1050px) {
+            width: 100%;
+            margin-bottom: 32px;
+        }
+    }
+    &__title {
+        max-width: 100%;
+        margin-bottom: 32px;
+        text-align: center;
+        @extend %reset;
+    }
+    &__description {
+        max-width: 100%;
+        margin-bottom: 54px;
+        color: #bfbfbf;
+        font-size: 18px;
+        font-family: 'Light';
+        line-height: 1.2;
+        text-align: center;
+        @extend %reset;
+        @include media(0, 1050px) {
+            font-size: 16px;
+        }
+    }
+    &__previews {
+        position: relative;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        @extend %reset;
+        @extend %row;
+        @include media(0, 1050px) {
+            max-width: 500px;
+        }
+    }
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 104px;
+        background: linear-gradient(270deg, rgba(196, 196, 196, 0) -113.75%, rgba(191, 191, 191, 0.1) 117.5%);
+        border-radius: 18px;
+        transform: translate(0, -50%);
+        transition: $trans;
+        @extend %reset;
+        @extend %click;
+        @extend %col;
+        @include blur(40px);
+        @include media(0, 1050px) {
+            display: none;
+        }
+        &._prev {
+            left: -140px;
+        }
+        &._next {
+            right: -140px;
+        }
+        &._dis {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        &Icon {
+            width: 68px;
+            height: 68px;
+            object-fit: contain;
+            @extend %reset;
+        }
+    }
+    &__preview {
+        display: block;
+        @extend %reset;
+        &Input {
+            display: none;
+        }
+        &View {
+            align-items: center;
+            @extend %reset;
+            @extend %col;
+            @extend %click;
+        }
+        &Avatar {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            border-radius: 50%;
+            @extend %reset;
+            @include media(0, 1050px) {
+                width: 48px;
+                height: 48px;
+            }
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 4px solid $colorMain;
+                border-radius: 50%;
+                opacity: 0;
+                transition: .5s ease-in-out;
+                content: "";
+                @extend %reset;
+                @include media(0, 1050px) {
+                    border-width: 2px;
+                }
+            }
+        }
+        &Input:checked~&View &Avatar {
+            &::before {
+                opacity: 1;
+            }
+        }
+        &Image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 4px;
+            @extend %reset;
+        }
+        &Name {
+            max-width: 100%;
+            color: #f8f8f8;
+            font-size: 14px;
+            font-family: 'Regular';
+            text-align: center;
+            text-transform: uppercase;
+            @extend %reset;
+            @include media(0, 1050px) {
+                font-size: 12px;
+            }
+        }
+    }
+    &__slider {
+        width: 100%;
+        user-select: none;
+        @extend %reset;
+        @include media(0, 1280px) {
+            padding: 0 64px;
+        }
+        @include media(0, 1050px) {
+            padding: 0;
+        }
+        &Items {
+            display: inline-flex;
+            transition: .5s ease-in-out;
+            will-change: transform;
+            @extend %reset;
+        }
+        &Item {
+            position: relative;
+            align-items: flex-end;
+            width: 868px;
+            height: 414px;
+            margin-right: 118px;
+            background: #23252C;
+            border-radius: 18px;
+            transform: scale(.75);
+            transition: .5s ease-in-out;
+            @extend %reset;
+            @extend %col;
+            @include media(0, 1050px) {
+                width: 92vw;
+                height: auto;
+                padding: 20px;
+            }
+            &._current {
+                transform: scale(1);
+            }
+            // &+& {
+            //     margin-left: 118px;
+            // }
+            &Image {
+                position: absolute;
+                bottom: 0;
+                left: -64px;
+                z-index: 2;
+                width: 442px;
+                height: 556px;
+                @extend %reset;
+                @include media(0, 1050px) {
+                    top: 14px;
+                    right: 14px;
+                    bottom: auto;
+                    left: auto;
+                    width: 100px;
+                    height: auto;
+                }
+            }
+            &Content {
+                width: 60%;
+                padding: 44px;
+                @extend %reset;
+                @extend %col;
+                @include media(0, 1050px) {
+                    width: 100%;
+                    padding: 0;
+                }
+            }
+            &Nik {
+                max-width: 100%;
+                margin-bottom: 4px;
+                color: #f8f8f8;
+                font-size: 34px;
+                font-family: 'Medium';
+                @extend %reset;
+                @include media(0, 1050px) {
+                    font-size: 24px;
+                }
+            }
+            &Name {
+                max-width: 100%;
+                margin-bottom: 10px;
+                color: #606060;
+                font-size: 22px;
+                font-family: 'Regular';
+                @extend %reset;
+                @include media(0, 1050px) {
+                    font-size: 18px;
+                }
+            }
+            &Team {
+                max-width: 100%;
+                margin-bottom: 50px;
+                color: #f8f8f8;
+                font-size: 22px;
+                font-family: 'Regular';
+                @extend %reset;
+                @include media(0, 1050px) {
+                    margin-bottom: 64px;
+                    font-size: 16px;
+                }
+            }
+            &Description {
+                max-width: 100%;
+                color: #bfbfbf;
+                font-size: 18px;
+                font-family: 'Light';
+                line-height: 1.2;
+                @extend %reset;
+                @include media(0, 1050px) {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}

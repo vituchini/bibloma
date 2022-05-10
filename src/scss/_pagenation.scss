@@ -1,0 +1,38 @@
+.pagenation {
+    align-items: center;
+    width: 100%;
+    @extend %reset;
+    @extend %row;
+    &__btn {
+        display: block;
+        width: 36px;
+        height: 36px;
+        @extend %reset;
+        @extend %click;
+    }
+    &__list {
+        align-items: center;
+        justify-content: center;
+        min-width: 524px;
+        padding: 0 20px;
+        @extend %reset;
+        @extend %row;
+        &Item {
+            align-items: center;
+            justify-content: center;
+            width: 72px;
+            height: 42px;
+            color: #fff;
+            font-size: 22px;
+            font-family: 'Regular';
+            border-radius: 4px;
+            @extend %reset;
+            @extend %click;
+            @extend %col;
+            &._current {
+                color: #000;
+                background: $colorMain;
+            }
+        }
+    }
+}

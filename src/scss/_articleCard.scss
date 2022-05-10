@@ -1,0 +1,162 @@
+.articleCard {
+    width: 100%;
+    height: 100%;
+    @extend %reset;
+    @extend %click;
+    &__image {
+        width: 100%;
+        height: 248px;
+        @extend %reset;
+        @include media(0, 800px) {
+            height: 60vw;
+        }
+        &Item {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @extend %reset;
+        }
+    }
+    &__content {
+        position: relative;
+        width: 100%;
+        padding: 16px;
+        background: rgba(#f8f8f8, .05);
+        border-top: 1px solid $colorMain;
+        @extend %reset;
+        @extend %col;
+    }
+    &__views {
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+        align-items: center;
+        color: #bfbfbf;
+        font-size: 16px;
+        font-family: 'Regular';
+        @extend %reset;
+        @extend %row;
+        @include media(0, 800px) {
+            position: relative;
+            right: 0;
+            bottom: 0;
+            margin: 6px 0 0 auto;
+        }
+        &Icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 6px;
+            @extend %reset;
+        }
+    }
+    &__title {
+        max-width: 100%;
+        margin-bottom: 6px;
+        color: #f8f8f8;
+        font-size: 18px;
+        font-family: 'Regular';
+        @extend %reset;
+    }
+    &__description {
+        max-width: 100%;
+        margin-bottom: 11px;
+        overflow: hidden;
+        color: #bfbfbf;
+        font-size: 16px;
+        line-height: 1.3;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        @extend %reset;
+    }
+    &__info {
+        align-items: center;
+        width: 100%;
+        @extend %reset;
+        @extend %row;
+        &Item {
+            color: #606060;
+            font-size: 16px;
+            font-family: 'Regular';
+            @extend %reset;
+            &+& {
+                margin-left: 12px;
+            }
+        }
+    }
+    &__params {
+        align-items: center;
+        width: 100%;
+        margin-top: 14px;
+        @extend %reset;
+        @extend %row;
+    }
+    &__param {
+        align-items: center;
+        margin-right: 20px;
+        color: #606060;
+        font-size: 16px;
+        font-family: 'Regular';
+        @extend %reset;
+        @extend %row;
+        &Icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 6px;
+        }
+    }
+    &__status {
+        align-items: center;
+        max-width: 100%;
+        height: 22px;
+        margin-bottom: 12px;
+        color: #bfbfbf;
+        font-size: 16px;
+        font-family: 'Regular';
+        @extend %reset;
+        @extend %row;
+        &._online {
+            padding: 6px 12px;
+            color: $colorError;
+            font-family: 'Medium';
+            background: rgba($colorError, .1);
+            border-radius: 360px;
+        }
+    }
+    &__teams {
+        align-items: center;
+        width: 100%;
+        @extend %reset;
+        @extend %row;
+        &Item {
+            align-items: center;
+            @extend %reset;
+            @extend %row;
+        }
+        &Logo {
+            width: 28px;
+            height: 22px;
+            margin-right: 8px;
+            object-fit: contain;
+            @extend %reset;
+        }
+        &Name {
+            color: #f8f8f8;
+            font-size: 20px;
+            font-family: 'Medium';
+            @extend %reset;
+        }
+        &Support {
+            margin: 0 16px;
+            color: #f8f8f8;
+            font-size: 20px;
+            font-family: 'Medium';
+            @extend %reset;
+        }
+    }
+    &__stage {
+        margin-top: 12px;
+        color: #606060;
+        font-family: 'Medium';
+        @extend %reset;
+    }
+}

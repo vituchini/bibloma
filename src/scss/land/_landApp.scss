@@ -1,0 +1,230 @@
+.landApp {
+    position: relative;
+    width: 100%;
+    padding: 150px 0 150px 0;
+    overflow: hidden;
+    @extend %reset;
+    @extend %section;
+    @include media(0, 1050px) {
+        padding: 32px 0;
+    }
+    &__inner {
+        @extend %reset;
+        @extend %innerLand;
+    }
+    &__content {
+        position: relative;
+        width: 100%;
+        padding: 240px 0;
+        @extend %reset;
+        @extend %row;
+        @include media(0, 1180px) {
+            flex-direction: column;
+            padding: 0;
+        }
+        &+& {
+            margin-top: 100px;
+            @include media(0, 1050px) {
+                margin-top: 32px;
+            }
+        }
+        &:nth-child(2n + 1) {
+            justify-content: flex-end;
+            @include media(0, 1180px) {
+                justify-content: flex-start;
+            }
+        }
+        &:nth-child(2n + 1) &Image {
+            left: -50%;
+            margin-top: 20px;
+            margin-left: 200px;
+            @include media(0, 1500px) {
+                margin-left: 0;
+            }
+            @include media(0, 1320px) {
+                margin-left: -200px;
+            }
+            @include media(0, 1180px) {
+                left: 0;
+                height: auto;
+                margin-left: 0;
+            }
+        }
+        &:nth-child(2n) &Image {
+            right: -50%;
+            height: 1050px;
+            margin-top: 20px;
+            margin-right: 160px;
+            @include media(0, 1500px) {
+                margin-right: 0;
+            }
+            @include media(0, 1320px) {
+                margin-right: -160px;
+            }
+            @include media(0, 1180px) {
+                right: 0;
+                width: 116%;
+                height: auto;
+                margin-right: 0;
+                margin-left: -8%;
+            }
+        }
+        &Image {
+            position: absolute;
+            top: 50%;
+            height: 880px;
+            object-fit: contain;
+            transform: translate(0, -50%);
+            @extend %reset;
+            @include media(0, 1180px) {
+                position: relative;
+                top: 0;
+                width: 100%;
+                height: auto;
+                margin-bottom: 64px;
+                transform: translate(0, 0);
+            }
+            @include media(0, 1050px) {
+                margin-bottom: 32px;
+            }
+        }
+        &Item {
+            width: 47%;
+            @extend %reset;
+            @extend %col;
+            @include media(0, 1180px) {
+                width: 100%;
+                max-width: 720px;
+            }
+        }
+        &:nth-child(2n + 1) &Item {
+            align-items: flex-end;
+            text-align: right;
+            @include media(0, 1180px) {
+                align-items: flex-start;
+                text-align: left;
+            }
+        }
+        &Title {
+            max-width: 100%;
+            margin-bottom: 32px;
+            @extend %reset;
+            @include media(0, 1050px) {
+                margin-bottom: 24px;
+            }
+        }
+        &Description {
+            max-width: 90%;
+            margin-bottom: 44px;
+            color: #bfbfbf;
+            font-size: 18px;
+            font-family: 'Light';
+            line-height: 1.2;
+            @extend %reset;
+            @include media(0, 1050px) {
+                margin-bottom: 32px;
+                font-size: 16px;
+                line-height: 1.3;
+            }
+        }
+        &Button {
+            align-items: center;
+            justify-content: center;
+            width: 232px;
+            height: 54px;
+            font-size: 20px;
+            background: $colorMain;
+            border-radius: 4px;
+            @extend %reset;
+            @extend %click;
+            @extend %row;
+            @include media(0, 1050px) {
+                width: 100%;
+                max-width: 300px;
+                height: 48px;
+                font-size: 18px;
+            }
+            @include media(0, 800px) {
+                max-width: none;
+            }
+        }
+        &Devices {
+            align-items: center;
+            width: 100%;
+            margin-bottom: 32px;
+            @extend %reset;
+            @extend %row;
+            @include media(0, 1050px) {
+                justify-content: space-between;
+                max-width: 320px;
+            }
+            @include media(0, 800px) {
+                max-width: none;
+            }
+        }
+        &Device {
+            align-items: center;
+            @extend %reset;
+            @extend %col;
+            &+& {
+                margin-left: 94px;
+                @include media(0, 1050px) {
+                    margin-left: 0;
+                }
+            }
+            &Icon {
+                width: 44px;
+                height: 44px;
+                margin-bottom: 8px;
+                object-fit: contain;
+            }
+            &._browser &Icon {
+                width: 38px;
+            }
+            &._phone &Icon {
+                width: 28px;
+            }
+            &Description {
+                max-width: 100%;
+                color: #f8f8f8;
+                font-size: 16px;
+                font-family: "Regular";
+                text-align: center;
+                @extend %reset;
+                @include media(0, 1050px) {
+                    font-size: 15px;
+                }
+            }
+        }
+        &Downloads {
+            align-items: center;
+            width: 100%;
+            @extend %reset;
+            @extend %row;
+            @include media(0, 1050px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        &Download {
+            width: 268px;
+            height: 62px;
+            @extend %reset;
+            @include media(0, 1050px) {
+                width: 100%;
+                max-width: 320px;
+                height: 54px;
+            }
+            @include media(0, 800px) {
+                max-width: none;
+            }
+            &+& {
+                margin-left: 32px;
+                @include media(0, 1050px) {
+                    margin-top: 16px;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}

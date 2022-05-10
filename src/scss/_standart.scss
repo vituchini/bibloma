@@ -1,0 +1,130 @@
+﻿%reset {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: unset;
+    text-decoration: none;
+    list-style-type: none;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    // -webkit-font-smoothing: antialiased;
+}
+
+html {
+    width: 100%;
+    @extend %reset;
+}
+
+%MEDIA {
+    &._mobile {
+        @include mediaMin(501px) {
+            display: none;
+        }
+    }
+    &._desktop {
+        @include media(0, 800px) {
+            display: none;
+        }
+    }
+}
+
+%section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    @include media(0, 800px) {
+        padding: 5rem 0;
+    }
+}
+
+%inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: $widthInner;
+}
+
+%innerLand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: calc(#{$widthInnerLand} + 60px);
+    padding: 0 30px;
+    @include media(0, 1050px) {
+        width: 92vw;
+        padding: 0;
+    }
+}
+
+%row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+%col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+@mixin inParent($name) {
+    #{$name} & {
+        @content;
+    }
+}
+
+%cabinetPage {
+    position: relative;
+    z-index: 1;
+    padding-right: 84px;
+    padding-left: 60px;
+    @include media(0, 1550px) {
+        padding-right: 32px;
+        padding-left: 32px;
+    }
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: rgba(248, 248, 248, 0.05);
+        content: "";
+        @include blur(120px);
+    }
+}
+
+._strike {
+    position: relative;
+    &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        width: calc(100% + 2px);
+        height: 1px;
+        margin-top: 2px;
+        transform: translate(-50%, -50%);
+        content: "";
+    }
+}
+
+@mixin ofStrike() {
+    & ._strike::before {
+        @content;
+    }
+}
