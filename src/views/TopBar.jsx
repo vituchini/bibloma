@@ -6,6 +6,7 @@ import Icon from '../components/Icon.jsx';
 import DropList from '../components/DropList.jsx';
 import { dispatcher, exit } from '../redux/redux';
 import changePage from '../functions/changePage';
+import { setItem } from '../utils/storage';
 
 class TopBar extends React.Component {
   constructor(props) {
@@ -87,7 +88,7 @@ class TopBar extends React.Component {
         },
         name: 'BattleStar',
         description:
-          'Вы вступили в новую лигу! Играйте на профессиональных турнирах и побеждайте в выс...',
+          'Вы вступили в новую лигу! Играйте на профессиональных Турнірах и побеждайте в выс...',
       },
       {
         preview: {
@@ -137,7 +138,7 @@ class TopBar extends React.Component {
       },
       {
         key: 'history',
-        name: 'История матчей',
+        name: 'Історія матчів',
         preview: {
           type: 'icon',
           link: 'cabinet/history',
@@ -146,7 +147,7 @@ class TopBar extends React.Component {
       },
       {
         key: 'personal',
-        name: 'Личные данные',
+        name: 'Особисті дані',
         preview: {
           type: 'icon',
           link: 'cabinet/personal',
@@ -155,7 +156,7 @@ class TopBar extends React.Component {
       },
       {
         key: 'wallet',
-        name: 'Кошелёк',
+        name: 'Гаманець',
         preview: {
           type: 'icon',
           link: 'cabinet/wallet',
@@ -164,33 +165,27 @@ class TopBar extends React.Component {
       },
       {
         key: 'settings',
-        name: 'Параметры',
+        name: 'Параметри',
         preview: {
           type: 'icon',
           link: 'cabinet/settings',
           url: 'cabinet-list-settings',
         },
       },
-      {
-        key: 'blacklist',
-        name: 'Черный список',
-        preview: {
-          type: 'icon',
-          link: 'cabinet/blacklist',
-          url: 'cabinet-list-blacklist',
-        },
-      },
+
       {
         key: 'exit',
-        name: 'Выйти из аккаунта',
+        name: 'Вийти з акаунту',
         preview: {
           type: 'icon',
           url: 'exit',
         },
         handler: function () {
-          changePage("");
+          setItem('info', null);
+          changePage('');
+
           exit();
-        }
+        },
       },
     ],
   };
@@ -316,12 +311,11 @@ class TopBar extends React.Component {
               <i className="topBar__searchIcon">
                 <Icon name="search" />
               </i>
-              <input type="text" className="topBar__searchInput" placeholder="Поиск" />
+              <input type="text" className="topBar__searchInput" placeholder="Пошук" />
             </div>
             {inCabinet === true && (
               <>
                 <div className="topBar__balance">
-                  <p className="topBar__balanceSupport">Баланс</p>
                   <i className="topBar__balanceAdd">
                     <Icon name="balance-add" />
                   </i>
@@ -364,11 +358,15 @@ class TopBar extends React.Component {
                   </div>
                   {isShowMenu === true && (
                     <div className="topBar__userDrop">
-                      <DropList config={this.menu} handler={(data) => {
-                        if (data.hasOwnProperty('handler') && data.handler){
-                          data.handler();
-                        }
-                      }} callback={this.handlerDrop} />
+                      <DropList
+                        config={this.menu}
+                        handler={(data) => {
+                          if (data.hasOwnProperty('handler') && data.handler) {
+                            data.handler();
+                          }
+                        }}
+                        callback={this.handlerDrop}
+                      />
                     </div>
                   )}
                 </div>
@@ -383,7 +381,7 @@ class TopBar extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    user:state.user,
+    user: state.user,
     levels: state.levels,
     currentGame: state.currentGame,
   };

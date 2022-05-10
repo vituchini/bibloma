@@ -26,7 +26,7 @@ class LandInstructions extends React.Component {
     },
     {
       icon: 'instructions-icon-5.png',
-      description: 'Легко выводи выигрыш',
+      description: 'Легко выводи выігриш',
     },
   ];
 

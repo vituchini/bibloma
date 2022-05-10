@@ -82,7 +82,7 @@ class OfferOrder extends React.Component {
             </div>
           </div>
           <div className="infoPartnersOffer__formButton">
-            <div className="infoPartnersOffer__button">Подать заявку</div>
+            <div className="infoPartnersOffer__button">Подати заявку</div>
           </div>
         </div>
       </>

@@ -21,11 +21,11 @@ class Settings extends React.Component {
   notifications = [
     {
       key: 'news',
-      content: 'Новости платформы',
+      content: 'Новини платформы',
     },
     {
       key: 'tournaments',
-      content: 'Новые турниры',
+      content: 'Нові Турніри',
     },
     {
       key: 'messages',
@@ -234,12 +234,12 @@ class Settings extends React.Component {
         </div>
         <div className="cabinetSettings__block _wide">
           <div className="cabinetSettings__blockTitle">
-            <h3 className="title">Регион</h3>
+            <h3 className="title">Регіон</h3>
           </div>
           <div className="cabinetSettings__blockContent">
             <div className="cabinetSettings__blockItems">
               <div className="cabinetSettings__blockItem _action">
-                <p className="cabinetSettings__blockDescription">Регион</p>
+                <p className="cabinetSettings__blockDescription">Регіон</p>
               </div>
               <div className="cabinetSettings__blockItem _content">
                 <div className="cabinetSettings__blockSelect">
@@ -313,7 +313,7 @@ class Settings extends React.Component {
             <i className="cabinetSettings__exitIcon">
               <Icon name="exit" />
             </i>
-            Выйти из аккаунта
+            Вийти з акаунту
           </div>
         </div>
       </div>

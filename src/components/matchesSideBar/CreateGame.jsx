@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import {  message  } from 'antd';
+import { message } from 'antd';
 
 import Icon from '../Icon.jsx';
 import changePage from '../../functions/changePage.js';
@@ -20,23 +20,22 @@ class CreateGame extends React.Component {
       size: 'csgo.1vs1',
       price: 100,
       mode: 'de_mirage',
-      name: 'Без названия',
+      name: 'Без назви',
       anticheat: true,
     };
   }
 
-  validateForm(){
-
-    if (this.state.name === ""){
-      message.info("Поле лобби пустое!");
+  validateForm() {
+    if (this.state.name === '') {
+      message.info('Поле лобби пустое!');
       return false;
-    } 
+    }
 
     return true;
   }
 
-  async createGameLobby(){
-    if (this.validateForm()){
+  async createGameLobby() {
+    if (this.validateForm()) {
       const gameData = {
         name: this.state.name,
         mode: this.state.size,
@@ -67,7 +66,7 @@ class CreateGame extends React.Component {
     });
   }
 
-  handleCheckboxChange(e){
+  handleCheckboxChange(e) {
     const checked = e.target.checked;
     const name = e.target.name;
     console.log(checked, name);
@@ -79,17 +78,17 @@ class CreateGame extends React.Component {
   sizes = [
     {
       content: '1х1',
-      value: "csgo.1vs1",
+      value: 'csgo.1vs1',
     },
     {
       content: '5х5',
-      value: "csgo.5vs5",
+      value: 'csgo.5vs5',
     },
   ];
 
   prices = [
     {
-      value: 100,  
+      value: 100,
     },
     {
       value: 300,
@@ -111,19 +110,19 @@ class CreateGame extends React.Component {
   modes = [
     {
       content: 'Mirage',
-      value: "de_mirage",
+      value: 'de_mirage',
     },
     {
       content: 'Inferno',
-      value: "de_inferno",
+      value: 'de_inferno',
     },
     {
       content: 'Lake',
-      value: "de_lake",
+      value: 'de_lake',
     },
     {
       content: 'Nuke',
-      value: "de_nuke",
+      value: 'de_nuke',
     },
   ];
 
@@ -132,13 +131,20 @@ class CreateGame extends React.Component {
       <>
         <div className="matchesSideBar__game">
           <div className="matchesSideBar__gameItem">
-            <p className="matchesSideBar__gameSupport">Лобби</p>
+            <p className="matchesSideBar__gameSupport">Лоббі</p>
             <div className="matchesSideBar__gameContent">
               <div className="matchesSideBar__gameLabels">
                 {this.sizes.map((size, key) => (
                   <div className="matchesSideBar__gameLabel" key={key}>
                     <label className="blockCheckbox _medium">
-                      <input type="radio" checked={size.value === this.state.size} onChange={this.handleChange} value={size.value} className="blockCheckbox__input" name="size" />
+                      <input
+                        type="radio"
+                        checked={size.value === this.state.size}
+                        onChange={this.handleChange}
+                        value={size.value}
+                        className="blockCheckbox__input"
+                        name="size"
+                      />
                       <div className="blockCheckbox__view">{size.content}</div>
                     </label>
                   </div>
@@ -167,13 +173,22 @@ class CreateGame extends React.Component {
                   className="matchesSideBar__gameInput"
                   placeholder="DISABLED"
                 />
-                <p className="matchesSideBar__gameFieldSupport"><span className="_strike">BS</span></p>
+                <p className="matchesSideBar__gameFieldSupport">
+                  <span className="_strike">BS</span>
+                </p>
               </div>
               <div className="matchesSideBar__gameLabels">
                 {this.prices.map((price, key) => (
                   <div className="matchesSideBar__gameLabel _medium" key={key}>
                     <label className="blockCheckbox _medium">
-                      <input type="radio" checked={price.value === Number(this.state.price)} value={price.value} onChange={this.handleChange} className="blockCheckbox__input" name="price" />
+                      <input
+                        type="radio"
+                        checked={price.value === Number(this.state.price)}
+                        value={price.value}
+                        onChange={this.handleChange}
+                        className="blockCheckbox__input"
+                        name="price"
+                      />
                       <div className="blockCheckbox__view">
                         {price.value}&nbsp;<span className="_strike">BS</span>
                       </div>
@@ -190,7 +205,14 @@ class CreateGame extends React.Component {
                 {this.modes.map((mode, key) => (
                   <div className="matchesSideBar__gameLabel" key={key}>
                     <label className="blockCheckbox _medium">
-                      <input type="checkbox" checked={mode.value === this.state.mode} value={mode.value} onChange={this.handleChange}  className="blockCheckbox__input" name="mode" />
+                      <input
+                        type="checkbox"
+                        checked={mode.value === this.state.mode}
+                        value={mode.value}
+                        onChange={this.handleChange}
+                        className="blockCheckbox__input"
+                        name="mode"
+                      />
                       <div className="blockCheckbox__view _white">{mode.content}</div>
                     </label>
                   </div>
@@ -200,10 +222,16 @@ class CreateGame extends React.Component {
           </div>
           <label className="matchesSideBar__gameCheckbox">
             <div className="matchesSideBar__gameCheckboxInner">
-              <p className="matchesSideBar__gameCheckboxSupport">Античит</p>
+              <p className="matchesSideBar__gameCheckboxSupport">Античіт</p>
               <div className="matchesSideBar__gameCheckboxContent">
                 <label className="fieldCheckbox">
-                  <input checked={this.state.anticheat} name="anticheat" onChange={this.handleCheckboxChange} type="checkbox" className="fieldCheckbox__input" />
+                  <input
+                    checked={this.state.anticheat}
+                    name="anticheat"
+                    onChange={this.handleCheckboxChange}
+                    type="checkbox"
+                    className="fieldCheckbox__input"
+                  />
                   <div className="fieldCheckbox__view">
                     <div className="fieldCheckbox__box">
                       <i className="fieldCheckbox__icon">
@@ -229,12 +257,11 @@ class CreateGame extends React.Component {
   }
 }
 
-
 function mapStateToProps() {
   return {};
 }
 
-export default connect(mapStateToProps,{createGame})(CreateGame);
+export default connect(mapStateToProps, { createGame })(CreateGame);
 
 CreateGame.propTypes = {
   content: PropTypes.string,

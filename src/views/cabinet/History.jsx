@@ -108,7 +108,7 @@ class History extends React.Component {
       <div className={`cabinetHistory`}>
         <div className="cabinetHistory__head">
           <div className="cabinetHistory__headTitle">
-            <h3 className="title">История матчей</h3>
+            <h3 className="title">Історія матчів</h3>
           </div>
           <div className="cabinetHistory__headFilter">
             <div className="cabinetHistory__headFilterView">

@@ -61,10 +61,10 @@ class OfferLogin extends React.Component {
             ))}
           </div>
           <div className="infoPartnersOffer__formButton">
-            <div className="infoPartnersOffer__button">Войти</div>
+            <div className="infoPartnersOffer__button">Ввійти</div>
           </div>
           <div className="infoPartnersOffer__socials">
-            <h4 className="infoPartnersOffer__socialsTitle">Или войдите через</h4>
+            <h4 className="infoPartnersOffer__socialsTitle">Чи ввійдіть через</h4>
             <div className="infoPartnersOffer__socialsItems">
               {this.socials.map((social, key) => (
                 <a

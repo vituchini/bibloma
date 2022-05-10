@@ -26,7 +26,7 @@ class LandPromo extends React.Component {
                 <h3 className="promo__title">
                   Пополни баланс сегодня и полчи +200 BS в качестве бонуса
                 </h3>
-                <div className="promo__button">Перейти в кошелёк</div>
+                <div className="promo__button">Перейти в гаманець</div>
               </div>
             </div>
           </div>

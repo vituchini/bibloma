@@ -16,8 +16,8 @@ class GameCard extends React.Component {
     map: 'Карта',
     price: 'Ставка',
     mode: 'Режим',
-    lobbi: 'Лобби',
-    counterUsers: 'Участников',
+    lobbi: 'Лоббі',
+    counterUsers: 'Учасників',
   };
 
   orderInfo = {
@@ -64,9 +64,7 @@ class GameCard extends React.Component {
                     className="gameCard__userLang"
                   />
                   <p className="gameCard__userName">{model.name}</p>
-                  <i className="gameCard__userIcon">
-                    {model.is_locked && <Icon name='locked' />}
-                  </i>
+                  <i className="gameCard__userIcon">{model.is_locked && <Icon name="locked" />}</i>
                 </div>
                 <p className="gameCard__map">{model.info.map}</p>
               </div>

@@ -29,8 +29,7 @@ class Matches extends React.Component {
     this.hideSideBar = this.hideSideBar.bind(this);
   }
 
-
-  componentDidMount(){
+  componentDidMount() {
     this.props.userInfo(userDataConfig);
   }
 
@@ -40,7 +39,7 @@ class Matches extends React.Component {
     {
       hrefs: ['', undefined],
       key: 'index',
-      contentLink: 'ОТКРЫТЫЕ МАТЧИ',
+      contentLink: 'ВІДКРИТІ МАТЧІ',
       render() {
         return <Index />;
       },
@@ -48,7 +47,7 @@ class Matches extends React.Component {
     {
       hrefs: ['streams'],
       key: 'streams',
-      contentLink: 'ТРАНСЛЯЦИИ',
+      contentLink: 'ТРАНСЛЯЦІЇ',
       render() {
         return <Streams />;
       },
@@ -56,7 +55,7 @@ class Matches extends React.Component {
     {
       hrefs: ['complete'],
       key: 'complete',
-      contentLink: 'ЗАВЕРШЁННЫЕ',
+      contentLink: '',
       render() {
         return <Index />;
       },
@@ -111,7 +110,7 @@ class Matches extends React.Component {
     });
   }
 
-  hideSideBar(){
+  hideSideBar() {
     this.setState((state) => {
       const newState = { ...state };
       newState.isShowSideBar = false;
@@ -129,16 +128,16 @@ class Matches extends React.Component {
   render() {
     const stats = [
       {
-        counter: this.props.status?.online || '0',
-        description: 'игроков онлайн',
+        counter: this.props.status?.online || Math.trunc(Math.random() * 1000),
+        description: 'граців онлайн',
       },
       {
-        counter: this.props.status?.matches || '0',
-        description: 'матчей сыграно',
+        counter: this.props.status?.matches || Math.trunc(Math.random() * 1000),
+        description: 'матчів зіграно',
       },
       {
-        counter: this.props.status?.total_bank || '0',
-        description: 'суммарный банк',
+        counter: this.props.status?.total_bank || Math.trunc(Math.random() * 1000),
+        description: 'сума банку',
       },
     ];
 

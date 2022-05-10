@@ -31,7 +31,7 @@ class InfoSupport extends React.Component {
     {
       hrefs: ['wallet'],
       key: 'wallet',
-      contentLink: 'Кошелёк',
+      contentLink: 'Гаманець',
       icon: 'cabinet-list-wallet',
       render() {
         return <Wallet />;
@@ -40,7 +40,7 @@ class InfoSupport extends React.Component {
     {
       hrefs: ['personal'],
       key: 'personal',
-      contentLink: 'Личные данные',
+      contentLink: 'Особисті дані',
       icon: 'cabinet-list-personal',
       render() {
         return <Personal />;
@@ -49,7 +49,7 @@ class InfoSupport extends React.Component {
     {
       hrefs: ['settings'],
       key: 'settings',
-      contentLink: 'Параметры',
+      contentLink: 'Параметри',
       icon: 'cabinet-list-settings',
       render() {
         return <Settings />;

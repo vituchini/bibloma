@@ -22,26 +22,26 @@ class FriendsIndex extends React.Component {
     {
       avatar: 'avatar-image.jpg',
       name: 'JohnTrawolta_4',
-      text: 'С другой стороны реализация намеченных плановых заданий обеспе чивает широкому кругу (специалистов) участие в форми ровании систем массового участия.',
+      text: 'Cool!!!',
       date: '12:15',
     },
     {
       avatar: 'avatar-image.jpg',
       name: 'JohnTrawolta_4',
-      text: 'С другой стороны реализация намеченных плановых заданий обеспе чивает широкому кругу (специалистов) участие в форми ровании систем массового участия.',
+      text: 'Cool!!!',
       date: '12:15',
       isMe: true,
     },
     {
       avatar: 'avatar-image.jpg',
       name: 'JohnTrawolta_4',
-      text: 'С другой стороны реализация намеченных плановых заданий обеспе чивает широкому кругу (специалистов) участие в форми ровании систем массового участия.',
+      text: 'Cool!!!',
       date: '12:15',
     },
     {
       avatar: 'avatar-image.jpg',
       name: 'JohnTrawolta_4',
-      text: 'С другой стороны реализация намеченных плановых заданий обеспе чивает широкому кругу (специалистов) участие в форми ровании систем массового участия.',
+      text: 'Cool!!!',
       date: '12:15',
       isMe: true,
     },
@@ -78,7 +78,7 @@ class FriendsIndex extends React.Component {
             <input
               type="text"
               className="friendsChat__searchInput"
-              placeholder="Поиск по друзьям"
+              placeholder="Пошук по друзьям"
             />
           </div>
           <div

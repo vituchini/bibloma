@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Loader from 'react-loader-spinner';
-import {  message  } from 'antd';
+import { message } from 'antd';
 
 import Icon from '../../../components/Icon.jsx';
 import { changeTeam, leaveGame, setReady, setUnReady, startGame } from '../../../redux/redux.js';
@@ -22,20 +22,19 @@ class MatchesTeams extends React.Component {
     this.findUserAmoungPlayers = this.findUserAmoungPlayers.bind(this);
     this.isThisUser = this.isThisUser.bind(this);
     this.getPlayerInfo = this.getPlayerInfo.bind(this);
-    
   }
 
   changeTeamGame(currentTeamId, wantedTeamId) {
     console.log(currentTeamId, wantedTeamId);
     if (currentTeamId === wantedTeamId) {
-      message.info({content:'Вы уже ввошли за эту команду!',className: 'message'});
+      message.info({ content: 'Вы уже ввошли за эту команду!', className: 'message' });
     } else {
       this.props.changeTeam(wantedTeamId);
       console.log('Team changed');
     }
   }
 
-  findUserAmoungPlayers(players){
+  findUserAmoungPlayers(players) {
     return players.find((player) => {
       return player.user_id === this.props.user.id;
     });
@@ -97,16 +96,16 @@ class MatchesTeams extends React.Component {
     };
   }
 
-  getPlayersPlaces(game, mode){
+  getPlayersPlaces(game, mode) {
     const modePrefix = `${game}.`;
     const places = mode.slice(modePrefix.length);
     console.log(places);
     const placesVariants = {
-      "1vs1": 1,
-      "5vs5": 5,
-      "10vs10": 10,
-    }
-    return placesVariants[`${places}`] || placesVariants["5vs5"];
+      '1vs1': 1,
+      '5vs5': 5,
+      '10vs10': 10,
+    };
+    return placesVariants[`${places}`] || placesVariants['5vs5'];
   }
 
   teams = [
@@ -193,7 +192,7 @@ class MatchesTeams extends React.Component {
     map: 'Карта',
     price: 'Ставка',
     mode: 'Режим',
-    counterUsers: 'Участников',
+    counterUsers: 'Учасників',
     id: 'ID',
   };
 
@@ -249,7 +248,8 @@ class MatchesTeams extends React.Component {
   }
 
   get isUserReady() {
-    return this.props.currentMatch?.players?.find((player) => player.user_id === this.props.user.id).is_ready;
+    return this.props.currentMatch?.players?.find((player) => player.user_id === this.props.user.id)
+      .is_ready;
   }
 
   get timeDiff() {
@@ -264,7 +264,7 @@ class MatchesTeams extends React.Component {
     const seconds = Math.trunc(secondsDiff - Math.trunc(secondsDiff / 60) * 60);
 
     return {
-      view: `${minutes}:${seconds.toString().length===1?`0${seconds}`:seconds}`,
+      view: `${minutes}:${seconds.toString().length === 1 ? `0${seconds}` : seconds}`,
       minutes,
       seconds,
     };
@@ -276,7 +276,14 @@ class MatchesTeams extends React.Component {
     const currentLobby = this.props.currentMatch;
     const started_at = '2021-09-17T12:00:00.000000Z';
     const {
-      name, game, mode, bet_amount, csgo_map, id, players, created_at,
+      name,
+      game,
+      mode,
+      bet_amount,
+      csgo_map,
+      id,
+      players,
+      created_at,
       // , started_at
     } = currentLobby || {
       name: 'TEST GAME WRONG',
@@ -299,17 +306,17 @@ class MatchesTeams extends React.Component {
     const teams = this.getTeams(players);
     const meUser = this.findUserAmoungPlayers(players);
     const playersPlaces = this.getPlayersPlaces(game, mode);
-    if (name==='TEST GAME WRONG') return <Loader type='Puff' color={'white'} />;
+    if (name === 'TEST GAME WRONG') return <Loader type="Puff" color={'white'} />;
     return (
       <>
-        <div className='matchesGame__info'>
-          <div className='matchesGame__infoUser'>
+        <div className="matchesGame__info">
+          <div className="matchesGame__infoUser">
             <img
               src={require('../../../img/lang-ru.svg').default}
-              alt=''
-              className='matchesGame__infoUserLang'
+              alt=""
+              className="matchesGame__infoUserLang"
             />
-            <p className='matchesGame__infoUserName'>{name || 'TEST GAME'}</p>
+            <p className="matchesGame__infoUserName">{name || 'TEST GAME'}</p>
           </div>
           <div className="matchesGame__infoItems">
             {this.orderInfo.map((key) => (
@@ -349,25 +356,25 @@ class MatchesTeams extends React.Component {
 
                 return (
                   <div className={`matchesTeams__headItem ${dir}`} key={key}>
-                    <h3 className='matchesTeams__headName'>{team.name}</h3>
-                    <p className='matchesTeams__headCounter'>({team.counter})</p>
+                    <h3 className="matchesTeams__headName">{team.name}</h3>
+                    <p className="matchesTeams__headCounter">({team.counter})</p>
                   </div>
                 );
               })}
-              <div className='matchesTeams__headInfo'>
-                <i className='matchesTeams__headInfoBack'>
-                  <Icon name='teams-info-back' />
+              <div className="matchesTeams__headInfo">
+                <i className="matchesTeams__headInfoBack">
+                  <Icon name="teams-info-back" />
                 </i>
                 {/*<h4 className="matchesTeams__headInfoValue">-:-</h4>*/}
-                {started_at &&
-                <>
-                  <h4 className='matchesTeams__headInfoValue'>{this.timeDiff?.view}</h4>
-                  <p className='matchesTeams__headInfoDescription'>до начала</p>
-                </>
-                }
+                {started_at && (
+                  <>
+                    <h4 className="matchesTeams__headInfoValue">{this.timeDiff?.view}</h4>
+                    <p className="matchesTeams__headInfoDescription">до начала</p>
+                  </>
+                )}
               </div>
             </div>
-            <div className='matchesTeams__items'>
+            <div className="matchesTeams__items">
               {teams.map((team, key) => {
                 const emptyUsers = [];
                 const dir = key === 0 ? '_left' : '_right';
@@ -388,7 +395,7 @@ class MatchesTeams extends React.Component {
                         ))}
                       </div>
                       {team.users.concat(...emptyUsers).map((user, keyUser) => (
-                        <div className='matchesTeams__tableRow' key={keyUser}>
+                        <div className="matchesTeams__tableRow" key={keyUser}>
                           {this.orderCols.map((col) => this.renderCol(col, user, key + 1, meUser))}
                         </div>
                       ))}
@@ -397,18 +404,26 @@ class MatchesTeams extends React.Component {
                 );
               })}
             </div>
-            {started_at && <div className='matchesTeams__button' onClick={() => {
-              this.isUserReady ? this.props.setUnReady() : this.props.setReady();
-            }}>
-              <div>{this.isUserReady ? 'Готов' : 'Не готов'}</div>
-            </div>}
-            {!started_at && <div className='matchesTeams__button' onClick={() => {
-              this.props.startGame();
-            }}>
-              <div>Начать матч</div>
-            </div>}
+            {started_at && (
+              <div
+                className="matchesTeams__button"
+                onClick={() => {
+                  this.isUserReady ? this.props.setUnReady() : this.props.setReady();
+                }}>
+                <div>{this.isUserReady ? 'Готов' : 'Не готов'}</div>
+              </div>
+            )}
+            {!started_at && (
+              <div
+                className="matchesTeams__button"
+                onClick={() => {
+                  this.props.startGame();
+                }}>
+                <div>Начать матч</div>
+              </div>
+            )}
             <div
-              className='matchesTeams__button'
+              className="matchesTeams__button"
               onClick={() => {
                 this.props.leaveGame();
                 changePage('matches');
@@ -432,7 +447,9 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { startGame, changeTeam, leaveGame, setReady, setUnReady })(MatchesTeams);
+export default connect(mapStateToProps, { startGame, changeTeam, leaveGame, setReady, setUnReady })(
+  MatchesTeams,
+);
 
 MatchesTeams.propTypes = {
   currentGame: PropTypes.string,

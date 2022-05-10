@@ -45,9 +45,9 @@ class InfoPartnersPersonal extends React.Component {
               <div className="cabinetPersonal__blockRow _bio">
                 <div className="cabinetPersonal__blockCol _support">Био</div>
                 <div className="cabinetPersonal__blockCol _content">
-                  Значимость этих проблем настолько очевидна, что консультация с широким активом
-                  способствует подготовки и реализации позиций, занимаемых участниками в отношении
-                  поставленных задач
+                  Значення проблем настільки очевидна що... с широким активом способствует
+                  подготовки и реализации позиций, занимаемых участниками в отношении поставленных
+                  задач
                 </div>
               </div>
               <div className="cabinetPersonal__blockRow _date">

@@ -17,8 +17,8 @@ class TournamentsTournament extends React.Component {
 
   event = {
     prize: '2 000 000 $',
-    date: '23 Окт - 7 Ноя',
-    reg: 'До 15 Окт',
+    date: '23 Тра - 7 Гру',
+    reg: 'До 15 Тра',
     teams: '9/16',
   };
 
@@ -152,7 +152,7 @@ class TournamentsTournament extends React.Component {
   links = [
     {
       key: 'grid',
-      contentLink: 'ТУРНИРНАЯ СЕТКА',
+      contentLink: 'ТурнірНАЯ СЕТКА',
       render() {
         return <Grid />;
       },
@@ -193,7 +193,7 @@ class TournamentsTournament extends React.Component {
         <div className="tournamentsTournament__items">
           <div className="tournamentsTournament__item _content">
             <div className="tournamentsTournament__preview">
-              <div className="tournamentsTournament__previewStatus">Турнир уже начался</div>
+              <div className="tournamentsTournament__previewStatus">Турнір уже начался</div>
               <img
                 src={require('../../img/tournament-image-1.png').default}
                 alt=""
@@ -215,24 +215,24 @@ class TournamentsTournament extends React.Component {
             </div>
             <div className="tournamentsTournament__about">
               <div className="tournamentsTournament__aboutBlock">
-                <h3 className="tournamentsTournament__aboutTitle">О турнире</h3>
+                <h3 className="tournamentsTournament__aboutTitle">О Турніре</h3>
                 <p className="tournamentsTournament__aboutDescription">
-                  PGL Major Stockholm 2021 — семнадцатый турнир серии Major по Counter-Strike:
-                  Global Offensive. Турнир запланированна 23 октября — 7 ноября 2021 года, место
-                  соревнований — Авичи-Арена, Стокгольм, Швеция. Призовой фонд турнира — 2 000 000
-                  $. 24 команды будут квалифицированы через серию из специальных RMR-турниров. Это
-                  второй турнир серии Major организованный румынской организацией PGL, после PGL
-                  Major: Kraków 2017. Этот турнир — первый Major после перерыва, связанного из-за
+                  PGL Major Stockholm 2021 — семнадцатый Турнір серии Major по Counter-Strike:
+                  Global Offensive. Турнір запланированна 23 Траября — 7 ноября 2021 года, место
+                  соревнований — Авичи-Арена, Стокгольм, Швеция. Призовой фонд Турніра — 2 000 000
+                  $. 24 команды будут квалифицированы через серию из специальных RMR-Турнірів. Это
+                  второй Турнір серии Major организованный румынской организацией PGL, после PGL
+                  Major: Kraków 2017. Этот Турнір — первый Major после перерыва, связанного из-за
                   пандемии коронавируса COVID-19.
                 </p>
               </div>
               <div className="tournamentsTournament__aboutBlock">
                 <h3 className="tournamentsTournament__aboutTitle">Условия проведения</h3>
                 <p className="tournamentsTournament__aboutDescription">
-                  Vесто соревнований — Авичи-Арена, Стокгольм, Швеция. Призовой фонд турнира — 2 000
-                  000 $. 24 команды будут квалифицированы через серию из специальных RMR-турниров.
-                  Это второй турнир серии Major организованный румынской организацией PGL, после PGL
-                  Major: Kraków 2017. Этот турнир — первый Major после перерыва, связанного из-за
+                  Vесто соревнований — Авичи-Арена, Стокгольм, Швеция. Призовой фонд Турніра — 2 000
+                  000 $. 24 команды будут квалифицированы через серию из специальных RMR-Турнірів.
+                  Это второй Турнір серии Major организованный румынской организацией PGL, после PGL
+                  Major: Kraków 2017. Этот Турнір — первый Major после перерыва, связанного из-за
                   пандемии коронавируса COVID-19.
                 </p>
               </div>
@@ -242,7 +242,7 @@ class TournamentsTournament extends React.Component {
             <div className="tournamentsTournament__nav">
               <div className="tournamentsTournament__navBlock">
                 <p className="tournamentsTournament__navSupport">Даты</p>
-                <p className="tournamentsTournament__navContent">23 Окт - 7 Ноя</p>
+                <p className="tournamentsTournament__navContent">23 Тра - 7 Гру</p>
               </div>
               <div className="tournamentsTournament__navBlock">
                 <p className="tournamentsTournament__navSupport">Призовой фонд</p>
@@ -253,7 +253,7 @@ class TournamentsTournament extends React.Component {
                 <p className="tournamentsTournament__navContent">ESEA RELEGATION PGL</p>
               </div>
               <div className="tournamentsTournament__navBlock">
-                <p className="tournamentsTournament__navSupport">Команды (23)</p>
+                <p className="tournamentsTournament__navSupport">Команди (23)</p>
                 <div className="tournamentsTournament__navTeams">
                   <div className="tournamentsTournament__navTeamsBox">
                     {this.teams.map((team, key) => (
@@ -272,7 +272,7 @@ class TournamentsTournament extends React.Component {
                   </div>
                   <p className="tournamentsTournament__navTeamsShow">Посмотреть все команды</p>
                 </div>
-                <div className="tournamentsTournament__navButton _grey">Подать заявку</div>
+                <div className="tournamentsTournament__navButton _grey">Подати заявку</div>
               </div>
               <div className="tournamentsTournament__navList">
                 <div className="tournamentsTournament__navListName">
@@ -305,7 +305,7 @@ class TournamentsTournament extends React.Component {
           </div>
         </div>
         <div className="tournamentsTournament__games">
-          <p className="tournamentsTournament__gamesSupport">Главные игры турнира</p>
+          <p className="tournamentsTournament__gamesSupport">Главные ігри Турніра</p>
           <div className="tournamentsTournament__gamesItems">
             {this.games.map((game, key) => (
               <div className="tournamentsTournament__gamesItem" key={key}>

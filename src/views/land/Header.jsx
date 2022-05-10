@@ -104,13 +104,15 @@ class LandHeader extends React.Component {
             <p className="landHeader__topName">Для партнёров</p>
             <div className="landHeader__topActions">
               <div className="landHeader__topButtons">
-                <div className='landHeader__topButton'>
-                  <i className='landHeader__topButtonIcon'>
-                    <Icon name='download' />
+                <div className="landHeader__topButton">
+                  <i className="landHeader__topButtonIcon">
+                    <Icon name="download" />
                   </i>
                   Cкачать клиент
                 </div>
-                <div className='landHeader__topButton _main' onClick={() => changePage(`auth`)}>Создать аккаунт</div>
+                <div className="landHeader__topButton _main" onClick={() => changePage(`auth`)}>
+                  Создать аккаунт
+                </div>
               </div>
               <div className="landHeader__topLang">
                 <div className="landHeader__topLangView">Ru</div>
@@ -124,7 +126,7 @@ class LandHeader extends React.Component {
             alt=""
             className={`landHeader__logo`}
           />
-          <h1 className="landHeader__title">Соревновательные матчи и&nbsp;турниры</h1>
+          <h1 className="landHeader__title">Соревновательные матчи и&nbsp;Турніры</h1>
           <p className="landHeader__description">
             Добро пожаловать на стартовую страницу уникального проекта Battlestar, который погрузит
             вас в незабываемую атмосферу игрового соперничества, побед и новых достижений. Играйте с

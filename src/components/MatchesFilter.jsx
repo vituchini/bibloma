@@ -203,7 +203,7 @@ class MatchesFilter extends React.Component {
                               <Icon name="done-bold" />
                             </i>
                           </div>
-                          <p className="fieldCheckbox__content">{price.value}₽</p>
+                          <p className="fieldCheckbox__content">{price.value}$</p>
                         </div>
                       </label>
                     </div>
@@ -214,14 +214,14 @@ class MatchesFilter extends React.Component {
                     <i className="matchesSideBar__buttonIcon">
                       <Icon name="users-done-bold" />
                     </i>
-                    Автоподбор матча
+                    Автопідбір матча
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div className="matchesFilter__item">
-            <div className="matchesFilter__itemHead">Карты</div>
+            <div className="matchesFilter__itemHead">Карти</div>
             <div className="matchesFilter__itemContent">
               <div className="matchesFilter__modes">
                 {this.modes.map((mode, key) => (
@@ -252,7 +252,7 @@ class MatchesFilter extends React.Component {
             </div>
           </div>
           <div className="matchesFilter__item">
-            <div className="matchesFilter__itemHead">Режим игры</div>
+            <div className="matchesFilter__itemHead">Режим ігри</div>
             <div className="matchesFilter__itemContent">
               <div className="matchesFilter__modes">
                 {this.sizes.map((size, key) => (
@@ -283,13 +283,13 @@ class MatchesFilter extends React.Component {
             </div>
           </div>
           <div className="matchesFilter__item">
-            <div className="matchesFilter__itemHead">Регион</div>
+            <div className="matchesFilter__itemHead">Регіон</div>
             <div className="matchesFilter__itemContent"></div>
           </div>
         </div>
         <label className="matchesFilter__checkbox">
           <div className="matchesFilter__checkboxInner">
-            <p className="matchesFilter__checkboxSupport">Античит</p>
+            <p className="matchesFilter__checkboxSupport">Античіт</p>
             <div className="matchesFilter__checkboxContent">
               <label className="fieldCheckbox">
                 <input

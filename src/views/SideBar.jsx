@@ -15,7 +15,7 @@ class SideBar extends React.Component {
     {
       key: 'index',
       href: 'index',
-      contentLink: 'Главная',
+      contentLink: 'Головна',
       icon: 'sidebar-index',
     },
     {
@@ -27,20 +27,14 @@ class SideBar extends React.Component {
     {
       key: 'tournaments',
       href: 'tournaments',
-      contentLink: 'Турниры',
+      contentLink: 'Турніри',
       icon: 'sidebar-tournaments',
     },
     {
       key: 'teams',
       href: 'teams',
-      contentLink: 'Команды',
+      contentLink: 'Команди',
       icon: 'sidebar-teams',
-    },
-    {
-      key: 'friends',
-      href: 'friends',
-      contentLink: 'Друзья',
-      icon: 'sidebar-friends',
     },
   ];
 

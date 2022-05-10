@@ -25,37 +25,38 @@ class Wallet extends React.Component {
         return (
           <>
             <div className="cabinetWallet__head">
-              <div className='cabinetWallet__headItem _card'>
+              <div className="cabinetWallet__headItem _card">
                 <img
                   src={require('../../img/wallet-card.svg').default}
-                  alt=''
-                  className='cabinetWallet__headCard'
+                  alt=""
+                  className="cabinetWallet__headCard"
                 />
-                <div className='cabinetWallet__headContents'>
-                  <p className='cabinetWallet__headContent'>ID {user?.id}</p>
-                  <p className='cabinetWallet__headContent'>{user?.name}</p>
+                <div className="cabinetWallet__headContents">
+                  <p className="cabinetWallet__headContent">ID {user?.id}</p>
+                  <p className="cabinetWallet__headContent">{user?.name}</p>
                 </div>
               </div>
-              <div className='cabinetWallet__headItem _info'>
-                <h3 className='cabinetWallet__headTitle'>
+              <div className="cabinetWallet__headItem _info">
+                <h3 className="cabinetWallet__headTitle">
                   Подписка:{' '}
                   <a
-                    href='/cabinet/wallet/tariffs'
+                    href="/cabinet/wallet/tariffs"
                     onClick={(e) => {
                       e.preventDefault();
                       changePage(`cabinet/wallet/tariffs`);
                     }}>
-                    {user?.subscription ? (user.subscription[0]?.toUpperCase() + user.subscription?.slice(1)) : '-'}
+                    {user?.subscription
+                      ? user.subscription[0]?.toUpperCase() + user.subscription?.slice(1)
+                      : '-'}
                   </a>
                 </h3>
-                <p className='cabinetWallet__headSupport'>Баланс</p>
-                <p className='cabinetWallet__headPrice'>
-                  {user?.balance} <span className='_strike'>BS</span>
+                <p className="cabinetWallet__headPrice">
+                  {user?.balance} <span className="_strike">BS</span>
                 </p>
                 <img
                   src={require('../../img/wallet-diagram.svg').default}
-                  alt=''
-                  className='cabinetWallet__headBack'
+                  alt=""
+                  className="cabinetWallet__headBack"
                 />
               </div>
             </div>
@@ -114,7 +115,7 @@ class Wallet extends React.Component {
             </div>
             <div className="cabinetWallet__history">
               <div className="cabinetWallet__historyTitle">
-                <h3 className="title">История транзакций</h3>
+                <h3 className="title">Історія транзакцій</h3>
               </div>
               <div className="cabinetWallet__historyContent">
                 <TransferTable items={this.items} />

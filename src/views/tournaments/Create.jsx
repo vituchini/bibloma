@@ -158,7 +158,7 @@ class TournamentsCreate extends React.Component {
                 <input
                   type="text"
                   className="tournamentsCreate__input"
-                  placeholder="Введите название турнира*"
+                  placeholder="Введите название Турніра*"
                 />
               </div>
               <div className="tournamentsCreate__field">
@@ -343,7 +343,7 @@ class TournamentsCreate extends React.Component {
           </div>
           <div className="tournamentsCreate__item _info">
             <div className="tournamentsCreate__info">
-              <h3 className="tournamentsCreate__infoTitle">Создание турнира</h3>
+              <h3 className="tournamentsCreate__infoTitle">Создание Турніра</h3>
               <p className="tournamentsCreate__infoDescription">
                 Равным образом реали зация нам еченных плановых зад аний спос обствует подгот овки и
                 реали зации соотв етствующий усло вий акт ивизации. Не следу ет, одна ко забыв ать,

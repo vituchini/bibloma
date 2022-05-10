@@ -18,7 +18,7 @@ class MatchesStream extends React.Component {
     name: 'PlayFair Display$$$',
     info: {
       map: 'Mirage',
-      price: '5000 ₽ ',
+      price: '5000 $ ',
       mode: '5x5',
       usersCounter: '8/10',
       id: '54692725',
@@ -29,7 +29,7 @@ class MatchesStream extends React.Component {
     map: 'Карта',
     price: 'Ставка',
     mode: 'Режим',
-    usersCounter: 'Участников',
+    usersCounter: 'Учасників',
     id: 'ID',
   };
 

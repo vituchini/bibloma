@@ -7,7 +7,6 @@ import MatchesTeams from './game/Teams.jsx';
 import MatchesStats from './game/Stats.jsx';
 import { getLobbyInfo, leaveGame, resetLobby } from '../../redux/redux';
 
-
 class MatchesGame extends React.Component {
   constructor(props) {
     super(props);
@@ -24,7 +23,7 @@ class MatchesGame extends React.Component {
     {
       hrefs: ['', undefined, 'teams'],
       key: 'teams',
-      contentLink: 'КОМАНДЫ',
+      contentLink: 'КОМАНДИ',
       render() {
         return <MatchesTeams />;
       },
@@ -47,9 +46,9 @@ class MatchesGame extends React.Component {
 
     return (
       <div className={`matchesGame`}>
-        <div className='matchesGame__inner'>
-          <div className='matchesGame__head'>
-            <div className='matchesGame__links'>
+        <div className="matchesGame__inner">
+          <div className="matchesGame__head">
+            <div className="matchesGame__links">
               {this.pages.map((page, key) => (
                 <div className="matchesGame__link" key={key}>
                   <label className="checkbox">
@@ -69,7 +68,7 @@ class MatchesGame extends React.Component {
           </div>
           {currentPage.render.call(this)}
         </div>
-        <Interval id={this.props.game.id} getLobbyInfo={this.props.getLobbyInfo}/>
+        <Interval id={this.props.game.id} getLobbyInfo={this.props.getLobbyInfo} />
       </div>
     );
   }
@@ -85,20 +84,17 @@ MatchesGame.propTypes = {
   levels: PropTypes.array,
 };
 
-function Interval({ id, getLobbyInfo}) {
+function Interval({ id, getLobbyInfo }) {
   const [currentCount, setCount] = useState(10);
   const timer = () => getLobbyInfo(id);
 
-  useEffect(
-    () => {
-      if (currentCount <= 0) {
-        return;
-      }
-      const id = setInterval(timer, 1000);
-      return () => clearInterval(id);
-    },
-    [currentCount]
-  );
+  useEffect(() => {
+    if (currentCount <= 0) {
+      return;
+    }
+    const id = setInterval(timer, 1000);
+    return () => clearInterval(id);
+  }, [currentCount]);
 
-  return <></>
+  return <></>;
 }

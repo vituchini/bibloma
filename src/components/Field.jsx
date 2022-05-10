@@ -50,10 +50,7 @@ class Field extends React.Component {
         </div>
         {model.withForget === true && (
           <p className="field__forget">
-            Забыли пароль?{' '}
-            <a href="#" className="field__forgetLink">
-              Восстановить
-            </a>
+            <a href="#" className="field__forgetLink"></a>
           </p>
         )}
       </div>

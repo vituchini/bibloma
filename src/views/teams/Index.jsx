@@ -68,7 +68,7 @@ class TeamsIndex extends React.Component {
       <>
         <div className="teams__block">
           <div className="teams__blockHead">
-            <p className="teams__blockSupport">Приглашения в команды</p>
+            <p className="teams__blockSupport">Запрошення в команди</p>
           </div>
           <div className="teams__blockContent">
             {this.invites.map((team, key) => (
@@ -81,10 +81,10 @@ class TeamsIndex extends React.Component {
         </div>
         <div className="teams__block">
           <div className="teams__blockHead">
-            <p className="teams__blockSupport">Мои команды</p>
+            <p className="teams__blockSupport">Мої команди</p>
             <div className="teams__blockSort">
               <div className="teams__blockSortView">
-                <p className="teams__blockSortSupport">Сортировать</p>
+                <p className="teams__blockSortSupport">Сортувати</p>
                 <div className="teams__blockSortSelect">По рейтингу</div>
               </div>
             </div>
@@ -93,7 +93,7 @@ class TeamsIndex extends React.Component {
             <input
               type="text"
               className="teams__blockSearchInput"
-              placeholder="Поиск по командам"
+              placeholder="Пошук по командам"
             />
           </div>
           <div className="teams__blockContent">

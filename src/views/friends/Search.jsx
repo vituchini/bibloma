@@ -45,7 +45,7 @@ class FriendsSearch extends React.Component {
             <input
               type="text"
               className="friendsChat__searchInput"
-              placeholder="Поиск по никнейму"
+              placeholder="Пошук по никнейму"
             />
           </div>
           <div className="friendsChat__searchUsers">

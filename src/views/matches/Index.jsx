@@ -172,7 +172,7 @@ class MatchesIndex extends React.Component {
       },
     ],
   };
-  async componentDidMount(){
+  async componentDidMount() {
     console.log('getLobbies', this.props.getLobbies());
   }
 
@@ -180,21 +180,24 @@ class MatchesIndex extends React.Component {
     const games = this.props.lobbies;
     console.log('games', games);
     let CSGOGames;
-    if (games) CSGOGames = games.filter(el => el.game === 'csgo').map(el => {
-      console.log('EL', el);
-      return ({
-        ...el,
-        name: el.name? el.name:`Без названия id:${el.id}`,
-        image: `${el.csgo_map}.jpg`,
-        lang: 'ru',
-        info: {
-          map: el.csgo_map,
-          price: el.bet_amount,
-          mode: el.mode?.replace('csgo.', '').replace('vs', 'x'),
-          counterUsers: `${el.count_players}/10`,
-        },
-      });
-    });
+    if (games)
+      CSGOGames = games
+        .filter((el) => el.game === 'csgo')
+        .map((el) => {
+          console.log('EL', el);
+          return {
+            ...el,
+            name: el.name ? el.name : `Без назви id:${el.id}`,
+            image: `${el.csgo_map}.jpg`,
+            lang: 'ru',
+            info: {
+              map: el.csgo_map,
+              price: el.bet_amount,
+              mode: el.mode?.replace('csgo.', '').replace('vs', 'x'),
+              counterUsers: `${el.count_players}/10`,
+            },
+          };
+        });
 
     return {
       cs: CSGOGames || [],
@@ -219,12 +222,12 @@ class MatchesIndex extends React.Component {
       <div className={`matches__games _${currentView}`}>
         <div className="matches__gamesHead">
           <div className="matches__gamesHeadItem">
-            <p className="matches__gamesHeadName">Открытые лобби</p>
+            <p className="matches__gamesHeadName">Відкриті лоббі</p>
           </div>
           {currentGame === 'cs' && (
             <div className="matches__gamesHeadItem _views">
               <div className="matches__gamesHeadView">
-                Отобразить
+                Відобразити
                 {this.views.map((view, key) => (
                   <i
                     className={`matches__gamesHeadIcon ${
@@ -244,11 +247,11 @@ class MatchesIndex extends React.Component {
         <div className="matches__gamesCards">
           {this.getGames()[currentGame].map((item, key) => (
             <div
-              className='matches__gamesCard'
+              className="matches__gamesCard"
               key={key}
               onClick={() => {
                 dispatcher({ type: 'isShowPopupLoginGame', data: item });
-                setItem('currentLobbyId',item.id)
+                setItem('currentLobbyId', item.id);
               }}>
               <GameCard model={item} type={currentView} nameOfGame={currentGame} />
             </div>

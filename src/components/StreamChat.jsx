@@ -19,23 +19,23 @@ class StreamChat extends React.Component {
     {
       avatar: 'avatar-image.jpg',
       name: 'JohnTrawolta_4',
-      text: 'С другой стороны реализация намеченных плановых заданий обеспе чивает широкому кругу (специалистов) участие в форми ровании систем массового участия.',
+      text: 'Cool!!!',
     },
     {
       avatar: 'avatar-image.jpg',
       name: 'JohnTrawolta_4',
-      text: 'С другой стороны реализация намеченных плановых заданий обеспе чивает широкому кругу (специалистов) участие в форми ровании систем массового участия.',
+      text: 'Cool!!!',
       isMe: true,
     },
     {
       avatar: 'avatar-image.jpg',
       name: 'JohnTrawolta_4',
-      text: 'С другой стороны реализация намеченных плановых заданий обеспе чивает широкому кругу (специалистов) участие в форми ровании систем массового участия.',
+      text: 'Cool!!!',
     },
     {
       avatar: 'avatar-image.jpg',
       name: 'JohnTrawolta_4',
-      text: 'С другой стороны реализация намеченных плановых заданий обеспе чивает широкому кругу (специалистов) участие в форми ровании систем массового участия.',
+      text: 'Cool!!!',
       isMe: true,
     },
   ];
@@ -52,7 +52,7 @@ class StreamChat extends React.Component {
                 </i>
                 Онлайн чат
               </p>
-              <p className="chatBar__innerHeadDescription">1340 участников</p>
+              <p className="chatBar__innerHeadDescription">1340 Учасників</p>
             </div>
           </div>
           <div className="chatBar__innerContent">

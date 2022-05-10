@@ -108,7 +108,7 @@ class FriendsSearch extends React.Component {
             </div>
             <div className="cabinetStat__block">
               <div className="cabinetStat__blockItem _support">
-                <h3 className="cabinetStat__title">Стиль игры</h3>
+                <h3 className="cabinetStat__title">Стиль ігри</h3>
                 <div className="cabinetStat__infos">
                   {this.infos.map((info, key) => (
                     <div className="cabinetStat__info" key={key}>
@@ -140,7 +140,7 @@ class FriendsSearch extends React.Component {
     {
       icon: 'tournaments',
       value: '4',
-      description: 'Турнира',
+      description: 'Турніра',
     },
     {
       icon: 'rate',
@@ -298,11 +298,11 @@ class FriendsSearch extends React.Component {
               </div>
               <div className="friendsUser__userInfo">
                 <h4 className="friendsUser__userName">Kirill Richter</h4>
-                <p className="friendsUser__userStatus">в игре с 9 Окт 2018</p>
+                <p className="friendsUser__userStatus">в игре с 9 Тра 2018</p>
                 <p className="friendsUser__userDescription">
-                  Значимость этих проблем настолько очевидна, что консультация с широким активом
-                  способствует подготовки и реализации позиций, занимаемых участниками в отношении
-                  поставленных задач
+                  Значення проблем настільки очевидна що... с широким активом способствует
+                  подготовки и реализации позиций, занимаемых участниками в отношении поставленных
+                  задач
                 </p>
               </div>
             </div>
@@ -390,12 +390,12 @@ class FriendsSearch extends React.Component {
         </div>
         <div className="friendsUser__teams">
           <div className="friendsUser__teamsHead">
-            <p className="friendsUser__teamsName">Команды ({this.teams.length})</p>
+            <p className="friendsUser__teamsName">Команди ({this.teams.length})</p>
             <div className="friendsUser__teamsSearch">
               <input
                 type="text"
                 className="friendsUser__teamsSearchInput"
-                placeholder="Поиск по командам..."
+                placeholder="Пошук по командам..."
               />
             </div>
           </div>

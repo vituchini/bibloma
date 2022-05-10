@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {  message  } from 'antd';
+import { message } from 'antd';
 
 import Icon from '../Icon.jsx';
 import { dispatcher, getLobbies, joinLobby } from '../../redux/redux';
@@ -27,7 +27,7 @@ class LoginGame extends React.Component {
         } else if (data.message === 'Lobby not found') {
           this.props.getLobbies();
           message.info(data.message);
-        }else {
+        } else {
           changePage('matches');
           message.info(data.message);
         }
@@ -48,7 +48,7 @@ class LoginGame extends React.Component {
             <Icon name="close" />
           </i>
           <h3 className="popup__title _large">
-            Войти в лобби на {game.info.price} <span className="_strike">BS</span>
+            Ввійти в лобби на {game.info.price} <span className="_strike">BS</span>
           </h3>
           <p className="popup__description _wide">
             Если вы выйдете из лобби во время матча - ваш вклад будет утерян
@@ -74,7 +74,7 @@ class LoginGame extends React.Component {
               onClick={() => {
                 this.joinToMatchLobby(game);
               }}>
-              Войти в комнату
+              Ввійти в комнату
             </div>
           </div>
         </div>

@@ -14,9 +14,9 @@ class TeamCard extends React.Component {
 
   infoDescriptions = {
     rate: 'Рейтинг',
-    counterGames: 'Турниров',
-    amount: 'Выиграно',
-    counterUsers: 'Участников',
+    counterGames: 'Турнірів',
+    amount: 'Виграно',
+    counterUsers: 'Учасників',
   };
 
   infoOrder = ['rate', 'counterGames', 'amount', 'counterUsers'];

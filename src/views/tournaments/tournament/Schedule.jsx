@@ -10,7 +10,7 @@ class TournamentsTournamentSchedule extends React.Component {
 
   blocks = [
     {
-      date: '15 Окт',
+      date: '15 Тра',
       items: [
         {
           time: '13:00',
@@ -105,7 +105,7 @@ class TournamentsTournamentSchedule extends React.Component {
       ],
     },
     {
-      date: '16 Окт',
+      date: '16 Тра',
       items: [
         {
           time: '13:00',
@@ -182,7 +182,7 @@ class TournamentsTournamentSchedule extends React.Component {
       ],
     },
     {
-      date: '17 Окт',
+      date: '17 Тра',
       items: [
         {
           time: '13:00',

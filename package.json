@@ -1,7 +1,7 @@
 {
     "name": "BattleStar",
     "version": "1.0.0",
-    "homepage": "http://Myros-code.github.io/battle-star-freelance",
+    "homepage": "http://vitichka/battle-star-freelance",
     "dependencies": {
         "antd": "^4.16.13",
         "axios": "^0.21.4",

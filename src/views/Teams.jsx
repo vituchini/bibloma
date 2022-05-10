@@ -18,7 +18,7 @@ class Teams extends React.Component {
     this.getCondForHideLinks = this.getCondForHideLinks.bind(this);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.props.userInfo(userDataConfig);
   }
 
@@ -28,7 +28,7 @@ class Teams extends React.Component {
     {
       hrefs: ['', undefined, 'my'],
       key: 'my',
-      contentLink: 'МОИ КОМАНДЫ',
+      contentLink: 'МОЇ КОМАНДИ',
       render() {
         return <Index />;
       },
@@ -36,7 +36,7 @@ class Teams extends React.Component {
     {
       hrefs: ['open'],
       key: 'open',
-      contentLink: 'ОТКРЫТЫЕ КОМАНДЫ',
+      contentLink: 'Відкриті команди',
       render() {
         return <Open />;
       },
@@ -109,7 +109,7 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps,{userInfo})(Teams);
+export default connect(mapStateToProps, { userInfo })(Teams);
 
 Teams.propTypes = {
   levels: PropTypes.array,

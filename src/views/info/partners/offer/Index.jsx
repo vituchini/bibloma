@@ -19,7 +19,7 @@ class OfferIndex extends React.Component {
         <ul className="infoPartnersOffer__list">
           <li className="infoPartnersOffer__listItem">• Призы от компании BattleStar</li>
           <li className="infoPartnersOffer__listItem">
-            • Процент от выигрыша приведенных подписчиков
+            • Процент от выігриша приведенных подписчиков
           </li>
           <li className="infoPartnersOffer__listItem">
             • Подробная аналитика аудитории в личном кабинете
@@ -47,7 +47,7 @@ class OfferIndex extends React.Component {
               onClick={() => {
                 changePage(`info/partners/offer/login`);
               }}>
-              <div className="infoPartnersOffer__button">Войти</div>
+              <div className="infoPartnersOffer__button">Ввійти</div>
             </div>
           </div>
         </div>

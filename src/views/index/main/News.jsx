@@ -15,50 +15,50 @@ class IndexMainNews extends React.Component {
   articles = [
     {
       image: 'article-image-3.jpg',
-      title: 'Главные турниры октября',
-      description: 'FURIA представила помощника тренера. Отныне tacituswefewfewfwef',
-      author: 'Максим Рихтер',
-      date: '19 Окт, 2020',
+      title: 'Головні турніри літа',
+      description: 'FURIA показала нового тренера. Тепер tacituswefewfewfwef',
+      author: 'Віктор Петрович',
+      date: '22 Тра, 2022',
       views: 134,
     },
     {
       image: 'article-image-4.jpg',
-      title: 'Главные турниры октября',
-      description: 'FURIA представила помощника тренера. Отныне tacitus',
-      author: 'Максим Рихтер',
-      date: '19 Окт, 2020',
+      title: 'Головні турніри літа',
+      description: 'FURIA показала нового тренера. Тепер tacitus',
+      author: 'Віктор Петрович',
+      date: '22 Тра, 2022',
       views: 134,
     },
     {
       image: 'article-image-5.jpg',
-      title: 'Главные турниры октября',
-      description: 'FURIA представила помощника тренера. Отныне tacitus',
-      author: 'Максим Рихтер',
-      date: '19 Окт, 2020',
+      title: 'Головні турніри літа',
+      description: 'FURIA показала нового тренера. Тепер tacitus',
+      author: 'Віктор Петрович',
+      date: '22 Тра, 2022',
       views: 134,
     },
     {
       image: 'article-image-6.jpg',
-      title: 'Главные турниры октября',
-      description: 'FURIA представила помощника тренера. Отныне tacitus',
-      author: 'Максим Рихтер',
-      date: '19 Окт, 2020',
+      title: 'Головні турніри літа',
+      description: 'FURIA показала нового тренера. Тепер tacitus',
+      author: 'Віктор Петрович',
+      date: '22 Тра, 2022',
       views: 134,
     },
     {
       image: 'article-image-7.jpg',
-      title: 'Главные турниры октября',
-      description: 'FURIA представила помощника тренера. Отныне tacitus',
-      author: 'Максим Рихтер',
-      date: '19 Окт, 2020',
+      title: 'Головні турніри літа',
+      description: 'FURIA показала нового тренера. Тепер tacitus',
+      author: 'Віктор Петрович',
+      date: '22 Тра, 2022',
       views: 134,
     },
     {
       image: 'article-image-8.jpg',
-      title: 'Главные турниры октября',
-      description: 'FURIA представила помощника тренера. Отныне tacitus',
-      author: 'Максим Рихтер',
-      date: '19 Окт, 2020',
+      title: 'Головні турніри літа',
+      description: 'FURIA показала нового тренера. Тепер tacitus',
+      author: 'Віктор Петрович',
+      date: '22 Тра, 2022',
       views: 134,
     },
   ];
@@ -67,7 +67,7 @@ class IndexMainNews extends React.Component {
     return (
       <>
         <h1 className="indexMain__title">
-          <span>BattleStar</span> Новости
+          <span>BattleStar</span> Новини
         </h1>
         <div className="indexMain__articles">
           <div className="indexMain__articlesBox">

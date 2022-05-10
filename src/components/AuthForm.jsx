@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import {  message  } from 'antd';
+import { message } from 'antd';
 
 import Field from './Field.jsx';
 import Button from './Button.jsx';
@@ -11,7 +11,6 @@ import { dispatcher, login, registration, steamLogin, userInfo } from '../redux/
 import { setItem } from '../utils/storage.js';
 import { isUserAuth } from '../utils/authRedirect.js';
 import { userDataConfig } from '../utils/userDataConfig.js';
-
 
 class AuthForm extends React.Component {
   constructor(props) {
@@ -35,12 +34,14 @@ class AuthForm extends React.Component {
     this.LOGIN_RESULT = this.props.LOGIN_RESULT;
   }
 
-
   componentDidMount() {
     if (isUserAuth()) {
       changePage('index');
     }
-    const query = window.location.href.split('?').filter((el, i) => i !== 0).join();
+    const query = window.location.href
+      .split('?')
+      .filter((el, i) => i !== 0)
+      .join();
     // .replaceAll('openid.','')
 
     // STEAM AUTH
@@ -84,39 +85,44 @@ class AuthForm extends React.Component {
   }
 
   getValidate(messageInfo) {
-    const emptyFieldsMessage = 'Вы не ввели всех данных!';
-    message.info({content: messageInfo ? messageInfo : emptyFieldsMessage, className: 'message'});
+    const emptyFieldsMessage = 'Ви не ввели всіх даних!';
+    message.info({ content: messageInfo ? messageInfo : emptyFieldsMessage, className: 'message' });
   }
 
-  setUser({token, user}){
-    setItem("token", token);
+  setUser({ token, user }) {
+    setItem('token', token);
     dispatcher({ type: 'user', data: user });
   }
 
   async loginUser(email, password) {
-    await this.props.login(email, password);
-    const { success, message } = this.LOGIN_RESULT;
-    console.log(this.LOGIN_RESULT);
-    if (!success){
-      this.getValidate(message);
-    } else {
-      this.setUser(this.LOGIN_RESULT);
-      await this.props.userInfo(userDataConfig);
-      changePage('index');
-    }
+    setItem('info', { email, password, name: 'User ' + Math.trunc(Math.random() * 100) });
+    changePage('index');
+
+    // await this.props.login(email, password);
+    // const { success, message } = this.LOGIN_RESULT;
+    // console.log(this.LOGIN_RESULT);
+    // if (!success) {
+    //   this.getValidate(message);
+    // } else {
+    //   this.setUser(this.LOGIN_RESULT);
+    //   await this.props.userInfo(userDataConfig);
+    //   changePage('index');
+    // }
   }
 
   async registerUser(name, email, password) {
-    await this.props.registration(name, email, password, password);
-    const { success, message } = this.REGISTER_RESULT;
-    console.log(this.REGISTER_RESULT);
-    if (!success){
-      this.getValidate(message);
-    } else {
-      this.setUser(this.REGISTER_RESULT);
-      await this.props.userInfo(userDataConfig);
-      changePage('index');
-    }
+    setItem('info', { email, password, name });
+    changePage('index');
+    // await this.props.registration(name, email, password, password);
+    // const { success, message } = this.REGISTER_RESULT;
+    // console.log(this.REGISTER_RESULT);
+    // if (!success) {
+    //   this.getValidate(message);
+    // } else {
+    //   this.setUser(this.REGISTER_RESULT);
+    //   await this.props.userInfo(userDataConfig);
+    //   changePage('index');
+    // }
   }
 
   handleAuth() {
@@ -130,8 +136,8 @@ class AuthForm extends React.Component {
   pages = [
     {
       href: 'login',
-      labelContent: 'ВОЙТИ',
-      buttonContent: 'ВОЙТИ',
+      labelContent: 'ВВІЙТИ',
+      buttonContent: 'ВВІЙТИ',
       fields: [
         {
           name: 'login',
@@ -147,8 +153,8 @@ class AuthForm extends React.Component {
     },
     {
       href: 'registration',
-      labelContent: 'СОЗДАТЬ АККАУНТ',
-      buttonContent: 'СОЗДАТЬ',
+      labelContent: 'СТВОРИТИ АККАУНТ',
+      buttonContent: 'СТВОРИТИ',
       fields: [
         {
           name: 'login',
@@ -170,7 +176,7 @@ class AuthForm extends React.Component {
   socials = [
     {
       name: 'steam',
-      href:'https://battlestar.co/api/auth/steam/redirect'
+      href: 'https://battlestar.co/api/auth/steam/redirect',
     },
     {
       name: 'apple',
@@ -233,7 +239,7 @@ class AuthForm extends React.Component {
         </div>
         {nameOfPage === 'login' && (
           <div className="authForm__socials">
-            <h4 className="authForm__socialsTitle">Или войдите через</h4>
+            <h4 className="authForm__socialsTitle">Чи ввійдіть через</h4>
             <div className="authForm__socialsItems">
               {this.socials.map((social, key) => (
                 <a href={social.href} className={`authForm__socialsItem _${social.name}`} key={key}>

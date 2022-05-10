@@ -12,7 +12,7 @@ class IndexMainMatches extends React.Component {
     {
       image: 'match-image-1.jpg',
       name: 'Major Stochholm 2021',
-      dates: '23 Окт - 7 Ноя',
+      dates: '23 Тра - 7 Гру',
       teams: [
         {
           image: 'team-preview-1.jpg',
@@ -68,7 +68,7 @@ class IndexMainMatches extends React.Component {
                     <p className="matchCard__dates">{match.dates}</p>
                     <div className="matchCard__teams">
                       <p className="matchCard__teamsSupport">
-                        {match.teams.length} команд зарегистрированы:
+                        {match.teams.length} команд зареєстровано:
                       </p>
                       <div className="matchCard__teamsBox">
                         <div className="matchCard__teamsItems">
@@ -90,7 +90,7 @@ class IndexMainMatches extends React.Component {
                         </div>
                       </div>
                     </div>
-                    <div className="matchCard__button">Подать заявку</div>
+                    <div className="matchCard__button">Подати заявку</div>
                   </div>
                 </div>
               </div>

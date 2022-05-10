@@ -15,21 +15,19 @@ import { userInfo } from '../redux/redux';
 import { userDataConfig } from '../utils/userDataConfig';
 import Preloader from '../components/Preloader';
 
-
 class Cabinet extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isLoaded: false,
     };
-    
   }
 
-  async componentDidMount(){
+  async componentDidMount() {
     await this.props.userInfo(userDataConfig);
     this.setState({
       isLoaded: true,
-    })
+    });
   }
 
   pages = [
@@ -45,7 +43,7 @@ class Cabinet extends React.Component {
     {
       hrefs: ['history'],
       key: 'history',
-      contentLink: 'История матчей',
+      contentLink: 'Історія матчів',
       icon: 'cabinet-list-history',
       render() {
         return <History />;
@@ -54,7 +52,7 @@ class Cabinet extends React.Component {
     {
       hrefs: ['personal'],
       key: 'personal',
-      contentLink: 'Личные данные',
+      contentLink: 'Особисті дані',
       icon: 'cabinet-list-personal',
       render() {
         return <Personal />;
@@ -63,7 +61,7 @@ class Cabinet extends React.Component {
     {
       hrefs: ['wallet'],
       key: 'wallet',
-      contentLink: 'Кошелёк',
+      contentLink: 'Гаманець',
       icon: 'cabinet-list-wallet',
       render() {
         return <Wallet />;
@@ -72,7 +70,7 @@ class Cabinet extends React.Component {
     {
       hrefs: ['settings'],
       key: 'settings',
-      contentLink: 'Параметры',
+      contentLink: 'Параметри',
       icon: 'cabinet-list-settings',
       render() {
         return <Settings />;
@@ -95,7 +93,7 @@ class Cabinet extends React.Component {
       this.pages.find((page) => page.hrefs.indexOf(levels[1]) !== -1) ||
       this.pages.find((page) => page.hrefs.indexOf('') !== -1);
 
-    if (this.state.isLoaded){
+    if (this.state.isLoaded) {
       return (
         <div className="cabinet">
           <div className="cabinet__inner">
@@ -105,9 +103,9 @@ class Cabinet extends React.Component {
                   {this.pages.map((page, key) => (
                     <a
                       href={page.hrefs[0]}
-                      className={`cabinet__link ${currentPage.key === page.key ? '_current' : ''} _${
-                        page.key
-                      }`}
+                      className={`cabinet__link ${
+                        currentPage.key === page.key ? '_current' : ''
+                      } _${page.key}`}
                       key={key}
                       onClick={(e) => {
                         e.preventDefault();
@@ -127,10 +125,8 @@ class Cabinet extends React.Component {
         </div>
       );
     } else {
-      return <Preloader/>;
+      return <Preloader />;
     }
-
-   
   }
 }
 
@@ -138,7 +134,7 @@ function mapStateToProps(state) {
   return { levels: state.levels };
 }
 
-export default connect(mapStateToProps,{userInfo})(Cabinet);
+export default connect(mapStateToProps, { userInfo })(Cabinet);
 
 Cabinet.propTypes = {
   levels: PropTypes.array,

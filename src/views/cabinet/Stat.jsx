@@ -81,7 +81,7 @@ class CabinetStat extends React.Component {
               </div>
               <div className="cabinetStat__blockItem _content">
                 <div className="cabinetStat__diagram">
-                    <CsgoStatGraph/>
+                  <CsgoStatGraph />
                 </div>
               </div>
             </div>
@@ -122,7 +122,7 @@ class CabinetStat extends React.Component {
             </div>
             <div className="cabinetStat__block">
               <div className="cabinetStat__blockItem _support">
-                <h3 className="cabinetStat__title">Стиль игры</h3>
+                <h3 className="cabinetStat__title">Стиль ігри</h3>
                 <div className="cabinetStat__infos">
                   {infos.map((info, key) => (
                     <div className="cabinetStat__info" key={key}>
@@ -137,8 +137,10 @@ class CabinetStat extends React.Component {
                 </div>
               </div>
               <div className="cabinetStat__blockItem _content">
-                <div className="cabinetStat__diagram" style={{backgroundColor: 'rgba(248, 248, 248, 0.1)', borderRadius: '50px'}}>
-                    <DotaStatGraph/>
+                <div
+                  className="cabinetStat__diagram"
+                  style={{ backgroundColor: 'rgba(248, 248, 248, 0.1)', borderRadius: '50px' }}>
+                  <DotaStatGraph />
                 </div>
               </div>
             </div>
@@ -148,12 +150,12 @@ class CabinetStat extends React.Component {
     },
   ];
 
-  getCards({tournaments, win_rate, hours_in_game}){
+  getCards({ tournaments, win_rate, hours_in_game }) {
     return [
       {
         icon: 'tournaments',
         value: `${tournaments}%`,
-        description: 'Турнира',
+        description: 'Турніра',
       },
       {
         icon: 'rate',
@@ -165,10 +167,10 @@ class CabinetStat extends React.Component {
         value: `${hours_in_game}`,
         description: 'Часов в игре',
       },
-    ]
+    ];
   }
 
-  getInfos({matches, maps, wins, losses, kills, deaths}){
+  getInfos({ matches, maps, wins, losses, kills, deaths }) {
     return [
       [
         {

@@ -120,7 +120,7 @@ class Select extends React.Component {
                 <i className="select__dropSearchIcon">
                   <Icon name="search" />
                 </i>
-                <input type="text" className="select__dropSearchInput" placeholder="Поиск" />
+                <input type="text" className="select__dropSearchInput" placeholder="Пошук" />
               </div>
             )}
             <div className="select__dropItems">

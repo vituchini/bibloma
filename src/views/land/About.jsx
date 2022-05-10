@@ -12,8 +12,8 @@ class LandAbout extends React.Component {
   items = [
     {
       icon: 'header-about-icon-1.png',
-      title: 'Турниры BattleStar',
-      description: 'Профессиональные и любительские турниры с большими призовыми фондами',
+      title: 'Турніры BattleStar',
+      description: 'Профессиональные и любительские Турніры с большими призовыми фондами',
     },
     {
       icon: 'header-about-icon-2.png',
@@ -27,8 +27,8 @@ class LandAbout extends React.Component {
     },
     {
       icon: 'header-about-icon-4.png',
-      title: 'Античит',
-      description: 'Античит BattleStar нового поколения обеспечит честную игру',
+      title: 'Античіт',
+      description: 'Античіт BattleStar нового поколения обеспечит честную игру',
     },
   ];
 

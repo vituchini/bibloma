@@ -67,16 +67,16 @@ class DropList extends React.Component {
         ref={this.parent}
         className={`dropList _${name} ${withSearch === true ? '_withSearch' : ''}`}>
         {withSearch === true && (
-          <div className='dropList__head'>
-            <div className='dropList__search'>
-              <i className='dropList__searchIcon'>
-                <Icon name='search' />
+          <div className="dropList__head">
+            <div className="dropList__search">
+              <i className="dropList__searchIcon">
+                <Icon name="search" />
               </i>
-              <input type='text' className='dropList__searchInput' placeholder='Поиск' />
+              <input type="text" className="dropList__searchInput" placeholder="Пошук" />
             </div>
           </div>
         )}
-        <div className='dropList__items'>
+        <div className="dropList__items">
           {items?.map((item, key) => (
             <div
               className={`dropList__item`}
@@ -89,11 +89,11 @@ class DropList extends React.Component {
                 if (config.key === 'games') setItem('game', item.key);
               }}>
               {item.preview && this.renderPreview(item)}
-              <div className='dropList__itemInfo'>
-                <p className='dropList__itemName'>{item.name}</p>
+              <div className="dropList__itemInfo">
+                <p className="dropList__itemName">{item.name}</p>
                 {item.description && (
                   <div
-                    className='dropList__itemDescription'
+                    className="dropList__itemDescription"
                     dangerouslySetInnerHTML={{ __html: item.description }}></div>
                 )}
               </div>

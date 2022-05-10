@@ -22,7 +22,7 @@ class Calendar extends React.Component {
           <i className="calendar__headBtn">
             <Icon name="calendar-prev" />
           </i>
-          <p className="calendar__headCurrent">Окт 2021</p>
+          <p className="calendar__headCurrent">Тра 2021</p>
           <i className="calendar__headBtn">
             <Icon name="calendar-next" />
           </i>

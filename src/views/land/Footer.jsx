@@ -11,7 +11,7 @@ class LandFooter extends React.Component {
 
   nav = [
     {
-      name: 'Новости',
+      name: 'Новини',
       list: [
         { content: 'Обновление 1.2' },
         { content: 'Рейтинг игроков' },
@@ -19,7 +19,7 @@ class LandFooter extends React.Component {
       ],
     },
     {
-      name: 'Турниры',
+      name: 'Турніры',
       list: [
         { content: 'Любительские' },
         { content: 'Профессиональные' },
@@ -31,7 +31,7 @@ class LandFooter extends React.Component {
       list: [
         { content: 'Прямые эфиры' },
         { content: 'Записи матчей' },
-        { content: 'Турнирные игры' },
+        { content: 'Турнірные ігри' },
       ],
     },
     {

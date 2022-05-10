@@ -16,7 +16,7 @@ class TournamentsIndex extends React.Component {
     {
       image: 'match-image-1.jpg',
       name: 'Major Stochholm 2021',
-      dates: '23 Окт - 7 Ноя',
+      dates: '23 Тра - 7 Гру',
       teams: [
         {
           image: 'team-preview-1.jpg',
@@ -55,11 +55,11 @@ class TournamentsIndex extends React.Component {
   links = [
     {
       key: 'nubs',
-      contentLink: 'ЛЮБИТЕЛЬСКИЕ ТУРНИРЫ',
+      contentLink: 'ЛЮБИТЕЛЬСКИЕ ТУРНІРИ',
     },
     {
       key: 'profi',
-      contentLink: 'ПРОФЕССИОНАЛЬНЫЕ ТУРНИРЫ',
+      contentLink: 'ПРОФЕСІЙНІ ТУРНІРИ',
     },
   ];
 
@@ -68,112 +68,112 @@ class TournamentsIndex extends React.Component {
       {
         image: 'article-image-3.jpg',
         title: 'NAC Sport Championship 2020',
-        description: '23 Окт - Начало в 14:00',
-        author: 'Максим Рихтер',
-        prize: '200000 ₽',
+        description: '23 Тра - Початок в 14:00',
+        author: 'Віктор Петрович',
+        prize: '200000 $',
         rate: '1200+',
-        area: 'Весь мир',
+        area: 'Весь світ',
       },
       {
         image: 'article-image-4.jpg',
         title: 'NAC Sport Championship 2020',
-        description: '23 Окт - Начало в 14:00',
-        author: 'Максим Рихтер',
-        prize: '200000 ₽',
+        description: '23 Тра - Початок в 14:00',
+        author: 'Віктор Петрович',
+        prize: '200000 $',
         rate: '1200+',
-        area: 'Весь мир',
+        area: 'Весь світ',
       },
       {
         image: 'article-image-5.jpg',
         title: 'NAC Sport Championship 2020',
-        description: '23 Окт - Начало в 14:00',
-        author: 'Максим Рихтер',
-        prize: '200000 ₽',
+        description: '23 Тра - Початок в 14:00',
+        author: 'Віктор Петрович',
+        prize: '200000 $',
         rate: '1200+',
-        area: 'Весь мир',
+        area: 'Весь світ',
       },
       {
         image: 'article-image-6.jpg',
         title: 'NAC Sport Championship 2020',
-        description: '23 Окт - Начало в 14:00',
-        author: 'Максим Рихтер',
-        prize: '200000 ₽',
+        description: '23 Тра - Початок в 14:00',
+        author: 'Віктор Петрович',
+        prize: '200000 $',
         rate: '1200+',
-        area: 'Весь мир',
+        area: 'Весь світ',
       },
       {
         image: 'article-image-7.jpg',
         title: 'NAC Sport Championship 2020',
-        description: '23 Окт - Начало в 14:00',
-        author: 'Максим Рихтер',
-        prize: '200000 ₽',
+        description: '23 Тра - Початок в 14:00',
+        author: 'Віктор Петрович',
+        prize: '200000 $',
         rate: '1200+',
-        area: 'Весь мир',
+        area: 'Весь світ',
       },
       {
         image: 'article-image-8.jpg',
         title: 'NAC Sport Championship 2020',
-        description: '23 Окт - Начало в 14:00',
-        author: 'Максим Рихтер',
-        prize: '200000 ₽',
+        description: '23 Тра - Початок в 14:00',
+        author: 'Віктор Петрович',
+        prize: '200000 $',
         rate: '1200+',
-        area: 'Весь мир',
+        area: 'Весь світ',
       },
     ],
     profi: [
       {
         image: 'article-image-3.jpg',
         title: 'NAC Sport Championship 2020',
-        description: '23 Окт - Начало в 14:00',
-        author: 'Максим Рихтер',
-        prize: '200000 ₽',
+        description: '23 Тра - Початок в 14:00',
+        author: 'Віктор Петрович',
+        prize: '200000 $',
         rate: '1200+',
-        area: 'Весь мир',
+        area: 'Весь світ',
       },
       {
         image: 'article-image-4.jpg',
         title: 'NAC Sport Championship 2020',
-        description: '23 Окт - Начало в 14:00',
-        author: 'Максим Рихтер',
-        prize: '200000 ₽',
+        description: '23 Тра - Початок в 14:00',
+        author: 'Віктор Петрович',
+        prize: '200000 $',
         rate: '1200+',
-        area: 'Весь мир',
+        area: 'Весь світ',
       },
       {
         image: 'article-image-5.jpg',
         title: 'NAC Sport Championship 2020',
-        description: '23 Окт - Начало в 14:00',
-        author: 'Максим Рихтер',
-        prize: '200000 ₽',
+        description: '23 Тра - Початок в 14:00',
+        author: 'Віктор Петрович',
+        prize: '200000 $',
         rate: '1200+',
-        area: 'Весь мир',
+        area: 'Весь світ',
       },
       {
         image: 'article-image-6.jpg',
         title: 'NAC Sport Championship 2020',
-        description: '23 Окт - Начало в 14:00',
-        author: 'Максим Рихтер',
-        prize: '200000 ₽',
+        description: '23 Тра - Початок в 14:00',
+        author: 'Віктор Петрович',
+        prize: '200000 $',
         rate: '1200+',
-        area: 'Весь мир',
+        area: 'Весь світ',
       },
       {
         image: 'article-image-7.jpg',
         title: 'NAC Sport Championship 2020',
-        description: '23 Окт - Начало в 14:00',
-        author: 'Максим Рихтер',
-        prize: '200000 ₽',
+        description: '23 Тра - Початок в 14:00',
+        author: 'Віктор Петрович',
+        prize: '200000 $',
         rate: '1200+',
-        area: 'Весь мир',
+        area: 'Весь світ',
       },
       {
         image: 'article-image-8.jpg',
         title: 'NAC Sport Championship 2020',
-        description: '23 Окт - Начало в 14:00',
-        author: 'Максим Рихтер',
-        prize: '200000 ₽',
+        description: '23 Тра - Початок в 14:00',
+        author: 'Віктор Петрович',
+        prize: '200000 $',
         rate: '1200+',
-        area: 'Весь мир',
+        area: 'Весь світ',
       },
     ],
   };
@@ -214,7 +214,7 @@ class TournamentsIndex extends React.Component {
                   <p className="matchCard__dates">{match.dates}</p>
                   <div className="matchCard__teams">
                     <p className="matchCard__teamsSupport">
-                      {match.teams.length} команд зарегистрированы:
+                      {match.teams.length} команд зареєстровано:
                     </p>
                     <div className="matchCard__teamsBox">
                       <div className="matchCard__teamsItems">
@@ -236,7 +236,7 @@ class TournamentsIndex extends React.Component {
                       </div>
                     </div>
                   </div>
-                  <div className="matchCard__button">Подать заявку</div>
+                  <div className="matchCard__button">Подати заявку</div>
                 </div>
               </div>
             </div>
@@ -270,19 +270,19 @@ class TournamentsIndex extends React.Component {
               </div>
             </div>
 
-            <div className="tournamentsIndex__headButton">СОЗДАТЬ ТУРНИР</div>
+            <div className="tournamentsIndex__headButton">СТВОРИТИ ТУРНІР</div>
           </div>
           <div className="tournamentsIndex__tournaments">
             <div className="tournamentsIndex__tournamentsHead">
               <div className="tournamentsIndex__tournamentsHeadItem">
                 <div className="tournamentsIndex__tournamentsFilter">
-                  <div className="tournamentsIndex__tournamentsFilterView">Ближайшие турниры</div>
+                  <div className="tournamentsIndex__tournamentsFilterView">Ближайшие Турніры</div>
                 </div>
               </div>
               <div className="tournamentsIndex__tournamentsHeadItem">
                 <div className="tournamentsIndex__tournamentsFilter">
                   <div className="tournamentsIndex__tournamentsFilterView">
-                    <span>Рейтинг турнира:</span> Любой
+                    <span>Рейтинг Турніра:</span> Будь-який
                   </div>
                 </div>
               </div>

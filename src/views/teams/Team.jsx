@@ -72,9 +72,8 @@ class TeamsTeam extends React.Component {
                 />
               </div>
               <p className="team__description">
-                Значимость этих проблем настолько очевидна, что консультация с широким активом
-                способствует подготовки и&nbsp;реализации позиций, занимаемых участниками в
-                отношении поставленных задач
+                Значення проблем настільки очевидна що... с широким активом способствует подготовки
+                и&nbsp;реализации позиций, занимаемых участниками в отношении поставленных задач
               </p>
               <div className="team__info">
                 <div className="team__infoItem">
@@ -85,7 +84,7 @@ class TeamsTeam extends React.Component {
                   />
                   <div className="team__infoItemContent">
                     <h3 className="team__infoItemTitle">2 победы</h3>
-                    <p className="team__infoItemDescription">в турнирах</p>
+                    <p className="team__infoItemDescription">в Турнірах</p>
                   </div>
                 </div>
                 <div className="team__infoItem">
@@ -120,7 +119,7 @@ class TeamsTeam extends React.Component {
                   />
                   <div className="team__infoItemContent">
                     <h3 className="team__infoItemTitle">13/15</h3>
-                    <p className="team__infoItemDescription">участников</p>
+                    <p className="team__infoItemDescription">Учасників</p>
                   </div>
                 </div>
               </div>

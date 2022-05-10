@@ -154,7 +154,7 @@ class InfoPartnersWallet extends React.Component {
         </div>
         <div className="cabinetWallet__history">
           <div className="cabinetWallet__historyTitle">
-            <h3 className="title">История транзакций</h3>
+            <h3 className="title">Історія транзакцій</h3>
           </div>
           <div className="cabinetWallet__historyContent">
             <TransferTable items={this.items} />

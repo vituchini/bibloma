@@ -23,14 +23,14 @@ class MatchesSideBar extends React.Component {
   links = [
     {
       key: 'findGame',
-      contentLink: 'НАЙТИ ИГРУ',
+      contentLink: 'ЗНАЙТИ ГРУ',
       render() {
         return <FindGame condForLinks={this.getCondForLinks()} />;
       },
     },
     {
       key: 'createGame',
-      contentLink: 'СОЗДАТЬ ЛОББИ',
+      contentLink: 'СТВОРИТИ ЛОББІ',
       render() {
         return <CreateGame hideSideBar={this.props.hideSideBar} />;
       },

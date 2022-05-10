@@ -1,10 +1,13 @@
-import { getItem } from "./storage";
-import {store} from '../redux/redux'
+import { getItem } from './storage';
+import { store } from '../redux/redux';
 
 export const isUserAuth = () => {
-    // const user = store.getState().user
-    // const token = store.getState().token
-    const token = getItem("token");
-    return !!token;
-}
+  // const user = store.getState().user
+  // const token = store.getState().token
 
+  // const token = getItem("token");
+  // return !!token;
+
+  const info = getItem('info');
+  return !!info;
+};

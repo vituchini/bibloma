@@ -114,7 +114,7 @@ class TeamsBest extends React.Component {
             <input
               type="text"
               className="teams__blockSearchInput"
-              placeholder="Поиск по командам"
+              placeholder="Пошук по командам"
             />
           </div>
           <div className="teams__blockContent">

@@ -191,12 +191,12 @@ class MatchesStreams extends React.Component {
       <div className={`matches__games _${currentView}`}>
         <div className="matches__gamesHead">
           <div className="matches__gamesHeadItem">
-            <p className="matches__gamesHeadName">Открытые лобби</p>
+            <p className="matches__gamesHeadName">Відкриті лоббі</p>
           </div>
           {currentGame === 'cs' && (
             <div className="matches__gamesHeadItem _views">
               <div className="matches__gamesHeadView">
-                Отобразить
+                Відобразити
                 {this.views.map((view, key) => (
                   <i
                     className={`matches__gamesHeadIcon ${

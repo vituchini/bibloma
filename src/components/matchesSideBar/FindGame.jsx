@@ -100,7 +100,7 @@ class FindGame extends React.Component {
         {condForLinks === true && (
           <div className="matchesSideBar__team">
             <p className="matchesSideBar__teamSupport">
-              Пати
+              Паті
               <i className="matchesSideBar__teamSupportIcon">
                 <Icon name="question" />
               </i>
@@ -152,7 +152,7 @@ class FindGame extends React.Component {
               <i className="matchesSideBar__filterSupportIcon">
                 <Icon name="filters" />
               </i>
-              Фильтры
+              Фильтри
             </h3>
             <div className="matchesSideBar__filterContent">
               <MatchesFilter />

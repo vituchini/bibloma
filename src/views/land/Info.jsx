@@ -27,7 +27,7 @@ class LandInfo extends React.Component {
       break: 13,
       counter: 1,
       key: 'tournaments',
-      description: 'Турниров',
+      description: 'Турнірів',
     },
     {
       break: 5172,
