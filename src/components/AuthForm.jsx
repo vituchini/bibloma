@@ -251,9 +251,9 @@ class AuthForm extends React.Component {
         )}
 
         <p className="authForm__rules">
-          Создавая аккаунт в “Название” вы соглашаетесь с{' '}
+          Створюючи акаунт у системі ви погоджуєтесь з{' '}
           <a href="#" className="authForm__rulesLink">
-            пользовательским соглашением
+            користувацьким правилами
           </a>
         </p>
       </div>

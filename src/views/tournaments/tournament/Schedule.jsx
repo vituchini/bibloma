@@ -235,7 +235,7 @@ class TournamentsTournamentSchedule extends React.Component {
                       <p className="scheduleCard__time">{item.time}</p>
                       {item.teams[0].result !== undefined && (
                         <a href="#" className="scheduleCard__link">
-                          Смотреть
+                          Дивитись
                         </a>
                       )}
 

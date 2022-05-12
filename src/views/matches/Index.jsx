@@ -228,7 +228,7 @@ class MatchesIndex extends React.Component {
             <div className="matches__gamesHeadItem _views">
               <div className="matches__gamesHeadView">
                 Відобразити
-                {this.views.map((view, key) => (
+                {[{ key: '123', icon: 'inferno' }].map((view, key) => (
                   <i
                     className={`matches__gamesHeadIcon ${
                       view.key === currentView ? '_current' : ''

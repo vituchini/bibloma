@@ -93,7 +93,7 @@ class Cabinet extends React.Component {
       this.pages.find((page) => page.hrefs.indexOf(levels[1]) !== -1) ||
       this.pages.find((page) => page.hrefs.indexOf('') !== -1);
 
-    if (this.state.isLoaded) {
+    if (!this.state.isLoaded) {
       return (
         <div className="cabinet">
           <div className="cabinet__inner">

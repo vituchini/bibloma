@@ -20,6 +20,7 @@ import { isUserAuth } from '../utils/authRedirect.js';
 import { userInfo } from '../redux/redux';
 import { userDataConfig } from '../utils/userDataConfig';
 import { getItem, setItem } from '../utils/storage';
+import changePage from '../functions/changePage';
 
 class App extends React.Component {
   constructor(props) {
@@ -143,7 +144,7 @@ class App extends React.Component {
       onlyDesktop: true,
       render() {
         return (
-          <div className='body__section'>
+          <div className="body__section">
             <Friends />
           </div>
         );
@@ -156,7 +157,9 @@ class App extends React.Component {
     const pages = isUserAuth() ? this.pages : this.notAuthPages;
     const currentPage =
       pages.find((page) => page.hrefs.indexOf(levels[0]) !== -1) ||
-      (isUserAuth() ? pages.find((page) => page.hrefs.indexOf('index') !== -1) : pages.find((page) => page.hrefs.indexOf('') !== -1));
+      (isUserAuth()
+        ? pages.find((page) => page.hrefs.indexOf('index') !== -1)
+        : pages.find((page) => page.hrefs.indexOf('') !== -1));
     return currentPage.inCabinet === true;
   }
 
@@ -207,7 +210,11 @@ class App extends React.Component {
     const pages = isUserAuth() ? this.pages : this.notAuthPages;
     const currentPage =
       pages.find((page) => page.hrefs.indexOf(levels[0]) !== -1) ||
-      (isUserAuth()?pages.find((page) => page.hrefs.indexOf('index') !== -1):pages.find((page) => page.hrefs.indexOf('') !== -1));
+      (isUserAuth()
+        ? pages.find((page) => page.hrefs.indexOf('index') !== -1)
+        : pages.find((page) => page.hrefs.indexOf('') !== -1));
+
+    // if (!isUserAuth() && !location.href?.includes('auth')) changePage('auth/login');
 
     return (
       <div
@@ -252,7 +259,7 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps,{userInfo})(App);
+export default connect(mapStateToProps, { userInfo })(App);
 
 App.propTypes = {
   levels: PropTypes.array,

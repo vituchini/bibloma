@@ -306,13 +306,13 @@ class MatchesTeams extends React.Component {
     const teams = this.getTeams(players);
     const meUser = this.findUserAmoungPlayers(players);
     const playersPlaces = this.getPlayersPlaces(game, mode);
-    if (name === 'TEST GAME WRONG') return <Loader type="Puff" color={'white'} />;
+    // if (name === 'TEST GAME WRONG') return <Loader type="Puff" color={'white'} />;
     return (
       <>
         <div className="matchesGame__info">
           <div className="matchesGame__infoUser">
             <img
-              src={require('../../../img/lang-ru.svg').default}
+              src={require('../../../img/lang-avstral.svg').default}
               alt=""
               className="matchesGame__infoUserLang"
             />
@@ -338,13 +338,13 @@ class MatchesTeams extends React.Component {
               <i className="matchesGame__infoButtonIcon">
                 <Icon name="download" />
               </i>
-              Скачать Демо
+              Скачати Демо
             </div>
             <div className="matchesGame__infoButton _watch">
               <i className="matchesGame__infoButtonIcon">
                 <Icon name="watch" />
               </i>
-              Смотреть
+              Дивитись
             </div>
           </div>
         </div>
@@ -368,8 +368,9 @@ class MatchesTeams extends React.Component {
                 {/*<h4 className="matchesTeams__headInfoValue">-:-</h4>*/}
                 {started_at && (
                   <>
-                    <h4 className="matchesTeams__headInfoValue">{this.timeDiff?.view}</h4>
-                    <p className="matchesTeams__headInfoDescription">до начала</p>
+                    {/*<h4 className="matchesTeams__headInfoValue">{this.timeDiff?.view}</h4>*/}
+                    <h4 className="matchesTeams__headInfoValue">12:10</h4>
+                    <p className="matchesTeams__headInfoDescription">до початку</p>
                   </>
                 )}
               </div>
@@ -410,7 +411,7 @@ class MatchesTeams extends React.Component {
                 onClick={() => {
                   this.isUserReady ? this.props.setUnReady() : this.props.setReady();
                 }}>
-                <div>{this.isUserReady ? 'Готов' : 'Не готов'}</div>
+                <div>{this.isUserReady ? 'Готовий' : 'Не готовий'}</div>
               </div>
             )}
             {!started_at && (
@@ -428,7 +429,7 @@ class MatchesTeams extends React.Component {
                 this.props.leaveGame();
                 changePage('matches');
               }}>
-              Выйти из лобби
+              Вийти з лоббі
             </div>
           </div>
         </div>

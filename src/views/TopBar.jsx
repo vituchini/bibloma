@@ -182,7 +182,7 @@ class TopBar extends React.Component {
         },
         handler: function () {
           setItem('info', null);
-          changePage('');
+          changePage('auth');
 
           exit();
         },
@@ -316,9 +316,9 @@ class TopBar extends React.Component {
             {inCabinet === true && (
               <>
                 <div className="topBar__balance">
-                  <i className="topBar__balanceAdd">
-                    <Icon name="balance-add" />
-                  </i>
+                  {/*<i className="topBar__balanceAdd">*/}
+                  {/*  <Icon name="balance-add" />*/}
+                  {/*</i>*/}
                   <p className="topBar__balanceValue">
                     {user?.balance} <span className="_strike">BS</span>
                   </p>

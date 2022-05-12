@@ -21,7 +21,7 @@ class SideBar extends React.Component {
     {
       key: 'matches',
       href: 'matches',
-      contentLink: 'Матчи',
+      contentLink: 'Матчі',
       icon: 'sidebar-games',
     },
     {

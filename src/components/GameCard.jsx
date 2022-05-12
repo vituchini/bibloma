@@ -59,7 +59,7 @@ class GameCard extends React.Component {
                 {model.isOnline === true && <div className="gameCard__online">Онлайн</div>}
                 <div className="gameCard__user">
                   <img
-                    src={require('../img/lang-ru.svg').default}
+                    src={require('../img/lang-avstral.svg').default}
                     alt=""
                     className="gameCard__userLang"
                   />
@@ -108,7 +108,7 @@ class GameCard extends React.Component {
               <div className="gameCard__infoHead">
                 <div className="gameCard__user">
                   <img
-                    src={require('../img/lang-ru.svg').default}
+                    src={require('../img/lang-avstral.svg').default}
                     alt=""
                     className="gameCard__userLang"
                   />

@@ -62,7 +62,7 @@ class LoginGame extends React.Component {
               className="popup__gameMap"
             />
             <img
-              src={require('../../img/lang-ru.svg').default}
+              src={require('../../img/lang-avstral.svg').default}
               alt=""
               className="popup__gameLang"
             />

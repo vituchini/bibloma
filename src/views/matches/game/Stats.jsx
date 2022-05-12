@@ -29,18 +29,18 @@ class MatchesStats extends React.Component {
   orderCols = ['user', 'info', 'exp', 'damage', 'kills'];
 
   namesCols = {
-    user: 'Игрок',
-    exp: 'Опыт',
-    damage: 'Урон',
-    kills: 'Убийства',
-    ub: 'Уб',
+    user: 'Гравець',
+    exp: 'Досвід',
+    damage: 'Шкода',
+    kills: 'Вбивства',
+    ub: 'Вб',
     sm: 'См',
     as: 'Ас',
     om: 'О/М',
     gm: 'Г/М',
-    heroes: 'Герои',
-    builds: 'Строения',
-    final: 'Общий',
+    heroes: 'Герої',
+    builds: 'Башні',
+    final: 'Повний',
   };
 
   teams = [
@@ -301,7 +301,7 @@ class MatchesStats extends React.Component {
         <div className="matchesGame__info _stats">
           <div className="matchesGame__infoUser">
             <img
-              src={require('../../../img/lang-ru.svg').default}
+              src={require('../../../img/lang-avstral.svg').default}
               alt=""
               className="matchesGame__infoUserLang"
             />

@@ -69,7 +69,7 @@ class InfoPartnersSettings extends React.Component {
       {
         value: 'russia',
         content: 'Россия',
-        icon: 'lang-ru.svg',
+        icon: 'lang-avstral.svg',
       },
       {
         value: 'avstr',
